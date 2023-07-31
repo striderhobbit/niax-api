@@ -34,7 +34,7 @@ declare namespace Resource {
     }
   >;
 
-  type Field<T extends UniqItem> = {
+  type TableField<T extends UniqItem> = {
     [P in Path<T>]: Pick<T, 'id'> &
       Routes<T>[P] & {
         path: P;
@@ -43,8 +43,8 @@ declare namespace Resource {
       };
   }[Path<T>];
 
-  interface Row<T extends UniqItem> {
-    fields: Field<T>[];
+  interface TableRow<T extends UniqItem> {
+    fields: TableField<T>[];
     resource: Pick<T, 'id'>;
   }
 
@@ -52,7 +52,7 @@ declare namespace Resource {
     columns: TableColumns<T>;
     hash: string;
     resource: string;
-    rows: PagingObject<Row<T>>[];
+    rows: PagingObject<TableRow<T>>[];
   }
 
   interface TableHeader<T extends UniqItem> extends Omit<RawTable<T>, 'rows'> {
@@ -63,7 +63,7 @@ declare namespace Resource {
 
   interface Table<T extends UniqItem> extends Omit<TableHeader<T>, 'rows'> {
     rows: Dictionary<{
-      items?: Row<T>[];
+      items?: TableRow<T>[];
     }>;
   }
 }

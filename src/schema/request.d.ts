@@ -31,7 +31,7 @@ declare namespace Request {
     ReqParams: {
       resource: string;
     };
-    ResBody: PagingObject<Resource.Row<T>>;
+    ResBody: PagingObject<Resource.TableRow<T>>;
     ReqBody: {};
     ReqQuery: {
       pageToken: string;
@@ -43,7 +43,7 @@ declare namespace Request {
       resource: string;
     };
     ResBody: T;
-    ReqBody: Resource.Field<T>;
+    ReqBody: Resource.TableField<T>;
     ReqQuery: {};
   }
 }

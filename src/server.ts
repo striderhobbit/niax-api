@@ -55,7 +55,7 @@ export class Server<T extends UniqItem> {
             items.map((item) => ({
               resource: pick(item, 'id'),
               fields: fields.map(
-                (field): Resource.Field<T> => ({
+                (field): Resource.TableField<T> => ({
                   ...field,
                   id: item.id,
                   value: get(item, field.path),
