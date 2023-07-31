@@ -1,0 +1,20 @@
+{
+  "id": {
+    "type": "string"
+  },
+  "name.first": {
+    "type": "string"
+  },
+  "name.last": {
+    "type": "string"
+  },
+  "age": {
+    "type": "number"
+  },
+  "eyeColor": {
+    "type": "string"
+  },
+  "isMarried": {
+    "type": "boolean"
+  }
+}
