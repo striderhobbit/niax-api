@@ -24,7 +24,7 @@ export class Server<T extends UniqItem> {
     >('/api/resource/table/:resource', async (req, res, next) => {
       const { resource } = req.params,
         paths = req.query.paths.split(',').map((path) => path as Path<T>),
-        { limit, hash, resourceId } = req.query;
+        { limit = 50, hash, resourceId } = req.query;
 
       const items: T[] = (
         await readFile(`resource/${resource}.items.json`, 'utf-8').then(
@@ -80,12 +80,7 @@ export class Server<T extends UniqItem> {
 
       res.send({
         ...table,
-        rows: fromPairs(
-          table.rows.map(({ items, pageToken }) => [
-            pageToken,
-            { items: items.map((item) => pick(item, 'resource')) },
-          ])
-        ),
+        rows: fromPairs(table.rows.map(({ pageToken }) => [pageToken, {}])),
         pageToken:
           resourceId &&
           table.rows.find((row) =>
@@ -123,17 +118,15 @@ export class Server<T extends UniqItem> {
             throw new Error(`${resource} item ${req.body.id} not found`);
           }
 
-          res.send(set(item, req.body.path, req.body.value));
-
           delete this.table[resource];
 
-          return items;
+          return { items, item: set(item, req.body.path, req.body.value) };
         })
-        .then((items) =>
+        .then(({ items, item }) =>
           writeFile(
             `resource/${resource}.items.json`,
             JSON.stringify(items, null, '\t')
-          )
+          ).then(() => res.send(item))
         );
     });
 

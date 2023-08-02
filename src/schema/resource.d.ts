@@ -56,9 +56,9 @@ declare namespace Resource {
   }
 
   interface TableHeader<T extends UniqItem> extends Omit<RawTable<T>, 'rows'> {
+    rows: Dictionary<{}>;
     pageToken?: string | null;
     resourceId?: string;
-    rows: Dictionary<{}>;
   }
 
   interface Table<T extends UniqItem> extends Omit<TableHeader<T>, 'rows'> {
