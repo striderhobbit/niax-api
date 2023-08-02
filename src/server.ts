@@ -30,7 +30,7 @@ export class Server<T extends UniqItem> {
         await readFile(`resource/${resource}.items.json`, 'utf-8').then(
           JSON.parse
         )
-      ).slice(0, 50);
+      ).slice(0, 50); // FIXME;
 
       const routes: Resource.Routes<T> = await readFile(
         `resource/${resource}.routes.json`,
