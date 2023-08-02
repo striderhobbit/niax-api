@@ -23,7 +23,7 @@ export class Server<T extends UniqItem> {
       Request.GetResourceTable<T>['ReqQuery']
     >('/api/resource/table/:resource', async (req, res, next) => {
       const { resource } = req.params,
-        { limit = 50, hash, resourceId } = req.query;
+        { hash, limit = 50, resourceId } = req.query;
 
       const items: T[] = (
         await readFile(`resource/${resource}.items.json`, 'utf-8').then(
