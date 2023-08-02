@@ -23,7 +23,7 @@ export class Server<T extends UniqItem> {
       Request.GetResourceTable<T>['ReqQuery']
     >('/api/resource/table/:resource', async (req, res, next) => {
       const { resource } = req.params,
-        { limit = 50, hash, resourceId } = req.query;
+        { hash, limit = 50, resourceId } = req.query;
 
       const items: T[] = (
         await readFile(`resource/${resource}.items.json`, 'utf-8').then(
@@ -108,26 +108,32 @@ export class Server<T extends UniqItem> {
       Request.PatchResourceItem<T>['ReqBody'],
       Request.PatchResourceItem<T>['ReqQuery']
     >('/api/:resource', (req, res, next) => {
-      const { resource } = req.params;
+      const { resource } = req.params,
+        { id, path, value } = req.body;
+
+      const getItem = (items: T[], id: string): T | undefined =>
+        items.find((item) => item.id === id);
 
       readFile(`resource/${resource}.items.json`, 'utf-8')
         .then<T[]>(JSON.parse)
         .then((items) => {
-          const item = find(items, (item) => item.id === req.body.id);
+          const item = getItem(items, id);
 
           if (item == null) {
-            throw new Error(`${resource} item ${req.body.id} not found`);
+            throw new Error(`${resource} ${JSON.stringify(id)} not found`);
           }
+
+          set(item, path, value);
 
           delete this.table[resource];
 
-          return { items, item: set(item, req.body.path, req.body.value) };
+          return items;
         })
-        .then(({ items, item }) =>
+        .then((items) =>
           writeFile(
             `resource/${resource}.items.json`,
             JSON.stringify(items, null, '\t')
-          ).then(() => res.send(item))
+          ).then(() => res.send(getItem(items, id)))
         );
     });
 
