@@ -50,7 +50,7 @@ export class Server<T extends UniqItem> {
       if (
         table == null ||
         hash == null ||
-        objectHash({ items, columns, limit }) !== hash
+        objectHash({ items, routes, columns, limit }) !== hash
       ) {
         const fields = filter(columns, '1.include').map(([path]) => ({
           path,
@@ -72,7 +72,7 @@ export class Server<T extends UniqItem> {
             })),
             +limit
           ),
-          hash: objectHash({ items, columns, limit }),
+          hash: objectHash({ items, routes, columns, limit }),
           columns: Object.fromEntries(columns),
         };
       }
