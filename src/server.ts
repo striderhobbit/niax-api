@@ -3,7 +3,7 @@ import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
-import { Dictionary, find, fromPairs, get, pick, set } from 'lodash';
+import { Dictionary, find, get, pick, pickBy, set } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { paginate } from './paging';
@@ -23,7 +23,6 @@ export class Server<T extends UniqItem> {
       Request.GetResourceTable<T>['ReqQuery']
     >('/api/resource/table/:resource', async (req, res, next) => {
       const { resource } = req.params,
-        paths = req.query.paths.split(',').map((path) => path as Path<T>),
         { limit = 50, hash, resourceId } = req.query;
 
       const items: T[] = (
@@ -37,17 +36,30 @@ export class Server<T extends UniqItem> {
         'utf-8'
       ).then(JSON.parse);
 
+      const columns = Object.fromEntries(
+        Object.keys(routes)
+          .map((path) => path as Path<T>)
+          .map((path) => [
+            path,
+            {
+              include: req.query.paths.split(',').includes(path),
+            },
+          ])
+      );
+
       let table = this.table[resource];
 
       if (
         table == null ||
         hash == null ||
-        objectHash({ items, routes, paths, limit }) !== hash
+        objectHash({ items, columns, limit }) !== hash
       ) {
-        const fields = paths.map((path) => ({
-          path,
-          type: routes[path]!.type,
-        }));
+        const fields = Object.keys(pickBy(columns, 'include'))
+          .map((path) => path as Path<T>)
+          .map((path) => ({
+            path,
+            type: routes[path]!.type,
+          }));
 
         table = this.table[resource] = {
           resource,
@@ -64,23 +76,16 @@ export class Server<T extends UniqItem> {
             })),
             +limit
           ),
-          hash: objectHash({ items, routes, paths, limit }),
-          columns: fromPairs(
-            Object.keys(routes)
-              .map((path) => path as Path<T>)
-              .map((path) => [
-                path,
-                {
-                  include: paths.includes(path),
-                },
-              ])
-          ),
+          hash: objectHash({ items, columns, limit }),
+          columns,
         };
       }
 
       res.send({
         ...table,
-        rows: fromPairs(table.rows.map(({ pageToken }) => [pageToken, {}])),
+        rows: Object.fromEntries(
+          table.rows.map(({ pageToken }) => [pageToken, {}])
+        ),
         pageToken:
           resourceId &&
           table.rows.find((row) =>
