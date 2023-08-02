@@ -7,13 +7,16 @@ import { Dictionary, filter, find, get, pick, set } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { paginate } from './paging';
+import { PromiseChain } from './promise';
 import { Path, UniqItem } from './schema';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 
 export class Server<T extends UniqItem> {
   private readonly app = express();
+  private readonly chain = new PromiseChain();
   private readonly table: Dictionary<Resource.RawTable<T>> = {};
+
   private readonly router = express
     .Router()
     .get<
@@ -21,75 +24,77 @@ export class Server<T extends UniqItem> {
       Request.GetResourceTable<T>['ResBody'],
       Request.GetResourceTable<T>['ReqBody'],
       Request.GetResourceTable<T>['ReqQuery']
-    >('/api/resource/table/:resource', async (req, res, next) => {
-      const { resource } = req.params,
-        { hash, limit = 50, resourceId } = req.query;
+    >('/api/resource/table/:resource', (req, res, next) =>
+      this.chain.push(async () => {
+        const { resource } = req.params,
+          { hash, limit = 50, resourceId } = req.query;
 
-      const items: T[] = (
-        await readFile(`resource/${resource}.items.json`, 'utf-8').then(
-          JSON.parse
-        )
-      ).slice(0, 50); // FIXME;
+        const items: T[] = (
+          await readFile(`resource/${resource}.items.json`, 'utf-8').then(
+            JSON.parse
+          )
+        ).slice(0, 50); // FIXME;
 
-      const routes: Resource.Routes<T> = await readFile(
-        `resource/${resource}.routes.json`,
-        'utf-8'
-      ).then(JSON.parse);
+        const routes: Resource.Routes<T> = await readFile(
+          `resource/${resource}.routes.json`,
+          'utf-8'
+        ).then(JSON.parse);
 
-      const columns: [Path<T>, Resource.TableColumn][] = Object.keys(
-        routes
-      ).map((path) => [
-        path as Path<T>,
-        {
-          include: req.query.paths.split(',').includes(path),
-        },
-      ]);
+        const columns: [Path<T>, Resource.TableColumn][] = Object.keys(
+          routes
+        ).map((path) => [
+          path as Path<T>,
+          {
+            include: req.query.paths.split(',').includes(path),
+          },
+        ]);
 
-      let table = this.table[resource];
+        let table = this.table[resource];
 
-      if (
-        table == null ||
-        hash == null ||
-        objectHash({ items, routes, columns, limit }) !== hash
-      ) {
-        const fields = filter(columns, '1.include').map(([path]) => ({
-          path,
-          type: routes[path]!.type,
-        }));
+        if (
+          table == null ||
+          hash == null ||
+          objectHash({ items, routes, columns, limit }) !== hash
+        ) {
+          const fields = filter(columns, '1.include').map(([path]) => ({
+            path,
+            type: routes[path]!.type,
+          }));
 
-        table = this.table[resource] = {
-          resource,
-          rows: paginate(
-            items.map((item) => ({
-              resource: pick(item, 'id'),
-              fields: fields.map(
-                (field): Resource.TableField<T> => ({
-                  ...field,
-                  id: item.id,
-                  value: get(item, field.path),
-                })
-              ),
-            })),
-            +limit
+          table = this.table[resource] = {
+            resource,
+            rows: paginate(
+              items.map((item) => ({
+                resource: pick(item, 'id'),
+                fields: fields.map(
+                  (field): Resource.TableField<T> => ({
+                    ...field,
+                    id: item.id,
+                    value: get(item, field.path),
+                  })
+                ),
+              })),
+              +limit
+            ),
+            hash: objectHash({ items, routes, columns, limit }),
+            columns: Object.fromEntries(columns),
+          };
+        }
+
+        res.send({
+          ...table,
+          rows: Object.fromEntries(
+            table.rows.map(({ pageToken }) => [pageToken, {}])
           ),
-          hash: objectHash({ items, routes, columns, limit }),
-          columns: Object.fromEntries(columns),
-        };
-      }
-
-      res.send({
-        ...table,
-        rows: Object.fromEntries(
-          table.rows.map(({ pageToken }) => [pageToken, {}])
-        ),
-        pageToken:
-          resourceId &&
-          table.rows.find((row) =>
-            find(row.items, { resource: { id: resourceId } })
-          )?.pageToken,
-        resourceId,
-      });
-    })
+          pageToken:
+            resourceId &&
+            table.rows.find((row) =>
+              find(row.items, { resource: { id: resourceId } })
+            )?.pageToken,
+          resourceId,
+        });
+      }, next)
+    )
     .get<
       Request.GetResourceTablePage<T>['ReqParams'],
       Request.GetResourceTablePage<T>['ResBody'],
@@ -107,36 +112,38 @@ export class Server<T extends UniqItem> {
       Request.PatchResourceItem<T>['ResBody'],
       Request.PatchResourceItem<T>['ReqBody'],
       Request.PatchResourceItem<T>['ReqQuery']
-    >('/api/:resource', (req, res, next) => {
-      const { resource } = req.params,
-        { id, path, value } = req.body;
+    >('/api/:resource', (req, res, next) =>
+      this.chain.push(() => {
+        const { resource } = req.params,
+          { id, path, value } = req.body;
 
-      const getItem = (items: T[], id: string): T => {
-        const item = items.find((item) => item.id === id);
+        const getItem = (items: T[], id: string): T => {
+          const item = items.find((item) => item.id === id);
 
-        if (item == null) {
-          throw new Error(`${resource} ${JSON.stringify(id)} not found`);
-        }
+          if (item == null) {
+            throw new Error(`${resource} ${JSON.stringify(id)} not found`);
+          }
 
-        return item;
-      };
+          return item;
+        };
 
-      readFile(`resource/${resource}.items.json`, 'utf-8')
-        .then<T[]>(JSON.parse)
-        .then((items) => {
-          set(getItem(items, id), path, value);
+        return readFile(`resource/${resource}.items.json`, 'utf-8')
+          .then<T[]>(JSON.parse)
+          .then((items) => {
+            set(getItem(items, id), path, value);
 
-          delete this.table[resource];
+            delete this.table[resource];
 
-          return items;
-        })
-        .then((items) =>
-          writeFile(
-            `resource/${resource}.items.json`,
-            JSON.stringify(items, null, '\t')
-          ).then(() => res.send(getItem(items, id)))
-        );
-    });
+            return items;
+          })
+          .then((items) =>
+            writeFile(
+              `resource/${resource}.items.json`,
+              JSON.stringify(items, null, '\t')
+            ).then(() => res.send(getItem(items, id)))
+          );
+      }, next)
+    );
 
   constructor(private readonly port: number) {
     this.app.use(json());
