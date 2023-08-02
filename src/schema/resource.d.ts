@@ -24,15 +24,14 @@ declare namespace Resource {
     };
   }>;
 
-  type TableColumns<T extends UniqItem> = Record<
-    keyof Routes<T>,
-    {
-      filter?: string;
-      include?: boolean;
-      order?: 'asc' | 'desc';
-      sortIndex?: number;
-    }
-  >;
+  interface TableColumn {
+    filter?: string;
+    include?: boolean;
+    order?: 'asc' | 'desc';
+    sortIndex?: number;
+  }
+
+  type TableColumns<T extends UniqItem> = Record<keyof Routes<T>, TableColumn>;
 
   type TableField<T extends UniqItem> = {
     [P in Path<T>]: Pick<T, 'id'> &

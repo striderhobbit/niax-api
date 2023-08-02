@@ -3,7 +3,7 @@ import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
-import { Dictionary, find, get, pick, pickBy, set } from 'lodash';
+import { Dictionary, filter, find, get, pick, set } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { paginate } from './paging';
@@ -36,16 +36,14 @@ export class Server<T extends UniqItem> {
         'utf-8'
       ).then(JSON.parse);
 
-      const columns = Object.fromEntries(
-        Object.keys(routes)
-          .map((path) => path as Path<T>)
-          .map((path) => [
-            path,
-            {
-              include: req.query.paths.split(',').includes(path),
-            },
-          ])
-      );
+      const columns: [Path<T>, Resource.TableColumn][] = Object.keys(
+        routes
+      ).map((path) => [
+        path as Path<T>,
+        {
+          include: req.query.paths.split(',').includes(path),
+        },
+      ]);
 
       let table = this.table[resource];
 
@@ -54,12 +52,10 @@ export class Server<T extends UniqItem> {
         hash == null ||
         objectHash({ items, columns, limit }) !== hash
       ) {
-        const fields = Object.keys(pickBy(columns, 'include'))
-          .map((path) => path as Path<T>)
-          .map((path) => ({
-            path,
-            type: routes[path]!.type,
-          }));
+        const fields = filter(columns, '1.include').map(([path]) => ({
+          path,
+          type: routes[path]!.type,
+        }));
 
         table = this.table[resource] = {
           resource,
@@ -77,7 +73,7 @@ export class Server<T extends UniqItem> {
             +limit
           ),
           hash: objectHash({ items, columns, limit }),
-          columns,
+          columns: Object.fromEntries(columns),
         };
       }
 
