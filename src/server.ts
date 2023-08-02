@@ -124,9 +124,7 @@ export class Server<T extends UniqItem> {
       readFile(`resource/${resource}.items.json`, 'utf-8')
         .then<T[]>(JSON.parse)
         .then((items) => {
-          const item = getItem(items, id);
-
-          set(item, path, value);
+          set(getItem(items, id), path, value);
 
           delete this.table[resource];
 
