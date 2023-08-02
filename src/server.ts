@@ -111,17 +111,20 @@ export class Server<T extends UniqItem> {
       const { resource } = req.params,
         { id, path, value } = req.body;
 
-      const getItem = (items: T[], id: string): T | undefined =>
-        items.find((item) => item.id === id);
+      const getItem = (items: T[], id: string): T => {
+        const item = items.find((item) => item.id === id);
+
+        if (item == null) {
+          throw new Error(`${resource} ${JSON.stringify(id)} not found`);
+        }
+
+        return item;
+      };
 
       readFile(`resource/${resource}.items.json`, 'utf-8')
         .then<T[]>(JSON.parse)
         .then((items) => {
           const item = getItem(items, id);
-
-          if (item == null) {
-            throw new Error(`${resource} ${JSON.stringify(id)} not found`);
-          }
 
           set(item, path, value);
 
