@@ -1,7 +1,6 @@
 import { ParamsDictionary } from 'express-serve-static-core';
 import { ParsedQs } from 'qs';
 import { UniqItem } from '.';
-import { PagingObject } from './paging';
 import { Resource } from './resource';
 
 interface RequestHandlerParams {
@@ -31,7 +30,7 @@ declare namespace Request {
     ReqParams: {
       resource: string;
     };
-    ResBody: PagingObject<Resource.TableRow<T>>;
+    ResBody: Resource.TableRowsPage<T>;
     ReqBody: {};
     ReqQuery: {
       pageToken: string;

@@ -15,7 +15,7 @@ import { Resource } from './schema/resource';
 export class Server<T extends UniqItem> {
   private readonly app = express();
   private readonly chain = new PromiseChain();
-  private readonly table: Dictionary<Resource.RawTable<T>> = {};
+  private readonly tables: Dictionary<Resource.RawTable<T>> = {};
 
   private readonly router = express
     .Router()
@@ -49,7 +49,7 @@ export class Server<T extends UniqItem> {
           },
         ]);
 
-        let table = this.table[resource];
+        let table = this.tables[resource];
 
         if (
           table == null ||
@@ -61,7 +61,7 @@ export class Server<T extends UniqItem> {
             type: routes[path]!.type,
           }));
 
-          table = this.table[resource] = {
+          table = this.tables[resource] = {
             resource,
             rowsPages: paginate(
               items.map((item) => ({
@@ -107,7 +107,7 @@ export class Server<T extends UniqItem> {
       Request.GetResourceTablePage<T>['ReqQuery']
     >('/api/resource/table/page/:resource', (req, res, next) =>
       res.send(
-        find(this.table[req.params.resource].rowsPages, {
+        find(this.tables[req.params.resource].rowsPages, {
           pageToken: req.query.pageToken,
         })
       )
@@ -137,7 +137,7 @@ export class Server<T extends UniqItem> {
           .then((items) => {
             set(getItem(items, id), path, value);
 
-            delete this.table[resource];
+            delete this.tables[resource];
 
             return items;
           })
