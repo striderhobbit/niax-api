@@ -91,11 +91,11 @@ export class Server<T extends UniqItem> {
               ]
             )
           ),
-          pageToken:
-            resourceId &&
+          pageToken: (
             table.rowsPages.find((rowsPage) =>
               find(rowsPage.items, { resource: { id: resourceId } })
-            )?.pageToken,
+            ) ?? table.rowsPages[0]
+          )?.pageToken,
           resourceId,
         });
       }, next)
