@@ -63,7 +63,7 @@ export class Server<T extends UniqItem> {
 
           table = this.table[resource] = {
             resource,
-            rows: paginate(
+            rowsPages: paginate(
               items.map((item) => ({
                 resource: pick(item, 'id'),
                 fields: fields.map(
@@ -83,18 +83,18 @@ export class Server<T extends UniqItem> {
 
         res.send({
           ...table,
-          rows: Object.fromEntries(
-            table.rows.map(
-              ({ pageToken, nextPageToken, previousPageToken }) => [
+          rowsPages: Object.fromEntries(
+            table.rowsPages.map(
+              ({ pageToken, previousPageToken, nextPageToken }) => [
                 pageToken,
-                { pageToken, nextPageToken, previousPageToken },
+                { pageToken, previousPageToken, nextPageToken },
               ]
             )
           ),
           pageToken:
             resourceId &&
-            table.rows.find((row) =>
-              find(row.items, { resource: { id: resourceId } })
+            table.rowsPages.find((rowsPage) =>
+              find(rowsPage.items, { resource: { id: resourceId } })
             )?.pageToken,
           resourceId,
         });
@@ -107,7 +107,7 @@ export class Server<T extends UniqItem> {
       Request.GetResourceTablePage<T>['ReqQuery']
     >('/api/resource/table/page/:resource', (req, res, next) =>
       res.send(
-        find(this.table[req.params.resource].rows, {
+        find(this.table[req.params.resource].rowsPages, {
           pageToken: req.query.pageToken,
         })
       )

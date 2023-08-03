@@ -54,16 +54,16 @@ declare namespace Resource {
     columns: TableColumns<T>;
     hash: string;
     resource: string;
-    rows: TableRowsPage<T>[];
+    rowsPages: TableRowsPage<T>[];
   }
 
-  interface TableHeader<T extends UniqItem> extends Omit<RawTable<T>, 'rows'> {
-    rows: Dictionary<PagingObjectHeader<TableRow<T>>>;
+  interface TableHeader<T extends UniqItem> extends Omit<RawTable<T>, 'rowsPages'> {
+    rowsPages: Dictionary<PagingObjectHeader<TableRow<T>>>;
     pageToken?: string | null;
     resourceId?: string;
   }
 
-  interface Table<T extends UniqItem> extends Omit<TableHeader<T>, 'rows'> {
-    rows: Dictionary<TableRowsPage<T>>;
+  interface Table<T extends UniqItem> extends Omit<TableHeader<T>, 'rowsPages'> {
+    rowsPages: Dictionary<TableRowsPage<T>>;
   }
 }
