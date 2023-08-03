@@ -1,7 +1,8 @@
 import { Dictionary } from 'express-serve-static-core';
 import { GetFieldType } from 'lodash';
+import { Optional } from 'utility-types';
 import { Path, UniqItem } from '.';
-import { PagingObject, PagingObjectHeader } from './paging';
+import { PagingObject } from './paging';
 
 interface TypeMap {
   boolean: boolean;
@@ -50,6 +51,9 @@ declare namespace Resource {
   interface TableRowsPage<T extends UniqItem>
     extends PagingObject<TableRow<T>> {}
 
+  interface TableRowsPageHeader<T extends UniqItem>
+    extends Optional<TableRowsPage<T>, 'items'> {}
+
   interface RawTable<T extends UniqItem> {
     columns: TableColumns<T>;
     hash: string;
@@ -57,13 +61,9 @@ declare namespace Resource {
     rowsPages: TableRowsPage<T>[];
   }
 
-  interface TableHeader<T extends UniqItem> extends Omit<RawTable<T>, 'rowsPages'> {
-    rowsPages: Dictionary<PagingObjectHeader<TableRow<T>>>;
+  interface Table<T extends UniqItem> extends Omit<RawTable<T>, 'rowsPages'> {
+    rowsPages: Dictionary<TableRowsPageHeader<T>>;
     pageToken?: string | null;
     resourceId?: string;
-  }
-
-  interface Table<T extends UniqItem> extends Omit<TableHeader<T>, 'rowsPages'> {
-    rowsPages: Dictionary<TableRowsPage<T>>;
   }
 }

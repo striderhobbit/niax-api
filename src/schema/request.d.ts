@@ -15,7 +15,7 @@ declare namespace Request {
     ReqParams: {
       resource: string;
     };
-    ResBody: Resource.TableHeader<T>;
+    ResBody: Resource.Table<T>;
     ReqBody: {};
     ReqQuery: {
       hash?: string;
