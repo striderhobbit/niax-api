@@ -84,7 +84,12 @@ export class Server<T extends UniqItem> {
         res.send({
           ...table,
           rows: Object.fromEntries(
-            table.rows.map(({ pageToken }) => [pageToken, {}])
+            table.rows.map(
+              ({ pageToken, nextPageToken, previousPageToken }) => [
+                pageToken,
+                { pageToken, nextPageToken, previousPageToken },
+              ]
+            )
           ),
           pageToken:
             resourceId &&
