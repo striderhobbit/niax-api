@@ -25,7 +25,7 @@ declare namespace Request {
     };
   }
 
-  interface GetResourceTablePage<T extends UniqItem>
+  interface GetResourceTableRowsPage<T extends UniqItem>
     extends RequestHandlerParams {
     ReqParams: {
       resource: string;

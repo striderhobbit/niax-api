@@ -101,11 +101,11 @@ export class Server<T extends UniqItem> {
       }, next)
     )
     .get<
-      Request.GetResourceTablePage<T>['ReqParams'],
-      Request.GetResourceTablePage<T>['ResBody'],
-      Request.GetResourceTablePage<T>['ReqBody'],
-      Request.GetResourceTablePage<T>['ReqQuery']
-    >('/api/resource/table/page/:resource', (req, res, next) =>
+      Request.GetResourceTableRowsPage<T>['ReqParams'],
+      Request.GetResourceTableRowsPage<T>['ResBody'],
+      Request.GetResourceTableRowsPage<T>['ReqBody'],
+      Request.GetResourceTableRowsPage<T>['ReqQuery']
+    >('/api/resource/table/rows/page/:resource', (req, res, next) =>
       res.send(
         find(this.tables[req.params.resource].rowsPages, {
           pageToken: req.query.pageToken,
@@ -117,7 +117,7 @@ export class Server<T extends UniqItem> {
       Request.PatchResourceItem<T>['ResBody'],
       Request.PatchResourceItem<T>['ReqBody'],
       Request.PatchResourceItem<T>['ReqQuery']
-    >('/api/:resource', (req, res, next) =>
+    >('/api/:resource/item', (req, res, next) =>
       this.chain.push(() => {
         const { resource } = req.params,
           { id, path, value } = req.body;
