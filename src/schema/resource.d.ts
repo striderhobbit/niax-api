@@ -83,5 +83,6 @@ declare namespace Resource {
       pageToken?: string | null;
       resourceId?: string;
     };
+    $primaryPaths: PropertyPath<I>[];
   }
 }

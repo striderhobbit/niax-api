@@ -3,7 +3,17 @@ import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
-import { Dictionary, find, forOwn, get, mapValues, pick, set } from 'lodash';
+import {
+  Dictionary,
+  find,
+  forOwn,
+  get,
+  map,
+  mapValues,
+  orderBy,
+  pick,
+  set,
+} from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { paginate } from './paging';
@@ -39,13 +49,49 @@ export class Server<I extends Resource.Item> {
           'utf-8'
         ).then(JSON.parse);
 
-        const columns: Resource.TableColumns<I> = mapValues(
-          routes,
-          (route) => ({
+        const paths = req.query.paths
+          .split(',')
+          .map(
+            (path) =>
+              path.match(
+                /^(?<path>[^:,]*):(?<sortIndex>\d*):(?<order>asc|desc|):(?<filter>[^,]*)$/
+              )!.groups!
+          )
+          .map((groups) => ({
+            path: groups['path'],
+            sortIndex: (function (sortIndex: string) {
+              if (sortIndex) {
+                return +sortIndex;
+              }
+
+              return;
+            })(groups['sortIndex']),
+            order: (function (order: string) {
+              if (order) {
+                return order as 'asc' | 'desc';
+              }
+
+              return;
+            })(groups['order']),
+            filter: (function (filter: string) {
+              if (filter) {
+                return filter;
+              }
+
+              return;
+            })(groups['filter']),
+          }));
+
+        const columns: Resource.TableColumns<I> = mapValues(routes, (route) => {
+          const path = find(paths, { path: route.path });
+          const include = path != null;
+
+          return {
             ...route,
-            include: req.query.paths.split(',').includes(route.path),
-          })
-        );
+            include,
+            ...(include ? pick(path, 'sortIndex', 'order', 'filter') : {}),
+          };
+        });
 
         let table = this.tables[resource];
 
@@ -98,6 +144,12 @@ export class Server<I extends Resource.Item> {
             )?.pageToken,
             resourceId,
           },
+          $primaryPaths: map(
+            orderBy(columns, 'sortIndex').filter(
+              ({ sortIndex }) => sortIndex != null
+            ),
+            'path'
+          ),
         });
       }, next)
     )
