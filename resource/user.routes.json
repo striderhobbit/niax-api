@@ -1,20 +1,26 @@
 {
   "id": {
+    "path": "id",
     "type": "string"
   },
   "name.first": {
+    "path": "name.first",
     "type": "string"
   },
   "name.last": {
+    "path": "name.last",
     "type": "string"
   },
   "age": {
+    "path": "age",
     "type": "number"
   },
   "eyeColor": {
+    "path": "eyeColor",
     "type": "string"
   },
   "isMarried": {
+    "path": "isMarried",
     "type": "boolean"
   }
 }

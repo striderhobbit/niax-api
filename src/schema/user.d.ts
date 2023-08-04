@@ -1,6 +1,6 @@
-import { UniqItem } from '.';
+import { Resource } from './resource';
 
-export interface User extends UniqItem {
+export interface User extends Resource.Item {
   name: {
     first: string;
     last: string;

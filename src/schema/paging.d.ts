@@ -1,6 +1,6 @@
-export interface PagingObject<T> {
+export interface PagingObject<I> {
   pageToken: string;
   previousPageToken: string | null;
   nextPageToken: string | null;
-  items: T[];
+  items: I[];
 }

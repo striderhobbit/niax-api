@@ -2,7 +2,7 @@ import { chunk } from 'lodash';
 import objectHash from 'object-hash';
 import { PagingObject } from './schema/paging';
 
-export const paginate = <T>(items: T[], limit: number): PagingObject<T>[] =>
+export const paginate = <I>(items: I[], limit: number): PagingObject<I>[] =>
   chunk(items, limit)
     .map((items, index) => ({
       pageToken: objectHash({ items, limit, index }),

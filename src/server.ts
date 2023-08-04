@@ -3,51 +3,49 @@ import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
-import { Dictionary, filter, find, get, pick, set } from 'lodash';
+import { Dictionary, find, forOwn, get, mapValues, pick, set } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { paginate } from './paging';
 import { PromiseChain } from './promise';
-import { Path, UniqItem } from './schema';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 
-export class Server<T extends UniqItem> {
+export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly chain = new PromiseChain();
-  private readonly tables: Dictionary<Resource.RawTable<T>> = {};
+  private readonly tables: Dictionary<Resource.Table<I>> = {};
 
   private readonly router = express
     .Router()
     .get<
-      Request.GetResourceTable<T>['ReqParams'],
-      Request.GetResourceTable<T>['ResBody'],
-      Request.GetResourceTable<T>['ReqBody'],
-      Request.GetResourceTable<T>['ReqQuery']
+      Request.GetResourceTable<I>['ReqParams'],
+      Request.GetResourceTable<I>['ResBody'],
+      Request.GetResourceTable<I>['ReqBody'],
+      Request.GetResourceTable<I>['ReqQuery']
     >('/api/resource/table/:resource', (req, res, next) =>
       this.chain.push(async () => {
         const { resource } = req.params,
           { hash, limit = 50, resourceId } = req.query;
 
-        const items: T[] = (
+        const items: I[] = (
           await readFile(`resource/${resource}.items.json`, 'utf-8').then(
             JSON.parse
           )
-        ).slice(0, 50); // FIXME;
+        ).slice(0, 50);
 
-        const routes: Resource.Routes<T> = await readFile(
+        const routes: Resource.Routes<I> = await readFile(
           `resource/${resource}.routes.json`,
           'utf-8'
         ).then(JSON.parse);
 
-        const columns: [Path<T>, Resource.TableColumn][] = Object.keys(
-          routes
-        ).map((path) => [
-          path as Path<T>,
-          {
-            include: req.query.paths.split(',').includes(path),
-          },
-        ]);
+        const columns: Resource.TableColumns<I> = mapValues(
+          routes,
+          (route) => ({
+            ...route,
+            include: req.query.paths.split(',').includes(route.path),
+          })
+        );
 
         let table = this.tables[resource];
 
@@ -56,28 +54,29 @@ export class Server<T extends UniqItem> {
           hash == null ||
           objectHash({ items, routes, columns, limit }) !== hash
         ) {
-          const fields = filter(columns, '1.include').map(([path]) => ({
-            path,
-            type: routes[path]!.type,
-          }));
+          const selectedRoutes: Resource.Route<I>[] = [];
+
+          forOwn(routes, (route) => {
+            if (columns[route.path].include) {
+              selectedRoutes.push(route);
+            }
+          });
 
           table = this.tables[resource] = {
             resource,
+            hash: objectHash({ items, routes, columns, limit }),
+            columns,
             rowsPages: paginate(
               items.map((item) => ({
                 resource: pick(item, 'id'),
-                fields: fields.map(
-                  (field): Resource.TableField<T> => ({
-                    ...field,
-                    id: item.id,
-                    value: get(item, field.path),
-                  })
-                ),
+                fields: selectedRoutes.map((route) => ({
+                  ...route,
+                  resource: pick(item, 'id'),
+                  value: get(item, route.path),
+                })),
               })),
               +limit
             ),
-            hash: objectHash({ items, routes, columns, limit }),
-            columns: Object.fromEntries(columns),
           };
         }
 
@@ -91,20 +90,22 @@ export class Server<T extends UniqItem> {
               ]
             )
           ),
-          pageToken: (
-            table.rowsPages.find((rowsPage) =>
-              find(rowsPage.items, { resource: { id: resourceId } })
-            ) ?? table.rowsPages[0]
-          )?.pageToken,
-          resourceId,
+          query: {
+            pageToken: (
+              table.rowsPages.find((rowsPage) =>
+                find(rowsPage.items, { resource: { id: resourceId } })
+              ) ?? table.rowsPages[0]
+            )?.pageToken,
+            resourceId,
+          },
         });
       }, next)
     )
     .get<
-      Request.GetResourceTableRowsPage<T>['ReqParams'],
-      Request.GetResourceTableRowsPage<T>['ResBody'],
-      Request.GetResourceTableRowsPage<T>['ReqBody'],
-      Request.GetResourceTableRowsPage<T>['ReqQuery']
+      Request.GetResourceTableRowsPage<I>['ReqParams'],
+      Request.GetResourceTableRowsPage<I>['ResBody'],
+      Request.GetResourceTableRowsPage<I>['ReqBody'],
+      Request.GetResourceTableRowsPage<I>['ReqQuery']
     >('/api/resource/table/rows/page/:resource', (req, res, next) =>
       res.send(
         find(this.tables[req.params.resource].rowsPages, {
@@ -113,16 +114,20 @@ export class Server<T extends UniqItem> {
       )
     )
     .patch<
-      Request.PatchResourceItem<T>['ReqParams'],
-      Request.PatchResourceItem<T>['ResBody'],
-      Request.PatchResourceItem<T>['ReqBody'],
-      Request.PatchResourceItem<T>['ReqQuery']
+      Request.PatchResourceItem<I>['ReqParams'],
+      Request.PatchResourceItem<I>['ResBody'],
+      Request.PatchResourceItem<I>['ReqBody'],
+      Request.PatchResourceItem<I>['ReqQuery']
     >('/api/:resource/item', (req, res, next) =>
       this.chain.push(() => {
         const { resource } = req.params,
-          { id, path, value } = req.body;
+          {
+            resource: { id },
+            path,
+            value,
+          } = req.body;
 
-        const getItem = (items: T[], id: string): T => {
+        const getItem = (items: I[], id: string): I => {
           const item = items.find((item) => item.id === id);
 
           if (item == null) {
@@ -133,7 +138,7 @@ export class Server<T extends UniqItem> {
         };
 
         return readFile(`resource/${resource}.items.json`, 'utf-8')
-          .then<T[]>(JSON.parse)
+          .then<I[]>(JSON.parse)
           .then((items) => {
             set(getItem(items, id), path, value);
 

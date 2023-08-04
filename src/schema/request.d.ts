@@ -1,6 +1,5 @@
 import { ParamsDictionary } from 'express-serve-static-core';
 import { ParsedQs } from 'qs';
-import { UniqItem } from '.';
 import { Resource } from './resource';
 
 interface RequestHandlerParams {
@@ -11,11 +10,12 @@ interface RequestHandlerParams {
 }
 
 declare namespace Request {
-  interface GetResourceTable<T extends UniqItem> extends RequestHandlerParams {
+  interface GetResourceTable<I extends Resource.Item>
+    extends RequestHandlerParams {
     ReqParams: {
       resource: string;
     };
-    ResBody: Resource.Table<T>;
+    ResBody: Resource.TableHeader<I>;
     ReqBody: {};
     ReqQuery: {
       hash?: string;
@@ -25,24 +25,25 @@ declare namespace Request {
     };
   }
 
-  interface GetResourceTableRowsPage<T extends UniqItem>
+  interface GetResourceTableRowsPage<I extends Resource.Item>
     extends RequestHandlerParams {
     ReqParams: {
       resource: string;
     };
-    ResBody: Resource.TableRowsPage<T>;
+    ResBody: Resource.TableRowsPage<I>;
     ReqBody: {};
     ReqQuery: {
       pageToken: string;
     };
   }
 
-  interface PatchResourceItem<T extends UniqItem> extends RequestHandlerParams {
+  interface PatchResourceItem<I extends Resource.Item>
+    extends RequestHandlerParams {
     ReqParams: {
       resource: string;
     };
-    ResBody: T;
-    ReqBody: Resource.TableField<T>;
+    ResBody: I;
+    ReqBody: Resource.TableField<I>;
     ReqQuery: {};
   }
 }

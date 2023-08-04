@@ -1,8 +1,8 @@
 import { Dictionary } from 'express-serve-static-core';
 import { GetFieldType } from 'lodash';
 import { Optional } from 'utility-types';
-import { Path, UniqItem } from '.';
 import { PagingObject } from './paging';
+import { PropertyPath } from './utility';
 
 interface TypeMap {
   boolean: boolean;
@@ -19,51 +19,69 @@ type InverseTypeMap<K> = K extends boolean
   : never;
 
 declare namespace Resource {
-  type Routes<T extends UniqItem> = Partial<{
-    [P in Path<T>]: {
-      type: InverseTypeMap<GetFieldType<T, P>>;
-    };
-  }>;
+  interface Item {
+    id: string;
+  }
 
-  interface TableColumn {
-    filter?: string;
+  interface SingleRoute<I extends Item, P extends PropertyPath<I>> {
+    path: P;
+    type: InverseTypeMap<GetFieldType<I, P>>;
+  }
+
+  type Routes<I extends Item> = {
+    [P in PropertyPath<I>]: SingleRoute<I, P>;
+  };
+
+  type Route<I extends Item> = Routes<I>[PropertyPath<I>];
+
+  interface SingleTableColumn<I extends Item, P extends PropertyPath<I>>
+    extends SingleRoute<I, P> {
     include?: boolean;
-    order?: 'asc' | 'desc';
     sortIndex?: number;
+    order?: 'asc' | 'desc';
+    filter?: string;
   }
 
-  type TableColumns<T extends UniqItem> = Record<keyof Routes<T>, TableColumn>;
+  type TableColumns<I extends Item> = {
+    [P in PropertyPath<I>]: SingleTableColumn<I, P>;
+  };
 
-  type TableField<T extends UniqItem> = {
-    [P in Path<T>]: Pick<T, 'id'> &
-      Routes<T>[P] & {
-        path: P;
-      } & {
-        value?: GetFieldType<T, P> | null;
-      };
-  }[Path<T>];
+  type TableColumn<I extends Item> = TableColumns<I>[PropertyPath<I>];
 
-  interface TableRow<T extends UniqItem> {
-    fields: TableField<T>[];
-    resource: Pick<T, 'id'>;
+  interface SingleTableField<I extends Item, P extends PropertyPath<I>>
+    extends SingleRoute<I, P> {
+    resource: Pick<I, 'id'>;
+    value?: GetFieldType<I, P> | null;
   }
 
-  interface TableRowsPage<T extends UniqItem>
-    extends PagingObject<TableRow<T>> {}
+  type TableFields<I extends Item> = {
+    [P in PropertyPath<I>]: SingleTableField<I, P>;
+  };
 
-  interface TableRowsPageHeader<T extends UniqItem>
-    extends Optional<TableRowsPage<T>, 'items'> {}
+  type TableField<I extends Item> = TableFields<I>[PropertyPath<I>];
 
-  interface RawTable<T extends UniqItem> {
-    columns: TableColumns<T>;
-    hash: string;
+  interface TableRow<I extends Item> {
+    resource: Pick<I, 'id'>;
+    fields: TableField<I>[];
+  }
+
+  interface TableRowsPage<I extends Item> extends PagingObject<TableRow<I>> {}
+
+  interface TableRowsPageHeader<I extends Item>
+    extends Optional<TableRowsPage<I>, 'items'> {}
+
+  interface Table<I extends Item> {
     resource: string;
-    rowsPages: TableRowsPage<T>[];
+    hash: string;
+    columns: TableColumns<I>;
+    rowsPages: TableRowsPage<I>[];
   }
 
-  interface Table<T extends UniqItem> extends Omit<RawTable<T>, 'rowsPages'> {
-    rowsPages: Dictionary<TableRowsPageHeader<T>>;
-    pageToken?: string | null;
-    resourceId?: string;
+  interface TableHeader<I extends Item> extends Omit<Table<I>, 'rowsPages'> {
+    rowsPages: Dictionary<TableRowsPageHeader<I>>;
+    query: {
+      pageToken?: string | null;
+      resourceId?: string;
+    };
   }
 }
