@@ -67,8 +67,8 @@ export class Server<I extends Resource.Item> {
               return;
             })(groups['sortIndex']),
             order: (function (order: string) {
-              if (order) {
-                return order as 'asc' | 'desc';
+              if (order === 'desc') {
+                return order as 'desc';
               }
 
               return;
