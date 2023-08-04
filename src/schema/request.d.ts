@@ -16,7 +16,6 @@ declare namespace Request {
       resource: string;
     };
     ResBody: Resource.TableHeader<I>;
-    ReqBody: {};
     ReqQuery: {
       hash?: string;
       limit: string;
@@ -31,7 +30,6 @@ declare namespace Request {
       resource: string;
     };
     ResBody: Resource.TableRowsPage<I>;
-    ReqBody: {};
     ReqQuery: {
       pageToken: string;
     };
@@ -44,6 +42,6 @@ declare namespace Request {
     };
     ResBody: I;
     ReqBody: Resource.TableField<I>;
-    ReqQuery: {};
+    ReqQuery: Record<string, never>;
   }
 }
