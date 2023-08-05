@@ -4,15 +4,15 @@ import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
-    Dictionary,
-    find,
-    forOwn,
-    get,
-    map,
-    mapValues,
-    orderBy,
-    pick,
-    set,
+  Dictionary,
+  find,
+  forOwn,
+  get,
+  map,
+  mapValues,
+  orderBy,
+  pick,
+  set,
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
@@ -49,7 +49,7 @@ export class Server<I extends Resource.Item> {
           'utf-8'
         ).then(JSON.parse);
 
-        const paths = req.query.paths
+        const includedColumns = req.query.paths
           .split(',')
           .map(
             (path) =>
@@ -83,13 +83,15 @@ export class Server<I extends Resource.Item> {
           }));
 
         const columns: Resource.TableColumns<I> = mapValues(routes, (route) => {
-          const path = find(paths, { path: route.path });
-          const include = path != null;
+          const column = find(includedColumns, { path: route.path });
 
           return {
             ...route,
-            ...(include
-              ? { include, ...pick(path, 'sortIndex', 'order', 'filter') }
+            ...(column != null
+              ? {
+                  include: true,
+                  ...pick(column, 'sortIndex', 'order', 'filter'),
+                }
               : {}),
           };
         });
