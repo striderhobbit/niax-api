@@ -165,6 +165,7 @@ export class Server<I extends Resource.Item> {
           ...table,
           rowsPages: table.rowsPages.map((rowsPage) => ({
             ...rowsPage,
+            items: [],
             deferred: true,
           })),
           $primaryPaths: map(primaryPaths, 'path'),
