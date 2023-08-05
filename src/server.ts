@@ -10,7 +10,6 @@ import {
   keyBy,
   map,
   mapValues,
-  omit,
   orderBy,
   pick,
   set,
@@ -164,10 +163,10 @@ export class Server<I extends Resource.Item> {
 
         res.send({
           ...table,
-          rowsPages: mapValues(
-            keyBy(table.rowsPages, 'pageToken'),
-            (rowsPage) => omit(rowsPage, 'items')
-          ),
+          rowsPages: table.rowsPages.map((rowsPage) => ({
+            ...rowsPage,
+            deferred: true,
+          })),
           $primaryPaths: map(primaryPaths, 'path'),
           $query: {
             pageToken: (

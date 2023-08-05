@@ -1,4 +1,3 @@
-import { Dictionary } from 'express-serve-static-core';
 import { GetFieldType } from 'lodash';
 import { Optional } from 'utility-types';
 import { PagingObject } from './paging';
@@ -67,9 +66,6 @@ declare namespace Resource {
 
   interface TableRowsPage<I extends Item> extends PagingObject<TableRow<I>> {}
 
-  interface TableRowsPageHeader<I extends Item>
-    extends Optional<TableRowsPage<I>, 'items'> {}
-
   interface Table<I extends Item> {
     resource: string;
     hash: string;
@@ -77,12 +73,11 @@ declare namespace Resource {
     rowsPages: TableRowsPage<I>[];
   }
 
-  interface TableHeader<I extends Item> extends Omit<Table<I>, 'rowsPages'> {
-    rowsPages: Dictionary<TableRowsPageHeader<I>>;
+  interface TableHeader<I extends Item> extends Table<I> {
     $primaryPaths: PropertyPath<I>[];
     $query: {
-        pageToken?: string | null;
-        resourceId?: string;
-      };
+      pageToken?: string | null;
+      resourceId?: string;
+    };
   }
 }

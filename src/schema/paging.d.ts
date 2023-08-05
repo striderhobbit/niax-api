@@ -4,4 +4,5 @@ export interface PagingObject<I> {
   previousPageToken: string | null;
   nextPageToken: string | null;
   items: I[];
+  deferred?: boolean;
 }
