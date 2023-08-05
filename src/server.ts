@@ -5,6 +5,7 @@ import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
   Dictionary,
+  cloneDeep,
   find,
   forOwn,
   get,
@@ -109,24 +110,22 @@ export class Server<I extends Resource.Item> {
           hash == null ||
           objectHash({ items, routes, columns, limit }) !== hash
         ) {
-          const requestedRoutes: Resource.Route<I>[] = [];
+          const requestedRoutes = cloneDeep(routes);
 
-          forOwn(routes, (route) => {
-            if (columns[route.path].include) {
-              requestedRoutes.push(route);
+          forOwn(requestedRoutes, (route) => {
+            if (!columns[route.path].include) {
+              delete requestedRoutes[route.path];
             }
           });
 
-          const rows = items.map(
-            (item): Resource.TableRow<I> => ({
+          const rows = items.map((item) => ({
+            resource: pick(item, 'id'),
+            fields: mapValues(requestedRoutes, (route) => ({
+              ...route,
               resource: pick(item, 'id'),
-              fields: requestedRoutes.map((route) => ({
-                ...route,
-                resource: pick(item, 'id'),
-                value: get(item, route.path),
-              })),
-            })
-          );
+              value: get(item, route.path),
+            })),
+          }));
 
           table = this.tables[resource] = {
             resource,
@@ -134,14 +133,33 @@ export class Server<I extends Resource.Item> {
             columns,
             rowsPages: paginate(
               orderBy(
-                rows,
+                // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+                rows.filter((row) => {
+                  let keep = true;
+
+                  forOwn(columns, (column) => {
+                    if (
+                      column.filter != null &&
+                      !new RegExp(column.filter).test(
+                        row.fields[column.path].value
+                      )
+                    ) {
+                      return (keep = false);
+                    }
+
+                    return;
+                  });
+
+                  return keep;
+                }),
                 primaryPaths.map(
-                  (primaryPath) => (row) =>
-                    row.fields.find((field) => field.path === primaryPath.path)!
-                      .value
+                  (primaryPath) => (row) => row.fields[primaryPath.path].value
                 ),
                 primaryPaths.map(({ order = 'asc' }) => order)
-              ),
+              ).map((row) => ({
+                ...row,
+                fields: Object.values(row.fields),
+              })),
               +limit
             ),
           };
