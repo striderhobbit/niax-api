@@ -4,16 +4,16 @@ import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
-  Dictionary,
-  cloneDeep,
-  find,
-  forOwn,
-  get,
-  map,
-  mapValues,
-  orderBy,
-  pick,
-  set,
+    Dictionary,
+    cloneDeep,
+    find,
+    forOwn,
+    get,
+    map,
+    mapValues,
+    orderBy,
+    pick,
+    set,
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
@@ -130,7 +130,7 @@ export class Server<I extends Resource.Item> {
           table = this.tables[resource] = {
             resource,
             hash: objectHash({ items, routes, columns, limit }),
-            columns,
+            columns: Object.values(columns),
             rowsPages: paginate(
               orderBy(
                 // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -140,7 +140,7 @@ export class Server<I extends Resource.Item> {
                   forOwn(columns, (column) => {
                     if (
                       column.filter != null &&
-                      !new RegExp(column.filter).test(
+                      !new RegExp(column.filter, "i").test(
                         row.fields[column.path].value
                       )
                     ) {

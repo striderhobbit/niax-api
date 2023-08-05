@@ -73,7 +73,7 @@ declare namespace Resource {
   interface Table<I extends Item> {
     resource: string;
     hash: string;
-    columns: TableColumns<I>;
+    columns: TableColumn<I>[];
     rowsPages: TableRowsPage<I>[];
   }
 
