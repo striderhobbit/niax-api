@@ -1,5 +1,4 @@
 import { GetFieldType } from 'lodash';
-import { Optional } from 'utility-types';
 import { PagingObject } from './paging';
 import { PropertyPath } from './utility';
 
