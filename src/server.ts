@@ -117,19 +117,31 @@ export class Server<I extends Resource.Item> {
             }
           });
 
+          const rows = items.map(
+            (item): Resource.TableRow<I> => ({
+              resource: pick(item, 'id'),
+              fields: selectedRoutes.map((route) => ({
+                ...route,
+                resource: pick(item, 'id'),
+                value: get(item, route.path),
+              })),
+            })
+          );
+
           table = this.tables[resource] = {
             resource,
             hash: objectHash({ items, routes, columns, limit }),
             columns,
             rowsPages: paginate(
-              items.map((item) => ({
-                resource: pick(item, 'id'),
-                fields: selectedRoutes.map((route) => ({
-                  ...route,
-                  resource: pick(item, 'id'),
-                  value: get(item, route.path),
-                })),
-              })),
+              orderBy(
+                rows,
+                primaryPaths.map(
+                  (primaryPath) => (row) =>
+                    row.fields.find((field) => field.path === primaryPath.path)!
+                      .value
+                ),
+                primaryPaths.map(({ order = 'asc' }) => order)
+              ),
               +limit
             ),
           };
