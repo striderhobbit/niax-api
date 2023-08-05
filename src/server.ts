@@ -109,18 +109,18 @@ export class Server<I extends Resource.Item> {
           hash == null ||
           objectHash({ items, routes, columns, limit }) !== hash
         ) {
-          const selectedRoutes: Resource.Route<I>[] = [];
+          const requestedRoutes: Resource.Route<I>[] = [];
 
           forOwn(routes, (route) => {
             if (columns[route.path].include) {
-              selectedRoutes.push(route);
+              requestedRoutes.push(route);
             }
           });
 
           const rows = items.map(
             (item): Resource.TableRow<I> => ({
               resource: pick(item, 'id'),
-              fields: selectedRoutes.map((route) => ({
+              fields: requestedRoutes.map((route) => ({
                 ...route,
                 resource: pick(item, 'id'),
                 value: get(item, route.path),
