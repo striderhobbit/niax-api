@@ -49,52 +49,54 @@ export class Server<I extends Resource.Item> {
           'utf-8'
         ).then(JSON.parse);
 
-        const includedColumns = req.query.paths
-          .split(',')
-          .map(
-            (path) =>
-              path.match(
-                /^(?<path>[^:,]*):(?<sortIndex>\d*):(?<order>asc|desc|):(?<filter>[^,]*)$/
-              )!.groups!
-          )
-          .map((groups) => ({
-            path: groups['path'],
-            sortIndex: (function (sortIndex: string) {
-              if (sortIndex) {
-                return +sortIndex;
-              }
+        const columns: Resource.TableColumns<I> = (function (requestedColumns) {
+          return mapValues(routes, (route) => {
+            const column = find(requestedColumns, { path: route.path });
 
-              return;
-            })(groups['sortIndex']),
-            order: (function (order: string) {
-              if (order === 'desc') {
-                return order as 'desc';
-              }
-
-              return;
-            })(groups['order']),
-            filter: (function (filter: string) {
-              if (filter) {
-                return filter;
-              }
-
-              return;
-            })(groups['filter']),
-          }));
-
-        const columns: Resource.TableColumns<I> = mapValues(routes, (route) => {
-          const column = find(includedColumns, { path: route.path });
-
-          return {
-            ...route,
-            ...(column != null
-              ? {
-                  include: true,
-                  ...pick(column, 'sortIndex', 'order', 'filter'),
+            return {
+              ...route,
+              ...(column != null
+                ? {
+                    include: true,
+                    ...pick(column, 'sortIndex', 'order', 'filter'),
+                  }
+                : {}),
+            };
+          });
+        })(
+          req.query.paths
+            .split(',')
+            .map(
+              (path) =>
+                path.match(
+                  /^(?<path>[^:,]*):(?<sortIndex>\d*):(?<order>asc|desc|):(?<filter>[^,]*)$/
+                )!.groups!
+            )
+            .map((groups) => ({
+              path: groups['path'],
+              sortIndex: (function (sortIndex: string) {
+                if (sortIndex) {
+                  return +sortIndex;
                 }
-              : {}),
-          };
-        });
+
+                return;
+              })(groups['sortIndex']),
+              order: (function (order: string) {
+                if (order === 'desc') {
+                  return order as 'desc';
+                }
+
+                return;
+              })(groups['order']),
+              filter: (function (filter: string) {
+                if (filter) {
+                  return filter;
+                }
+
+                return;
+              })(groups['filter']),
+            }))
+        );
 
         const primaryPaths = orderBy(columns, 'sortIndex').filter(
           ({ sortIndex }) => sortIndex != null
