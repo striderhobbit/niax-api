@@ -4,15 +4,15 @@ import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
-  Dictionary,
-  find,
-  forOwn,
-  get,
-  map,
-  mapValues,
-  orderBy,
-  pick,
-  set,
+    Dictionary,
+    find,
+    forOwn,
+    get,
+    map,
+    mapValues,
+    orderBy,
+    pick,
+    set,
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
@@ -88,10 +88,15 @@ export class Server<I extends Resource.Item> {
 
           return {
             ...route,
-            include,
-            ...(include ? pick(path, 'sortIndex', 'order', 'filter') : {}),
+            ...(include
+              ? { include, ...pick(path, 'sortIndex', 'order', 'filter') }
+              : {}),
           };
         });
+
+        const primaryPaths = orderBy(columns, 'sortIndex').filter(
+          ({ sortIndex }) => sortIndex != null
+        );
 
         let table = this.tables[resource];
 
@@ -136,7 +141,8 @@ export class Server<I extends Resource.Item> {
               ]
             )
           ),
-          query: {
+          $primaryPaths: map(primaryPaths, 'path'),
+          $query: {
             pageToken: (
               table.rowsPages.find((rowsPage) =>
                 find(rowsPage.items, { resource: { id: resourceId } })
@@ -144,12 +150,6 @@ export class Server<I extends Resource.Item> {
             )?.pageToken,
             resourceId,
           },
-          $primaryPaths: map(
-            orderBy(columns, 'sortIndex').filter(
-              ({ sortIndex }) => sortIndex != null
-            ),
-            'path'
-          ),
         });
       }, next)
     )

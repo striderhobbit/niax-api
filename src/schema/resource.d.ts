@@ -79,10 +79,10 @@ declare namespace Resource {
 
   interface TableHeader<I extends Item> extends Omit<Table<I>, 'rowsPages'> {
     rowsPages: Dictionary<TableRowsPageHeader<I>>;
-    query: {
-      pageToken?: string | null;
-      resourceId?: string;
-    };
     $primaryPaths: PropertyPath<I>[];
+    $query: {
+        pageToken?: string | null;
+        resourceId?: string;
+      };
   }
 }
