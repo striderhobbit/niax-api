@@ -69,11 +69,11 @@ declare namespace Resource {
     resource: string;
     hash: string;
     columns: TableColumn<I>[];
+    primaryPaths: PropertyPath<I>[];
     rowsPages: TableRowsPage<I>[];
   }
 
   interface TableHeader<I extends Item> extends Table<I> {
-    $primaryPaths: PropertyPath<I>[];
     $query: {
       pageToken?: string | null;
       resourceId?: string;

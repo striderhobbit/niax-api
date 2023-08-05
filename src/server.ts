@@ -137,6 +137,7 @@ export class Server<I extends Resource.Item> {
             resource,
             hash: objectHash({ items, routes, columns, limit }),
             columns,
+            primaryPaths: map(primaryPaths, 'path'),
             rowsPages: paginate(
               orderBy(
                 rows.filter((row) =>
@@ -168,7 +169,6 @@ export class Server<I extends Resource.Item> {
             items: [],
             deferred: true,
           })),
-          $primaryPaths: map(primaryPaths, 'path'),
           $query: {
             pageToken: (
               table.rowsPages.find((rowsPage) =>
