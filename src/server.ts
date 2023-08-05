@@ -4,16 +4,17 @@ import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
-    Dictionary,
-    cloneDeep,
-    find,
-    forOwn,
-    get,
-    map,
-    mapValues,
-    orderBy,
-    pick,
-    set,
+  Dictionary,
+  find,
+  get,
+  keyBy,
+  map,
+  mapValues,
+  omit,
+  orderBy,
+  pick,
+  set,
+  sortBy,
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
@@ -45,13 +46,15 @@ export class Server<I extends Resource.Item> {
           )
         ).slice(0, 50);
 
-        const routes: Resource.Routes<I> = await readFile(
+        const routes: Resource.Route<I>[] = await readFile(
           `resource/${resource}.routes.json`,
           'utf-8'
         ).then(JSON.parse);
 
-        const columns: Resource.TableColumns<I> = (function (requestedColumns) {
-          return mapValues(routes, (route) => {
+        const columns: Resource.TableColumn<I>[] = (function (
+          requestedColumns
+        ) {
+          return routes.map((route) => {
             const column = find(requestedColumns, { path: route.path });
 
             return {
@@ -99,7 +102,7 @@ export class Server<I extends Resource.Item> {
             }))
         );
 
-        const primaryPaths = orderBy(columns, 'sortIndex').filter(
+        const primaryPaths = sortBy(columns, 'sortIndex').filter(
           ({ sortIndex }) => sortIndex != null
         );
 
@@ -110,56 +113,50 @@ export class Server<I extends Resource.Item> {
           hash == null ||
           objectHash({ items, routes, columns, limit }) !== hash
         ) {
-          const requestedRoutes = cloneDeep(routes);
-
-          forOwn(requestedRoutes, (route) => {
-            if (!columns[route.path].include) {
-              delete requestedRoutes[route.path];
-            }
-          });
+          const columnsDictionary = keyBy(columns, 'path');
+          const requestedRoutes = routes.filter(
+            (route) => columnsDictionary[route.path].include
+          );
 
           const rows = items.map((item) => ({
             resource: pick(item, 'id'),
-            fields: mapValues(requestedRoutes, (route) => ({
-              ...route,
-              resource: pick(item, 'id'),
-              value: get(item, route.path),
-            })),
+            fields: requestedRoutes.map(
+              (route): Resource.TableField<I> => ({
+                ...route,
+                resource: pick(item, 'id'),
+                value: get(item, route.path),
+              })
+            ),
           }));
+
+          const fieldsDictionary = mapValues(
+            keyBy(rows, 'resource.id'),
+            (row) => keyBy(row.fields, 'path')
+          );
 
           table = this.tables[resource] = {
             resource,
             hash: objectHash({ items, routes, columns, limit }),
-            columns: Object.values(columns),
+            columns,
             rowsPages: paginate(
               orderBy(
-                // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-                rows.filter((row) => {
-                  let keep = true;
-
-                  forOwn(columns, (column) => {
-                    if (
-                      column.filter != null &&
-                      !new RegExp(column.filter, "i").test(
-                        row.fields[column.path].value
+                rows.filter((row) =>
+                  columns.every(
+                    (column) =>
+                      column.filter == null ||
+                      new RegExp(column.filter, 'i').test(
+                        fieldsDictionary[row.resource.id][
+                          column.path
+                        ].value?.toString() ?? ''
                       )
-                    ) {
-                      return (keep = false);
-                    }
-
-                    return;
-                  });
-
-                  return keep;
-                }),
+                  )
+                ),
                 primaryPaths.map(
-                  (primaryPath) => (row) => row.fields[primaryPath.path].value
+                  (primaryPath) => (row) =>
+                    fieldsDictionary[row.resource.id][primaryPath.path].value
                 ),
                 primaryPaths.map(({ order = 'asc' }) => order)
-              ).map((row) => ({
-                ...row,
-                fields: Object.values(row.fields),
-              })),
+              ),
               +limit
             ),
           };
@@ -167,13 +164,9 @@ export class Server<I extends Resource.Item> {
 
         res.send({
           ...table,
-          rowsPages: Object.fromEntries(
-            table.rowsPages.map(
-              ({ pageToken, previousPageToken, nextPageToken }) => [
-                pageToken,
-                { pageToken, previousPageToken, nextPageToken },
-              ]
-            )
+          rowsPages: mapValues(
+            keyBy(table.rowsPages, 'pageToken'),
+            (rowsPage) => omit(rowsPage, 'items')
           ),
           $primaryPaths: map(primaryPaths, 'path'),
           $query: {
