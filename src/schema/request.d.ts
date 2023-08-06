@@ -12,36 +12,34 @@ interface RequestHandlerParams {
 declare namespace Request {
   interface GetResourceTable<I extends Resource.Item>
     extends RequestHandlerParams {
-    ReqParams: {
-      resourceName: string;
-    };
+    ReqParams: {};
     ResBody: Resource.Table<I>;
     ReqQuery: {
       hash?: string;
       limit: string;
       paths: string;
       resourceId?: string;
+      resourceName: string;
     };
   }
 
   interface GetResourceTableRowsPage<I extends Resource.Item>
     extends RequestHandlerParams {
-    ReqParams: {
-      resourceName: string;
-    };
+    ReqParams: {};
     ResBody: Resource.TableRowsPage<I>;
     ReqQuery: {
       pageToken: string;
+      resourceName: string;
     };
   }
 
   interface PatchResourceItem<I extends Resource.Item>
     extends RequestHandlerParams {
-    ReqParams: {
-      resourceName: string;
-    };
+    ReqParams: {};
     ResBody: I;
     ReqBody: Resource.TableField<I>;
-    ReqQuery: Record<string, never>;
+    ReqQuery: {
+      resourceName: string;
+    };
   }
 }

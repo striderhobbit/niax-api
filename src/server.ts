@@ -34,10 +34,9 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTable<I>['ResBody'],
       Request.GetResourceTable<I>['ReqBody'],
       Request.GetResourceTable<I>['ReqQuery']
-    >('/api/:resourceName/resource/table', (req, res, next) =>
+    >('/api/resource/table', (req, res, next) =>
       this.chain.push(async () => {
-        const { resourceName } = req.params,
-          { hash, limit = 50, resourceId } = req.query;
+        const { hash, limit = 50, paths, resourceId, resourceName } = req.query;
 
         const items: I[] = (
           await readFile(`resource/${resourceName}.items.json`, 'utf-8').then(
@@ -68,7 +67,7 @@ export class Server<I extends Resource.Item> {
             };
           });
         })(
-          req.query.paths
+          paths
             .split(',')
             .map(
               (path) =>
@@ -195,21 +194,19 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTableRowsPage<I>['ResBody'],
       Request.GetResourceTableRowsPage<I>['ReqBody'],
       Request.GetResourceTableRowsPage<I>['ReqQuery']
-    >('/api/:resourceName/resource/table/rows/page', (req, res, next) =>
-      res.send(
-        find(this.tables[req.params.resourceName].rowsPages, {
-          pageToken: req.query.pageToken,
-        })
-      )
-    )
+    >('/api/resource/table/rows/page', (req, res, next) => {
+      const { pageToken, resourceName } = req.query;
+
+      res.send(find(this.tables[resourceName].rowsPages, { pageToken }));
+    })
     .patch<
       Request.PatchResourceItem<I>['ReqParams'],
       Request.PatchResourceItem<I>['ResBody'],
       Request.PatchResourceItem<I>['ReqBody'],
       Request.PatchResourceItem<I>['ReqQuery']
-    >('/api/:resourceName/resource/item', (req, res, next) =>
+    >('/api/resource/item', (req, res, next) =>
       this.chain.push(() => {
-        const { resourceName } = req.params,
+        const { resourceName } = req.query,
           {
             resource: { id },
             path,
