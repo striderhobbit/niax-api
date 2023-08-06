@@ -61,7 +61,8 @@ export class Server<I extends Resource.Item> {
               ...(column != null
                 ? {
                     include: true,
-                    ...pick(column, 'sortIndex', 'order', 'filter'),
+                    ...pick(column, 'sortIndex', 'filter'),
+                    ...(column.sortIndex != null ? pick(column, 'order') : {}),
                   }
                 : {}),
             };
