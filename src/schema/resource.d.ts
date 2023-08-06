@@ -66,17 +66,13 @@ declare namespace Resource {
   interface TableRowsPage<I extends Item> extends PagingObject<TableRow<I>> {}
 
   interface Table<I extends Item> {
-    resource: string;
+    resource: {
+      name: string;
+      id?: string;
+    };
     hash: string;
     columns: TableColumn<I>[];
     primaryPaths: PropertyPath<I>[];
     rowsPages: TableRowsPage<I>[];
-  }
-
-  interface TableHeader<I extends Item> extends Table<I> {
-    $query: {
-      pageToken?: string | null;
-      resourceId?: string;
-    };
   }
 }

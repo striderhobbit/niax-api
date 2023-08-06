@@ -13,9 +13,9 @@ declare namespace Request {
   interface GetResourceTable<I extends Resource.Item>
     extends RequestHandlerParams {
     ReqParams: {
-      resource: string;
+      resourceName: string;
     };
-    ResBody: Resource.TableHeader<I>;
+    ResBody: Resource.Table<I>;
     ReqQuery: {
       hash?: string;
       limit: string;
@@ -27,7 +27,7 @@ declare namespace Request {
   interface GetResourceTableRowsPage<I extends Resource.Item>
     extends RequestHandlerParams {
     ReqParams: {
-      resource: string;
+      resourceName: string;
     };
     ResBody: Resource.TableRowsPage<I>;
     ReqQuery: {
@@ -38,7 +38,7 @@ declare namespace Request {
   interface PatchResourceItem<I extends Resource.Item>
     extends RequestHandlerParams {
     ReqParams: {
-      resource: string;
+      resourceName: string;
     };
     ResBody: I;
     ReqBody: Resource.TableField<I>;

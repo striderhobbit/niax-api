@@ -34,19 +34,19 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTable<I>['ResBody'],
       Request.GetResourceTable<I>['ReqBody'],
       Request.GetResourceTable<I>['ReqQuery']
-    >('/api/resource/table/:resource', (req, res, next) =>
+    >('/api/:resourceName/resource/table', (req, res, next) =>
       this.chain.push(async () => {
-        const { resource } = req.params,
+        const { resourceName } = req.params,
           { hash, limit = 50, resourceId } = req.query;
 
         const items: I[] = (
-          await readFile(`resource/${resource}.items.json`, 'utf-8').then(
+          await readFile(`resource/${resourceName}.items.json`, 'utf-8').then(
             JSON.parse
           )
         ).slice(0, 50);
 
         const routes: Resource.Route<I>[] = await readFile(
-          `resource/${resource}.routes.json`,
+          `resource/${resourceName}.routes.json`,
           'utf-8'
         ).then(JSON.parse);
 
@@ -105,7 +105,7 @@ export class Server<I extends Resource.Item> {
           ({ sortIndex }) => sortIndex != null
         );
 
-        let table = this.tables[resource];
+        let table = this.tables[resourceName];
 
         if (
           table == null ||
@@ -133,8 +133,10 @@ export class Server<I extends Resource.Item> {
             (row) => keyBy(row.fields, 'path')
           );
 
-          table = this.tables[resource] = {
-            resource,
+          table = this.tables[resourceName] = {
+            resource: {
+              name: resourceName,
+            },
             hash: objectHash({ items, routes, columns, limit }),
             columns,
             primaryPaths: map(primaryPaths, 'path'),
@@ -162,21 +164,28 @@ export class Server<I extends Resource.Item> {
           };
         }
 
+        const requestedRowsPage = table.rowsPages.find((rowsPage) =>
+          find(rowsPage.items, { resource: { id: resourceId } })
+        );
+
         res.send({
           ...table,
-          rowsPages: table.rowsPages.map((rowsPage) => ({
-            ...rowsPage,
-            items: [],
-            deferred: true,
-          })),
-          $query: {
-            pageToken: (
-              table.rowsPages.find((rowsPage) =>
-                find(rowsPage.items, { resource: { id: resourceId } })
-              ) ?? table.rowsPages[0]
-            )?.pageToken,
-            resourceId,
+          resource: {
+            ...table.resource,
+            id: requestedRowsPage && resourceId,
           },
+          rowsPages: table.rowsPages.map((rowsPage, index) => {
+            const deferred =
+              requestedRowsPage == null
+                ? index !== 0
+                : rowsPage !== requestedRowsPage;
+
+            return {
+              ...rowsPage,
+              items: deferred ? [] : rowsPage.items,
+              deferred,
+            };
+          }),
         });
       }, next)
     )
@@ -185,9 +194,9 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTableRowsPage<I>['ResBody'],
       Request.GetResourceTableRowsPage<I>['ReqBody'],
       Request.GetResourceTableRowsPage<I>['ReqQuery']
-    >('/api/resource/table/rows/page/:resource', (req, res, next) =>
+    >('/api/:resourceName/resource/table/rows/page', (req, res, next) =>
       res.send(
-        find(this.tables[req.params.resource].rowsPages, {
+        find(this.tables[req.params.resourceName].rowsPages, {
           pageToken: req.query.pageToken,
         })
       )
@@ -197,9 +206,9 @@ export class Server<I extends Resource.Item> {
       Request.PatchResourceItem<I>['ResBody'],
       Request.PatchResourceItem<I>['ReqBody'],
       Request.PatchResourceItem<I>['ReqQuery']
-    >('/api/:resource/item', (req, res, next) =>
+    >('/api/:resourceName/resource/item', (req, res, next) =>
       this.chain.push(() => {
-        const { resource } = req.params,
+        const { resourceName } = req.params,
           {
             resource: { id },
             path,
@@ -210,24 +219,24 @@ export class Server<I extends Resource.Item> {
           const item = items.find((item) => item.id === id);
 
           if (item == null) {
-            throw new Error(`${resource} ${JSON.stringify(id)} not found`);
+            throw new Error(`${resourceName} ${JSON.stringify(id)} not found`);
           }
 
           return item;
         };
 
-        return readFile(`resource/${resource}.items.json`, 'utf-8')
+        return readFile(`resource/${resourceName}.items.json`, 'utf-8')
           .then<I[]>(JSON.parse)
           .then((items) => {
             set(getItem(items, id), path, value);
 
-            delete this.tables[resource];
+            delete this.tables[resourceName];
 
             return items;
           })
           .then((items) =>
             writeFile(
-              `resource/${resource}.items.json`,
+              `resource/${resourceName}.items.json`,
               JSON.stringify(items, null, '\t')
             ).then(() => res.send(getItem(items, id)))
           );
