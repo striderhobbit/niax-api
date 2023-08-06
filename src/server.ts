@@ -36,7 +36,7 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTable<I>['ReqQuery']
     >('/api/resource/table', (req, res, next) =>
       this.chain.push(async () => {
-        const { hash, limit = 50, paths, resourceId, resourceName } = req.query;
+        const { hash, limit, paths, resourceId, resourceName } = req.query;
 
         const items: I[] = (
           await readFile(`resource/${resourceName}.items.json`, 'utf-8').then(
@@ -68,7 +68,7 @@ export class Server<I extends Resource.Item> {
           });
         })(
           paths
-            .split(',')
+            ?.split(',')
             .map(
               (path) =>
                 path.match(
@@ -134,10 +134,6 @@ export class Server<I extends Resource.Item> {
           );
 
           table = this.tables[resourceName] = {
-            resource: {
-              name: resourceName,
-            },
-            hash: objectHash({ items, routes, columns, limit }),
             columns,
             primaryPaths: map(primaryPaths, 'path'),
             rowsPages: paginate(
@@ -159,8 +155,14 @@ export class Server<I extends Resource.Item> {
                 ),
                 primaryPaths.map(({ order = 'asc' }) => order)
               ),
-              +limit
+              +(limit ?? 50)
             ),
+            params: {
+              hash: objectHash({ items, routes, columns, limit }),
+              limit,
+              paths,
+              resourceName,
+            },
           };
         }
 
@@ -170,10 +172,6 @@ export class Server<I extends Resource.Item> {
 
         res.send({
           ...table,
-          resource: {
-            ...table.resource,
-            id: requestedRowsPage && resourceId,
-          },
           rowsPages: table.rowsPages.map((rowsPage, index) => {
             const deferred =
               requestedRowsPage == null
@@ -186,6 +184,10 @@ export class Server<I extends Resource.Item> {
               deferred,
             };
           }),
+          params: {
+            ...table.params,
+            resourceId,
+          },
         });
       }, next)
     )

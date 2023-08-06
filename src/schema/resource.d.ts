@@ -1,5 +1,6 @@
 import { GetFieldType } from 'lodash';
 import { PagingObject } from './paging';
+import { Request } from './request';
 import { PropertyPath } from './utility';
 
 interface TypeMap {
@@ -66,13 +67,9 @@ declare namespace Resource {
   interface TableRowsPage<I extends Item> extends PagingObject<TableRow<I>> {}
 
   interface Table<I extends Item> {
-    resource: {
-      name: string;
-      id?: string;
-    };
-    hash: string;
     columns: TableColumn<I>[];
     primaryPaths: PropertyPath<I>[];
     rowsPages: TableRowsPage<I>[];
+    params: Request.GetResourceTable<I>['ReqQuery'];
   }
 }
