@@ -38,11 +38,10 @@ export class Server<I extends Resource.Item> {
       this.chain.push(async () => {
         const { hash, limit, paths, resourceId, resourceName } = req.query;
 
-        const items: I[] = (
-          await readFile(`resource/${resourceName}.items.json`, 'utf-8').then(
-            JSON.parse
-          )
-        ).slice(0, 50);
+        const items: I[] = await readFile(
+          `resource/${resourceName}.items.json`,
+          'utf-8'
+        ).then(JSON.parse);
 
         const routes: Resource.Route<I>[] = await readFile(
           `resource/${resourceName}.routes.json`,
@@ -101,7 +100,7 @@ export class Server<I extends Resource.Item> {
             }))
         );
 
-        const primaryPaths = sortBy(columns, 'sortIndex').filter(
+        const primaryColumns = sortBy(columns, 'sortIndex').filter(
           ({ sortIndex }) => sortIndex != null
         );
 
@@ -135,7 +134,7 @@ export class Server<I extends Resource.Item> {
 
           table = this.tables[resourceName] = {
             columns,
-            primaryPaths: map(primaryPaths, 'path'),
+            primaryPaths: map(primaryColumns, 'path'),
             rowsPages: paginate(
               orderBy(
                 rows.filter((row) =>
@@ -149,11 +148,11 @@ export class Server<I extends Resource.Item> {
                       )
                   )
                 ),
-                primaryPaths.map(
+                primaryColumns.map(
                   (primaryPath) => (row) =>
                     fieldsDictionary[row.resource.id][primaryPath.path].value
                 ),
-                primaryPaths.map(({ order = 'asc' }) => order)
+                primaryColumns.map(({ order = 'asc' }) => order)
               ),
               +(limit ?? 50)
             ),
