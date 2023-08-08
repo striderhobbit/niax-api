@@ -69,6 +69,7 @@ declare namespace Resource {
   interface Table<I extends Item> {
     columns: TableColumn<I>[];
     primaryPaths: PropertyPath<I>[];
+    secondaryPaths: PropertyPath<I>[];
     rowsPages: TableRowsPage<I>[];
     params: Request.GetResourceTable<I>['ReqQuery'];
   }

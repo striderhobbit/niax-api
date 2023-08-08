@@ -138,6 +138,12 @@ export class Server<I extends Resource.Item> {
             table = this.tables[resourceName] = {
               columns,
               primaryPaths: map(primaryColumns, 'path'),
+              secondaryPaths: map(
+                columns.filter(
+                  (column) => column.include && column.sortIndex == null
+                ),
+                'path'
+              ),
               rowsPages: paginate(
                 orderBy(
                   rows.filter((row) =>
