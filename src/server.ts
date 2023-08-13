@@ -162,7 +162,7 @@ export class Server<I extends Resource.Item> {
                       fieldsDictionary[row.resource.id][primaryPath.path].value
                   ),
                   primaryColumns.map(({ order = 'asc' }) => order)
-                ),
+                ).map((row, index) => ({ ...row, index })),
                 +(limit ?? 50)
               ),
               params: {

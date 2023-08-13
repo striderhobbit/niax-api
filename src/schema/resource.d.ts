@@ -62,6 +62,7 @@ declare namespace Resource {
   interface TableRow<I extends Item> {
     resource: Pick<I, 'id'>;
     fields: TableField<I>[];
+    index: number;
   }
 
   interface TableRowsPage<I extends Item> extends PagingObject<TableRow<I>> {}
