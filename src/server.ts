@@ -9,7 +9,6 @@ import {
   get,
   keyBy,
   map,
-  mapValues,
   orderBy,
   pick,
   set,
@@ -114,26 +113,25 @@ export class Server<I extends Resource.Item> {
             hash == null ||
             objectHash({ items, routes, columns, limit }) !== hash
           ) {
-            const columnsDictionary = keyBy(columns, 'path');
             const requestedRoutes = routes.filter(
-              (route) => columnsDictionary[route.path].include
+              (route) =>
+                columns.find((column) => column.path === route.path)!.include
             );
 
-            const rows = items.map((item) => ({
+            const rows = items.map((item, index) => ({
               resource: pick(item, 'id'),
-              fields: requestedRoutes.map(
-                (route): Resource.TableField<I> => ({
-                  ...route,
-                  resource: pick(item, 'id'),
-                  value: get(item, route.path),
-                })
+              fields: keyBy(
+                requestedRoutes.map(
+                  (route): Resource.TableField<I> => ({
+                    ...route,
+                    resource: pick(item, 'id'),
+                    value: get(item, route.path),
+                  })
+                ),
+                'path'
               ),
+              index,
             }));
-
-            const fieldsDictionary = mapValues(
-              keyBy(rows, 'resource.id'),
-              (row) => keyBy(row.fields, 'path')
-            );
 
             table = this.tables[resourceName] = {
               columns,
@@ -151,15 +149,12 @@ export class Server<I extends Resource.Item> {
                       (column) =>
                         column.filter == null ||
                         new RegExp(column.filter, 'i').test(
-                          fieldsDictionary[row.resource.id][
-                            column.path
-                          ].value?.toString() ?? ''
+                          row.fields[column.path].value?.toString() ?? ''
                         )
                     )
                   ),
                   primaryColumns.map(
-                    (primaryPath) => (row) =>
-                      fieldsDictionary[row.resource.id][primaryPath.path].value
+                    (primaryPath) => (row) => row.fields[primaryPath.path].value
                   ),
                   primaryColumns.map(({ order = 'asc' }) => order)
                 ).map((row, index) => ({ ...row, index })),
@@ -181,15 +176,15 @@ export class Server<I extends Resource.Item> {
           res.send({
             ...table,
             rowsPages: table.rowsPages.map((rowsPage, index) => {
-              const deferred =
+              const pending =
                 requestedRowsPage == null
                   ? index !== 0
                   : rowsPage !== requestedRowsPage;
 
               return {
                 ...rowsPage,
-                items: deferred ? [] : rowsPage.items,
-                deferred,
+                items: pending ? [] : rowsPage.items,
+                pending,
               };
             }),
             params: {

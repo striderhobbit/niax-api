@@ -61,7 +61,7 @@ declare namespace Resource {
 
   interface TableRow<I extends Item> {
     resource: Pick<I, 'id'>;
-    fields: TableField<I>[];
+    fields: TableFields<I>;
     index: number;
   }
 
