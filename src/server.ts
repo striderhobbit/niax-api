@@ -54,18 +54,14 @@ export class Server<I extends Resource.Item> {
             return routes.map((route) => {
               const column = find(requestedColumns, { path: route.path });
 
-              return {
-                ...route,
-                ...(column != null
-                  ? {
-                      include: true,
-                      ...pick(column, 'sortIndex', 'filter'),
-                      ...(column.sortIndex != null
-                        ? pick(column, 'order')
-                        : {}),
-                    }
-                  : {}),
-              };
+              return column == null
+                ? route
+                : {
+                    ...route,
+                    include: true,
+                    ...pick(column, 'sortIndex', 'filter'),
+                    ...(column.sortIndex != null ? pick(column, 'order') : {}),
+                  };
             });
           })(
             paths
@@ -87,7 +83,7 @@ export class Server<I extends Resource.Item> {
                 })(groups['sortIndex']),
                 order: (function (order: string) {
                   if (order === 'desc') {
-                    return order as 'desc';
+                    return order;
                   }
 
                   return;
@@ -156,7 +152,7 @@ export class Server<I extends Resource.Item> {
                   primaryColumns.map(
                     (primaryPath) => (row) => row.fields[primaryPath.path].value
                   ),
-                  primaryColumns.map(({ order = 'asc' }) => order)
+                  primaryColumns.map(({ order }) => order || 'asc')
                 ).map((row, index) => ({ ...row, index })),
                 +(limit ?? 50)
               ),

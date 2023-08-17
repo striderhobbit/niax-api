@@ -37,7 +37,7 @@ declare namespace Resource {
     extends SingleRoute<I, P> {
     include?: boolean;
     sortIndex?: number;
-    order?: 'asc' | 'desc';
+    order?: 'asc' | 'desc' | '';
     filter?: string;
   }
 
