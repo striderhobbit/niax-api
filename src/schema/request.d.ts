@@ -15,7 +15,6 @@ declare namespace Request {
     ReqParams: {};
     ResBody: Resource.Table<I>;
     ReqQuery: {
-      hash?: string;
       limit?: string;
       paths?: string;
       resourceId?: string;
@@ -28,8 +27,8 @@ declare namespace Request {
     ReqParams: {};
     ResBody: Resource.TableRowsPage<I>;
     ReqQuery: {
+      tableToken: string;
       pageToken: string;
-      resourceName: string;
     };
   }
 
@@ -39,7 +38,7 @@ declare namespace Request {
     ResBody: I;
     ReqBody: Resource.TableField<I>;
     ReqQuery: {
-      resourceName: string;
+      tableToken: string;
     };
   }
 }

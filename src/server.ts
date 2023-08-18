@@ -4,13 +4,13 @@ import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
-  Dictionary,
   find,
   get,
   keyBy,
   map,
   orderBy,
   pick,
+  pull,
   set,
   sortBy,
 } from 'lodash';
@@ -24,7 +24,7 @@ import { Resource } from './schema/resource';
 export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly queue = new Subject<any>();
-  private readonly tables: Dictionary<Resource.Table<I>> = {};
+  private readonly cache: Resource.Table<I>[] = [];
 
   private readonly router = express
     .Router()
@@ -36,7 +36,7 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/table', (req, res, next) =>
       this.queue.next(
         defer(async () => {
-          const { hash, paths, resourceId, resourceName } = req.query;
+          const { paths = '', resourceId, resourceName } = req.query;
 
           const limit = Math.min(+(req.query.limit ?? 50), 100);
 
@@ -100,17 +100,17 @@ export class Server<I extends Resource.Item> {
               }))
           );
 
-          const primaryColumns = sortBy(columns, 'sortIndex').filter(
-            ({ sortIndex }) => sortIndex != null
-          );
+          const token = objectHash({
+            columns,
+            items,
+            limit,
+            resourceName,
+            routes,
+          });
 
-          let table = this.tables[resourceName];
+          const restored = find(this.cache, { params: { token } });
 
-          if (
-            table == null ||
-            hash == null ||
-            objectHash({ items, routes, columns, limit }) !== hash
-          ) {
+          if (restored == null) {
             const requestedRoutes = routes.filter(
               (route) =>
                 columns.find((column) => column.path === route.path)!.include
@@ -131,7 +131,11 @@ export class Server<I extends Resource.Item> {
               index,
             }));
 
-            table = this.tables[resourceName] = {
+            const primaryColumns = sortBy(columns, 'sortIndex').filter(
+              ({ sortIndex }) => sortIndex != null
+            );
+
+            const table = {
               columns,
               primaryPaths: map(primaryColumns, 'path'),
               secondaryPaths: map(
@@ -159,13 +163,23 @@ export class Server<I extends Resource.Item> {
                 limit
               ),
               params: {
-                hash: objectHash({ items, routes, columns, limit }),
-                limit: limit.toString(),
+                token,
+                limit,
                 paths,
                 resourceName,
               },
             };
+
+            this.cache.unshift(table);
+
+            this.cache.length = Math.min(this.cache.length, 5);
+          } else if (this.cache.indexOf(restored) !== 0) {
+            pull(this.cache, restored);
+
+            this.cache.unshift(restored);
           }
+
+          const { 0: table } = this.cache;
 
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
             find(rowsPage.items, { resource: { id: resourceId } })
@@ -190,6 +204,11 @@ export class Server<I extends Resource.Item> {
               resourceId,
             },
           });
+
+          return writeFile(
+            '$tableCache.json',
+            JSON.stringify(keyBy(this.cache, 'params.token'), null, '\t')
+          );
         })
       )
     )
@@ -199,9 +218,13 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTableRowsPage<I>['ReqBody'],
       Request.GetResourceTableRowsPage<I>['ReqQuery']
     >('/api/resource/table/rows/page', (req, res, next) => {
-      const { pageToken, resourceName } = req.query;
+      const { tableToken, pageToken } = req.query;
 
-      res.send(find(this.tables[resourceName].rowsPages, { pageToken }));
+      res.send(
+        find(find(this.cache, { params: { token: tableToken } })!.rowsPages, {
+          pageToken,
+        })
+      );
     })
     .patch<
       Request.PatchResourceItem<I>['ReqParams'],
@@ -211,7 +234,10 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/item', (req, res, next) =>
       this.queue.next(
         defer(() => {
-          const { resourceName } = req.query,
+          const { tableToken } = req.query,
+            {
+              params: { resourceName },
+            } = find(this.cache, { params: { token: tableToken } })!,
             {
               resource: { id },
               path,
@@ -232,13 +258,7 @@ export class Server<I extends Resource.Item> {
 
           return readFile(`resource/${resourceName}.items.json`, 'utf-8')
             .then<I[]>(JSON.parse)
-            .then((items) => {
-              set(getItem(items, id), path, value);
-
-              delete this.tables[resourceName];
-
-              return items;
-            })
+            .then((items) => (set(getItem(items, id), path, value), items))
             .then((items) =>
               writeFile(
                 `resource/${resourceName}.items.json`,
