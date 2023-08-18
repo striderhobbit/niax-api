@@ -36,7 +36,9 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/table', (req, res, next) =>
       this.queue.next(
         defer(async () => {
-          const { hash, limit, paths, resourceId, resourceName } = req.query;
+          const { hash, paths, resourceId, resourceName } = req.query;
+
+          const limit = Math.min(+(req.query.limit ?? 50), 100);
 
           const items: I[] = await readFile(
             `resource/${resourceName}.items.json`,
@@ -154,11 +156,11 @@ export class Server<I extends Resource.Item> {
                   ),
                   primaryColumns.map(({ order }) => order || 'asc')
                 ).map((row, index) => ({ ...row, index })),
-                +(limit ?? 50)
+                limit
               ),
               params: {
                 hash: objectHash({ items, routes, columns, limit }),
-                limit,
+                limit: limit.toString(),
                 paths,
                 resourceName,
               },
