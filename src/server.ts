@@ -36,6 +36,10 @@ class TableCache<I extends Resource.Item> {
     this.tables.length = Math.min(this.tables.length, this.LIMIT);
   }
 
+  public delete(table: Resource.Table<I>): void {
+    pull(this.tables, table);
+  }
+
   public first(): Resource.Table<I> | undefined {
     return this.tables[0];
   }
@@ -261,10 +265,10 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/item', (req, res, next) =>
       this.queue.next(
         defer(() => {
-          const { tableToken } = req.query,
+          const table = this.tableCache.getItem(req.query.tableToken)!,
             {
               params: { resourceName },
-            } = this.tableCache.getItem(tableToken)!,
+            } = table,
             {
               resource: { id },
               path,
@@ -285,7 +289,13 @@ export class Server<I extends Resource.Item> {
 
           return readFile(`resource/${resourceName}.items.json`, 'utf-8')
             .then<I[]>(JSON.parse)
-            .then((items) => (set(getItem(items, id), path, value), items))
+            .then((items) => {
+              set(getItem(items, id), path, value);
+
+              this.tableCache.delete(table);
+
+              return items;
+            })
             .then((items) =>
               writeFile(
                 `resource/${resourceName}.items.json`,
