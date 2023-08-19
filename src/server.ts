@@ -1,5 +1,4 @@
 import { json } from 'body-parser';
-import chalk from 'chalk';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
