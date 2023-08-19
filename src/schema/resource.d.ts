@@ -77,7 +77,7 @@ declare namespace Resource {
   interface TableParams {
     token: string;
     limit: number;
-    paths: string;
+    cols: string;
     resourceId?: string;
     resourceName: string;
   }

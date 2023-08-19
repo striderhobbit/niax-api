@@ -16,7 +16,7 @@ declare namespace Request {
     ResBody: Resource.Table<I>;
     ReqQuery: {
       limit?: string;
-      paths?: string;
+      cols?: string;
       resourceId?: string;
       resourceName: string;
     };

@@ -69,7 +69,7 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/table', (req, res, next) =>
       this.queue.next(
         defer(async () => {
-          const { paths = '', resourceId, resourceName } = req.query;
+          const { cols = '', resourceId, resourceName } = req.query;
 
           const limit = Math.min(+(req.query.limit ?? 50), 100);
 
@@ -99,7 +99,7 @@ export class Server<I extends Resource.Item> {
                   };
             });
           })(
-            paths
+            cols
               ?.split(',')
               .map(
                 (path) =>
@@ -198,7 +198,7 @@ export class Server<I extends Resource.Item> {
               params: {
                 token,
                 limit,
-                paths,
+                cols,
                 resourceName,
               },
             };

@@ -1,7 +1,7 @@
 type DotPrefix<T extends string> = T extends '' ? '' : `.${T}`;
 
 /**
- * Extracts paths of all terminal properties/leaves of an object.
+ * Extracts paths of all terminal properties ("leaves") of an object.
  */
 export type PropertyPath<T> = (
   T extends object
