@@ -80,5 +80,6 @@ declare namespace Resource {
     cols: string;
     resourceId?: string;
     resourceName: string;
+    cacheRestored?: boolean;
   }
 }

@@ -140,6 +140,7 @@ export class Server<I extends Resource.Item> {
             routes,
           });
 
+          let cacheRestored = false;
           const restored = this.tableCache.getItem(token);
 
           if (restored == null) {
@@ -205,6 +206,8 @@ export class Server<I extends Resource.Item> {
             this.tableCache.add(table);
           } else {
             this.tableCache.promote(restored);
+
+            cacheRestored = true;
           }
 
           const table = this.tableCache.first()!;
@@ -230,6 +233,7 @@ export class Server<I extends Resource.Item> {
             params: {
               ...table.params,
               resourceId,
+              cacheRestored,
             },
           });
         })
