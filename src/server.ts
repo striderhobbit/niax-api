@@ -1,4 +1,5 @@
 import { json } from 'body-parser';
+import chalk from 'chalk';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
@@ -21,10 +22,42 @@ import { paginate } from './paging';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 
+class TableCache<I extends Resource.Item> {
+  private readonly tables: Resource.Table<I>[] = [];
+
+  constructor(private readonly LIMIT: number) {}
+
+  public add(table: Resource.Table<I>): void {
+    if (find(this.tables, pick(table, 'params.token')) != null) {
+      throw new Error(`duplicate table ${table.params.token}`);
+    }
+
+    this.tables.unshift(table);
+
+    this.tables.length = Math.min(this.tables.length, this.LIMIT);
+  }
+
+  public first(): Resource.Table<I> | undefined {
+    return this.tables[0];
+  }
+
+  public getItem(token: string): Resource.Table<I> | undefined {
+    return find(this.tables, { params: { token } });
+  }
+
+  public promote(table: Resource.Table<I>): void {
+    if (this.tables.indexOf(table) !== 0) {
+      pull(this.tables, table);
+
+      this.tables.unshift(table);
+    }
+  }
+}
+
 export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly queue = new Subject<any>();
-  private readonly cache: Resource.Table<I>[] = [];
+  private readonly tableCache = new TableCache<I>(5);
 
   private readonly router = express
     .Router()
@@ -108,7 +141,7 @@ export class Server<I extends Resource.Item> {
             routes,
           });
 
-          const restored = find(this.cache, { params: { token } });
+          const restored = this.tableCache.getItem(token);
 
           if (restored == null) {
             const requestedRoutes = routes.filter(
@@ -170,16 +203,12 @@ export class Server<I extends Resource.Item> {
               },
             };
 
-            this.cache.unshift(table);
-
-            this.cache.length = Math.min(this.cache.length, 5);
-          } else if (this.cache.indexOf(restored) !== 0) {
-            pull(this.cache, restored);
-
-            this.cache.unshift(restored);
+            this.tableCache.add(table);
+          } else {
+            this.tableCache.promote(restored);
           }
 
-          const { 0: table } = this.cache;
+          const table = this.tableCache.first()!;
 
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
             find(rowsPage.items, { resource: { id: resourceId } })
@@ -204,11 +233,6 @@ export class Server<I extends Resource.Item> {
               resourceId,
             },
           });
-
-          return writeFile(
-            '$tableCache.json',
-            JSON.stringify(keyBy(this.cache, 'params.token'), null, '\t')
-          );
         })
       )
     )
@@ -221,7 +245,7 @@ export class Server<I extends Resource.Item> {
       const { tableToken, pageToken } = req.query;
 
       res.send(
-        find(find(this.cache, { params: { token: tableToken } })!.rowsPages, {
+        find(this.tableCache.getItem(tableToken)!.rowsPages, {
           pageToken,
         })
       );
@@ -237,7 +261,7 @@ export class Server<I extends Resource.Item> {
           const { tableToken } = req.query,
             {
               params: { resourceName },
-            } = find(this.cache, { params: { token: tableToken } })!,
+            } = this.tableCache.getItem(tableToken)!,
             {
               resource: { id },
               path,
