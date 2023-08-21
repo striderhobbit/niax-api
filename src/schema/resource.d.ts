@@ -71,12 +71,13 @@ declare namespace Resource {
     primaryPaths: PropertyPath<I>[];
     secondaryPaths: PropertyPath<I>[];
     rowsPages: TableRowsPage<I>[];
-    params: TableParams;
+    query: TableQuery;
+    token: string;
+    totalRows: number;
     restoredFromCache?: boolean;
   }
 
-  interface TableParams {
-    token: string;
+  interface TableQuery {
     limit: number;
     cols: string;
     resourceId?: string;

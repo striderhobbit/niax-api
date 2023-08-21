@@ -27,8 +27,8 @@ class TableCache<I extends Resource.Item> {
   constructor(private readonly LIMIT: number) {}
 
   public add(table: Resource.Table<I>): Resource.Table<I> {
-    if (find(this.tables, pick(table, 'params.token')) != null) {
-      throw new Error(`duplicate table ${table.params.token}`);
+    if (find(this.tables, pick(table, 'token')) != null) {
+      throw new Error(`duplicate table ${table.token}`);
     }
 
     this.tables.unshift(table);
@@ -47,13 +47,13 @@ class TableCache<I extends Resource.Item> {
   }
 
   public getItem(token: string): Resource.Table<I> | undefined {
-    return find(this.tables, { params: { token } });
+    return find(this.tables, { token });
   }
 
   public promote(table: Resource.Table<I>): Resource.Table<I> {
     switch (this.tables.indexOf(table)) {
       case -1:
-        throw new Error(`table ${table.params.token} not found`);
+        throw new Error(`table ${table.token} not found`);
       case 0:
         break;
       default:
@@ -210,17 +210,16 @@ export class Server<I extends Resource.Item> {
               rowsPages: paginate(
                 filteredAndSortedRows,
                 limit,
-                filteredAndSortedRows.find(
-                  (row) => row.resource.id === resourceId
-                )
+                (row) => row.resource.id === resourceId
               ),
-              params: {
-                token,
+              query: {
                 limit,
                 cols,
                 resourceId,
                 resourceName,
               },
+              token,
+              totalRows: filteredAndSortedRows.length,
             });
           } else {
             table = this.tableCache.promote(restored);
@@ -272,7 +271,7 @@ export class Server<I extends Resource.Item> {
       this.queue.next(
         defer(() => {
           const table = this.tableCache.getItem(req.query.tableToken),
-            { resourceName } = table!.params,
+            { resourceName } = table!.query,
             {
               resource: { id },
               path,
