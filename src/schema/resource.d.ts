@@ -61,6 +61,7 @@ declare namespace Resource {
   interface TableRow<I extends Item> {
     resource: Pick<I, 'id'>;
     fields: TableFields<I>;
+    index: number;
   }
 
   interface TableRowsPage<I extends Item> extends PagingObject<TableRow<I>> {}
@@ -71,6 +72,7 @@ declare namespace Resource {
     secondaryPaths: PropertyPath<I>[];
     rowsPages: TableRowsPage<I>[];
     params: TableParams;
+    restoredFromCache?: boolean;
   }
 
   interface TableParams {

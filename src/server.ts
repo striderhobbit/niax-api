@@ -140,6 +140,7 @@ export class Server<I extends Resource.Item> {
             columns,
             items,
             limit,
+            resourceId,
             resourceName,
             routes,
           });
@@ -150,6 +151,10 @@ export class Server<I extends Resource.Item> {
             const requestedRoutes = routes.filter(
               (route) =>
                 columns.find((column) => column.path === route.path)!.include
+            );
+
+            const primaryColumns = sortBy(columns, 'sortIndex').filter(
+              ({ sortIndex }) => sortIndex != null
             );
 
             const rows = items.map((item, index) => ({
@@ -167,9 +172,21 @@ export class Server<I extends Resource.Item> {
               index,
             }));
 
-            const primaryColumns = sortBy(columns, 'sortIndex').filter(
-              ({ sortIndex }) => sortIndex != null
-            );
+            const filteredAndSortedRows = orderBy(
+              rows.filter((row) =>
+                columns.every(
+                  (column) =>
+                    column.filter == null ||
+                    new RegExp(column.filter, 'i').test(
+                      row.fields[column.path].value?.toString() ?? ''
+                    )
+                )
+              ),
+              primaryColumns.map(
+                (primaryPath) => (row) => row.fields[primaryPath.path].value
+              ),
+              primaryColumns.map(({ order }) => order || 'asc')
+            ).map((row, index) => Object.assign(row, { index }));
 
             const table = {
               columns,
@@ -181,27 +198,17 @@ export class Server<I extends Resource.Item> {
                 'path'
               ),
               rowsPages: paginate(
-                orderBy(
-                  rows.filter((row) =>
-                    columns.every(
-                      (column) =>
-                        column.filter == null ||
-                        new RegExp(column.filter, 'i').test(
-                          row.fields[column.path].value?.toString() ?? ''
-                        )
-                    )
-                  ),
-                  primaryColumns.map(
-                    (primaryPath) => (row) => row.fields[primaryPath.path].value
-                  ),
-                  primaryColumns.map(({ order }) => order || 'asc')
-                ),
-                limit
+                filteredAndSortedRows,
+                limit,
+                filteredAndSortedRows.find(
+                  (row) => row.resource.id === resourceId
+                )
               ),
               params: {
                 token,
                 limit,
                 cols,
+                resourceId,
                 resourceName,
               },
             };
@@ -231,10 +238,7 @@ export class Server<I extends Resource.Item> {
                 pending,
               };
             }),
-            params: {
-              ...table.params,
-              resourceId,
-            },
+            restoredFromCache: restored != null,
           });
         })
       )
