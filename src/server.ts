@@ -195,7 +195,7 @@ export class Server<I extends Resource.Item> {
                     (primaryPath) => (row) => row.fields[primaryPath.path].value
                   ),
                   primaryColumns.map(({ order }) => order || 'asc')
-                ).map((row, index) => ({ ...row, index })),
+                ),
                 limit
               ),
               params: {
