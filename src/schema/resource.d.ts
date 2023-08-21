@@ -74,7 +74,7 @@ declare namespace Resource {
     query: TableQuery;
     token: string;
     totalRows: number;
-    restoredFromCache?: boolean;
+    signature?: TableSignature<I>;
   }
 
   interface TableQuery {
@@ -82,5 +82,12 @@ declare namespace Resource {
     cols: string;
     resourceId?: string;
     resourceName: string;
+  }
+
+  interface TableSignature<I extends Item>
+    extends Pick<Table<I>, 'token' | 'totalRows'> {
+    originalUrl: string;
+    restoredFromCache: boolean;
+    timestamp: string;
   }
 }

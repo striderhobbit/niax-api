@@ -242,7 +242,12 @@ export class Server<I extends Resource.Item> {
                 pending,
               };
             }),
-            restoredFromCache: restored != null,
+            signature: {
+              ...pick(table, 'token', 'totalRows'),
+              originalUrl: req.originalUrl,
+              restoredFromCache: restored != null,
+              timestamp: new Date().toUTCString(),
+            },
           });
         })
       )
