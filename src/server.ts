@@ -38,7 +38,7 @@ class TableCache<I extends Resource.Item> {
     return table;
   }
 
-  public delete(table: Resource.Table<I>): void {
+  public delete(table: Resource.Table<I> | undefined): void {
     pull(this.tables, table);
   }
 
@@ -271,10 +271,8 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/item', (req, res, next) =>
       this.queue.next(
         defer(() => {
-          const table = this.tableCache.getItem(req.query.tableToken)!,
-            {
-              params: { resourceName },
-            } = table,
+          const table = this.tableCache.getItem(req.query.tableToken),
+            { resourceName } = table!.params,
             {
               resource: { id },
               path,
