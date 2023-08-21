@@ -1,11 +1,11 @@
-import { ListIterateeCustom, chunk, find } from 'lodash';
+import { ListIterateeCustom, chunk, find, stubFalse } from 'lodash';
 import objectHash from 'object-hash';
 import { PagingObject } from './schema/paging';
 
 export const paginate = <I>(
   items: I[],
   limit: number,
-  promote?: ListIterateeCustom<I, boolean>
+  promote: ListIterateeCustom<I, boolean> = stubFalse
 ): PagingObject<I>[] => {
   const chunks: I[][] = [];
   const promoteItem = find(items, promote);
