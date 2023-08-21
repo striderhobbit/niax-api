@@ -111,8 +111,7 @@ export class Server<I extends Resource.Item> {
                   };
             });
           })(
-            cols
-              ?.split(',')
+            (cols ? cols.split(',') : [])
               .map(
                 (path) =>
                   path.match(
