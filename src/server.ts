@@ -26,7 +26,7 @@ class TableCache<I extends Resource.Item> {
 
   constructor(private readonly LIMIT: number) {}
 
-  public add(table: Resource.Table<I>): void {
+  public add(table: Resource.Table<I>): Resource.Table<I> {
     if (find(this.tables, pick(table, 'params.token')) != null) {
       throw new Error(`duplicate table ${table.params.token}`);
     }
@@ -34,6 +34,8 @@ class TableCache<I extends Resource.Item> {
     this.tables.unshift(table);
 
     this.tables.length = Math.min(this.tables.length, this.LIMIT);
+
+    return table;
   }
 
   public delete(table: Resource.Table<I>): void {
@@ -48,12 +50,19 @@ class TableCache<I extends Resource.Item> {
     return find(this.tables, { params: { token } });
   }
 
-  public promote(table: Resource.Table<I>): void {
-    if (this.tables.indexOf(table) !== 0) {
-      pull(this.tables, table);
+  public promote(table: Resource.Table<I>): Resource.Table<I> {
+    switch (this.tables.indexOf(table)) {
+      case -1:
+        throw new Error(`table ${table.params.token} not found`);
+      case 0:
+        break;
+      default:
+        pull(this.tables, table);
 
-      this.tables.unshift(table);
+        this.tables.unshift(table);
     }
+
+    return table;
   }
 }
 
@@ -108,31 +117,31 @@ export class Server<I extends Resource.Item> {
                 (path) =>
                   path.match(
                     /^(?<path>[^:,]*):(?<sortIndex>\d*):(?<order>asc|desc|):(?<filter>[^,]*)$/
-                  )!.groups!
+                  )!.groups
               )
               .map((groups) => ({
-                path: groups['path'],
+                path: groups!['path'],
                 sortIndex: (function (sortIndex: string) {
                   if (sortIndex) {
                     return +sortIndex;
                   }
 
                   return;
-                })(groups['sortIndex']),
+                })(groups!['sortIndex']),
                 order: (function (order: string) {
                   if (order === 'desc') {
                     return order;
                   }
 
                   return;
-                })(groups['order']),
+                })(groups!['order']),
                 filter: (function (filter: string) {
                   if (filter) {
                     return filter;
                   }
 
                   return;
-                })(groups['filter']),
+                })(groups!['filter']),
               }))
           );
 
@@ -146,6 +155,7 @@ export class Server<I extends Resource.Item> {
           });
 
           const restored = this.tableCache.getItem(token);
+          let table: Resource.Table<I>;
 
           if (restored == null) {
             const requestedRoutes = routes.filter(
@@ -188,7 +198,7 @@ export class Server<I extends Resource.Item> {
               primaryColumns.map(({ order }) => order || 'asc')
             ).map((row, index) => Object.assign(row, { index }));
 
-            const table = {
+            table = this.tableCache.add({
               columns,
               primaryPaths: map(primaryColumns, 'path'),
               secondaryPaths: map(
@@ -211,14 +221,10 @@ export class Server<I extends Resource.Item> {
                 resourceId,
                 resourceName,
               },
-            };
-
-            this.tableCache.add(table);
+            });
           } else {
-            this.tableCache.promote(restored);
+            table = this.tableCache.promote(restored);
           }
-
-          const table = this.tableCache.first()!;
 
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
             find(rowsPage.items, { resource: { id: resourceId } })
