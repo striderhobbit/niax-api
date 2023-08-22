@@ -88,6 +88,7 @@ declare namespace Resource {
     extends Pick<Table<I>, 'token' | 'totalRows'> {
     originalUrl: string;
     restoredFromCache: boolean;
+    revision: string;
     timestamp: string;
   }
 }

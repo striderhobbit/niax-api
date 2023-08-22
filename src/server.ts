@@ -1,4 +1,5 @@
 import { json } from 'body-parser';
+import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { readFile, writeFile } from 'fs/promises';
@@ -246,7 +247,8 @@ export class Server<I extends Resource.Item> {
               ...pick(table, 'token', 'totalRows'),
               originalUrl: req.originalUrl,
               restoredFromCache: restored != null,
-              timestamp: new Date().toUTCString(),
+              revision: execSync('git rev-parse HEAD').toString().trim(),
+              timestamp: new Date().toISOString(),
             },
           });
         })
