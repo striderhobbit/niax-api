@@ -1,0 +1,10 @@
+[
+  { "path": "album.name", "type": "string", "nullable": false },
+  { "path": "artists", "type": "string", "nullable": false },
+  { "path": "durationMs", "type": "number", "nullable": false },
+  { "path": "id", "type": "string", "nullable": false },
+  { "path": "key", "type": "number", "nullable": true },
+  { "path": "name", "type": "string", "nullable": false },
+  { "path": "releaseDate", "type": "string", "nullable": false },
+  { "path": "tempo", "type": "number", "nullable": true }
+]

@@ -1,0 +1,4554 @@
+[
+  {
+    "key": null,
+    "tempo": 100.002,
+    "artists": "Xique-Xique",
+    "durationMs": 347600,
+    "id": "10glJ8ARN1G9ESFF9s00yk",
+    "name": "1542",
+    "album": { "name": "Xaxoeira" },
+    "releaseDate": "2016-10-21"
+  },
+  {
+    "key": null,
+    "tempo": 141.989,
+    "artists": "Alignment",
+    "durationMs": 344787,
+    "id": "7fFIQS0h2EpivRZMAkiGcj",
+    "name": "1992",
+    "album": { "name": "1992" },
+    "releaseDate": "2020-06-03"
+  },
+  {
+    "tempo": 131.991,
+    "artists": "KAS:ST",
+    "durationMs": 366235,
+    "id": "2rgtmHB1O8GHaLFQZTF2tR",
+    "name": "2084",
+    "album": { "name": "2084" },
+    "releaseDate": "2023-05-05"
+  },
+  {
+    "key": 5,
+    "tempo": 95,
+    "artists": "Oliver Koletzki",
+    "durationMs": 370453,
+    "id": "239SrBPZi0xs1OQZmedr6q",
+    "name": "A Tribe Called Kotori",
+    "album": { "name": "The Arc of Tension" },
+    "releaseDate": "2017-05-19"
+  },
+  {
+    "key": null,
+    "tempo": 124.986,
+    "artists": "Psaiko.Dino,Maywa",
+    "durationMs": 172800,
+    "id": "6WuOTw1d5SRWfQMFk28TBZ",
+    "name": "ALUNA",
+    "album": { "name": "ALUNA" },
+    "releaseDate": "2023-08-11"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Timboletti",
+    "durationMs": 430322,
+    "id": "33qKIR6zfO0cvVLO5Mwp37",
+    "name": "About Frogs and Birds",
+    "album": { "name": "Global Entry 2" },
+    "releaseDate": "2021-05-07"
+  },
+  {
+    "tempo": 139.995,
+    "artists": "Symphonix,Naturalize",
+    "durationMs": 254678,
+    "id": "15mHk5iNru3j49NsnMaZdV",
+    "name": "Addiction",
+    "album": { "name": "Addiction" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": null,
+    "tempo": 130.011,
+    "artists": "Deborah de Luca",
+    "durationMs": 413538,
+    "id": "110oOecgIEMdjl5kOLtPCd",
+    "name": "Adrenaline",
+    "album": { "name": "Adrenaline" },
+    "releaseDate": "2022-05-23"
+  },
+  {
+    "key": 11,
+    "tempo": 125.069,
+    "artists": "Vintage Culture",
+    "durationMs": 203520,
+    "id": "0zkWmS5tEFgaHaXTSGQ2b1",
+    "name": "Agape",
+    "album": { "name": "Agape" },
+    "releaseDate": "2022-11-18"
+  },
+  {
+    "key": 11,
+    "tempo": 145.012,
+    "artists": "Mark Dekoda",
+    "durationMs": 264827,
+    "id": "1khq5gFJaY6ztqQ92tbD3l",
+    "name": "Akuma",
+    "album": { "name": "Akuma" },
+    "releaseDate": "2023-06-09"
+  },
+  {
+    "tempo": 196.005,
+    "artists": "Shkoon,Goldcap",
+    "durationMs": 444405,
+    "id": "5tiKMgMNgmV1M9vTscxtNK",
+    "name": "Ala Moj Al Bahr - Goldcap Remix",
+    "album": { "name": "Letters" },
+    "releaseDate": "2016-12-09"
+  },
+  {
+    "key": 0,
+    "tempo": 159.926,
+    "artists": "Zafrir,Billx,Anna Timofei",
+    "durationMs": 231000,
+    "id": "6UO97Q5Rbg7iLAcIiAIZHr",
+    "name": "Aliyu",
+    "album": { "name": "Aliyu" },
+    "releaseDate": "2022-03-11"
+  },
+  {
+    "key": 2,
+    "tempo": 119.987,
+    "artists": "LP Giobbi,DJ Tennis,Joseph Ashworth",
+    "durationMs": 230015,
+    "id": "11SEKnYpFCFRXnUap3Cso2",
+    "name": "All In A Dream",
+    "album": { "name": "All In A Dream" },
+    "releaseDate": "2022-06-29"
+  },
+  {
+    "tempo": 123.005,
+    "artists": "Gavin Rochford",
+    "durationMs": 507317,
+    "id": "2aTpRaMazMXutcaBTMic49",
+    "name": "All In Flavour - Original Mix",
+    "album": { "name": "Natura Sonoris pres. Quarantine Demo Project" },
+    "releaseDate": "2020-08-14"
+  },
+  {
+    "tempo": null,
+    "artists": "Maceo Plex,Oscar and the Wolf",
+    "durationMs": 376448,
+    "id": "0pp5J5USoRAqy8gpkLQjPB",
+    "name": "All Night (Garage Version)",
+    "album": { "name": "All Night" },
+    "releaseDate": "2022-10-21"
+  },
+  {
+    "key": 0,
+    "tempo": 190.102,
+    "artists": "Lemurian,Discoshaman,Alvaro Suarez",
+    "durationMs": 495230,
+    "id": "07hbojp6d9NUVSvSo7lOIm",
+    "name": "All We Want Is to Smile",
+    "album": { "name": "Rising Sun / Chapter 1" },
+    "releaseDate": "2018-07-23"
+  },
+  {
+    "key": 2,
+    "tempo": 134.97,
+    "artists": "Mark Dekoda,Ben Dust",
+    "durationMs": 314666,
+    "id": "3UShLxr87usr5yQ6G3GVKK",
+    "name": "Alle meine Raver",
+    "album": { "name": "Alle meine Raver" },
+    "releaseDate": "2023-03-17"
+  },
+  {
+    "tempo": 124.997,
+    "artists": "Steve Bug",
+    "durationMs": 507848,
+    "id": "11XOxp07FStWyaO3FQ98iL",
+    "name": "Alto Adige",
+    "album": { "name": "Alto Adige" },
+    "releaseDate": "2023-04-28"
+  },
+  {
+    "tempo": 122.004,
+    "artists": "Emanuele Esposito,Claudia León,Lizwi",
+    "durationMs": 440655,
+    "id": "5oXLWzm5AFy5EJp9UqYk7y",
+    "name": "Amazwe",
+    "album": { "name": "Amazwe" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 6,
+    "tempo": 139.993,
+    "artists": "I.GOT.U,RAVE-N",
+    "durationMs": 156827,
+    "id": "7MDppFVchHTvTRvr4q69z8",
+    "name": "Ameno",
+    "album": { "name": "Ameno" },
+    "releaseDate": "2022-11-25"
+  },
+  {
+    "key": 0,
+    "tempo": 120.008,
+    "artists": "Amonita",
+    "durationMs": 467928,
+    "id": "3Pid6VePPVB89EWz2M2xVz",
+    "name": "Amfora",
+    "album": { "name": "Aura EP" },
+    "releaseDate": "2021-06-18"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Rodriguez Jr.,RJLA,Liset Alea",
+    "durationMs": 288737,
+    "id": "3qzAlgyrmiCXz2o66lW589",
+    "name": "Amplify",
+    "album": { "name": "Amplify" },
+    "releaseDate": "2023-03-24"
+  },
+  {
+    "key": null,
+    "tempo": 124.004,
+    "artists": "Neorbeat,Kollektiv SS",
+    "durationMs": 526472,
+    "id": "6lIfHm4BuIamQoZURRfNci",
+    "name": "Analog Time - Neorbeat Remix",
+    "album": { "name": "Analog Time" },
+    "releaseDate": "2013-09-05"
+  },
+  {
+    "tempo": null,
+    "artists": "Kräuterbeet",
+    "durationMs": 435857,
+    "id": "3XKEDaJFOztFbeKBPcRMlR",
+    "name": "Ancestors (Original Mix)",
+    "album": { "name": "The Elders Thoughts" },
+    "releaseDate": "2015-02-21"
+  },
+  {
+    "key": 8,
+    "tempo": null,
+    "artists": "Electric Universe,Ace Ventura",
+    "durationMs": 480000,
+    "id": "6n2OgfyvY0MuwFphEywfgz",
+    "name": "Ancient Aum",
+    "album": { "name": "Ancient Aum" },
+    "releaseDate": "2022-09-02"
+  },
+  {
+    "key": 1,
+    "tempo": 124.996,
+    "artists": "Niax",
+    "durationMs": 406200,
+    "id": "4iAWYMsHvGZ1I4YkZytNvR",
+    "name": "Angular",
+    "album": { "name": "Angular" },
+    "releaseDate": "2021-12-17"
+  },
+  {
+    "key": 7,
+    "tempo": 128.011,
+    "artists": "UMEK",
+    "durationMs": 585117,
+    "id": "3Ha1wDjFPnguV6A7SSsQDK",
+    "name": "Anomalies in Heart Rate - Original Mix",
+    "album": { "name": "Ravaged EP" },
+    "releaseDate": "2019-08-02"
+  },
+  {
+    "key": null,
+    "tempo": 121.004,
+    "artists": "Yeröm,Remotion",
+    "durationMs": 379672,
+    "id": "0eUkXMB5qROmZk1ExXKwgZ",
+    "name": "Anomaly - Remotion Remix",
+    "album": { "name": "Anomaly" },
+    "releaseDate": "2021-01-29"
+  },
+  {
+    "key": null,
+    "tempo": 117.009,
+    "artists": "David Orin",
+    "durationMs": 535792,
+    "id": "1dRkTR8XAAwVPflqwdcCJ6",
+    "name": "Antemeridian",
+    "album": { "name": "Antemeridian" },
+    "releaseDate": "2018-09-21"
+  },
+  {
+    "key": 0,
+    "tempo": 122.991,
+    "artists": "Cherry (UA)",
+    "durationMs": 251418,
+    "id": "0DtjsvzxKhW4CvyQl0zdI3",
+    "name": "Armonica",
+    "album": { "name": "Sirena" },
+    "releaseDate": "2021-10-01"
+  },
+  {
+    "key": 5,
+    "tempo": 120.003,
+    "artists": "DSF",
+    "durationMs": 532711,
+    "id": "4p3IQi4kh6sBazAgDJ06Jl",
+    "name": "Arpeggiated Souls",
+    "album": { "name": "Decompressing Happy Camper VA Sampler" },
+    "releaseDate": "2018-11-09"
+  },
+  {
+    "key": 7,
+    "tempo": 129.998,
+    "artists": "HI-LO,Space 92,Oliver Heldens",
+    "durationMs": 240000,
+    "id": "3yyUCi2aug4daXsYQa4x1L",
+    "name": "Arpeggio",
+    "album": { "name": "Arpeggio" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 11,
+    "tempo": 120.005,
+    "artists": "&ME",
+    "durationMs": 482028,
+    "id": "09EjrLphoM0waG3Am1SpGN",
+    "name": "As Above so Below",
+    "album": { "name": "In Your Eyes" },
+    "releaseDate": "2018-09-21"
+  },
+  {
+    "key": 2,
+    "tempo": 101.996,
+    "artists": "Zuma Dionys",
+    "durationMs": 469000,
+    "id": "4e9UIKY0dESrEdVGlxeVRW",
+    "name": "As Time Goes By",
+    "album": { "name": "Yuddhapot" },
+    "releaseDate": "2018-09-04"
+  },
+  {
+    "key": 11,
+    "tempo": 123.997,
+    "artists": "LE YORA,SOMMA,Jewels,yuma.,MAGNUS",
+    "durationMs": 258327,
+    "id": "0TEHDmNapSu35R3LawypP4",
+    "name": "Ascension",
+    "album": { "name": "Labyrinth" },
+    "releaseDate": "2023-04-28"
+  },
+  {
+    "key": 7,
+    "tempo": 152.027,
+    "artists": "Björn Peng,Luna Nogood",
+    "durationMs": 230451,
+    "id": "6z6GuU1flCyg58dksataox",
+    "name": "At Night",
+    "album": { "name": "Dark Rave" },
+    "releaseDate": "2014-12-12"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "VTSS",
+    "durationMs": 396026,
+    "id": "0ChvWY0uRIGvXfhqvv8jC1",
+    "name": "Atlantyda",
+    "album": { "name": "The World Of Monnom Black II" },
+    "releaseDate": "2019-12-13"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Dok & Martin",
+    "durationMs": 438461,
+    "id": "5eCCDEJhr3gh8WsXAulpjK",
+    "name": "Atmosferic",
+    "album": { "name": "Atmosferic" },
+    "releaseDate": "2023-06-16"
+  },
+  {
+    "key": 11,
+    "tempo": 117.997,
+    "artists": "Hraach",
+    "durationMs": 442969,
+    "id": "5OtFbE3u5v7BGQLESkZfXU",
+    "name": "Aurores",
+    "album": { "name": "Aurores" },
+    "releaseDate": "2019-06-12"
+  },
+  {
+    "tempo": 130.003,
+    "artists": "Justus Reim",
+    "durationMs": 371076,
+    "id": "0gM35tN0TaqGHYvTETUMIY",
+    "name": "Axis Mundi",
+    "album": { "name": "Axis Mundi" },
+    "releaseDate": "2023-07-21"
+  },
+  {
+    "key": 0,
+    "tempo": 122.948,
+    "artists": "Pilocka Krach,The Lost Amigos",
+    "durationMs": 254218,
+    "id": "09qO12xzULKSkShDdKOUaW",
+    "name": "Ay Caramba",
+    "album": { "name": "Ay Caramba" },
+    "releaseDate": "2020-10-30"
+  },
+  {
+    "tempo": null,
+    "artists": "Joep Mencke",
+    "durationMs": 470434,
+    "id": "1kVa6xhxYQXfUArmpW2hA6",
+    "name": "Azul",
+    "album": { "name": "Azul" },
+    "releaseDate": "2017-06-02"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Pan-Pot",
+    "durationMs": 379093,
+    "id": "6dnjaixd1oLBBHIKAJDIhW",
+    "name": "BOND",
+    "album": { "name": "BOND" },
+    "releaseDate": "2023-08-11"
+  },
+  {
+    "key": 6,
+    "tempo": 134.973,
+    "artists": "HI-LO,Oliver Heldens",
+    "durationMs": 216350,
+    "id": "0gDfZQksdHrXAQ3DE9wO0X",
+    "name": "BONZAI",
+    "album": { "name": "BONZAI" },
+    "releaseDate": "2023-06-09"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Rey&Kjavik",
+    "durationMs": 506995,
+    "id": "5hMuCTGW8SL0l1NFe9LjeQ",
+    "name": "Baba City - Rkadash Version",
+    "album": { "name": "Baba City (Remixes)" },
+    "releaseDate": "2017-02-03"
+  },
+  {
+    "key": 3,
+    "tempo": 124.008,
+    "artists": "Avis Vox",
+    "durationMs": 263674,
+    "id": "2XR34K2tAxlLjfMSxjEdFL",
+    "name": "Back Me My Freedom",
+    "album": { "name": "Back Me My Freedom" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "tempo": 132.009,
+    "artists": "Spektre",
+    "durationMs": 240403,
+    "id": "6EqEtYGJnkP3BBySHscyLj",
+    "name": "Badlands",
+    "album": { "name": "Badlands" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "tempo": 102.004,
+    "artists": "Zapjevala,Geplantes Nichtstun",
+    "durationMs": 459360,
+    "id": "79gZOc3uGfkzjFgJM4SDQU",
+    "name": "Bakasch Gode - Geplantes Nichtstun Remix",
+    "album": { "name": "Bakasch Gode (Geplantes Nichtstun Remix)" },
+    "releaseDate": "2018-08-03"
+  },
+  {
+    "key": 4,
+    "tempo": 171.935,
+    "artists": "Joyce Muniz",
+    "durationMs": 182125,
+    "id": "5SbQwyAnj2NkyPSg5SLn8V",
+    "name": "Bangalore Girl",
+    "album": { "name": "Bangalore Girl" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 0,
+    "tempo": 131.025,
+    "artists": "DANNY AVILA,Belocca",
+    "durationMs": 368651,
+    "id": "3nogl1x0xoi93Rc6TsrI8k",
+    "name": "Be Real! - Extended",
+    "album": { "name": "Be Real!" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": null,
+    "tempo": 100.003,
+    "artists": "Zuma Dionys",
+    "durationMs": 494604,
+    "id": "0UK6sgXZsTLh32f4srgQ9T",
+    "name": "Belantash",
+    "album": { "name": "Hebele Hubulu & Belantash" },
+    "releaseDate": "2019-05-20"
+  },
+  {
+    "key": 1,
+    "tempo": 123.007,
+    "artists": "Bigfett",
+    "durationMs": 375000,
+    "id": "51fDXMWRJPzCCAVoEgW22G",
+    "name": "Beyond Human",
+    "album": { "name": "Inception" },
+    "releaseDate": "2022-09-23"
+  },
+  {
+    "key": 0,
+    "tempo": 122.493,
+    "artists": "Digitalism",
+    "durationMs": 306160,
+    "id": "6xn6iazP6nt9JiY1Nb7RH7",
+    "name": "Binary",
+    "album": { "name": "Binary" },
+    "releaseDate": "2023-05-26"
+  },
+  {
+    "key": null,
+    "tempo": 123.012,
+    "artists": "Moullinex,GPU Panic,Xinobi",
+    "durationMs": 391769,
+    "id": "5gAYiP4uZQsvdFDz0N7EFv",
+    "name": "Blasphemy - Xinobi Remix",
+    "album": { "name": "Triangle Remixes" },
+    "releaseDate": "2023-07-12"
+  },
+  {
+    "tempo": 116.002,
+    "artists": "Derun",
+    "durationMs": 449863,
+    "id": "3dFgpRHUx60es4nvmxw4jv",
+    "name": "Blind the Sun",
+    "album": { "name": "Summer Sol V" },
+    "releaseDate": "2020-06-19"
+  },
+  {
+    "tempo": 80.514,
+    "artists": "Stand High Patrol",
+    "durationMs": 198120,
+    "id": "0Msii49GB1LgfhcrQlSAPf",
+    "name": "Boat People",
+    "album": { "name": "Midnight Walkers" },
+    "releaseDate": "2012-01-20"
+  },
+  {
+    "key": 6,
+    "tempo": 132.017,
+    "artists": "MCHL51",
+    "durationMs": 415146,
+    "id": "0iEIn70fJIa6pbcGMwUJ44",
+    "name": "Body Language",
+    "album": { "name": "Body Language" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 7,
+    "tempo": 139.967,
+    "artists": "Infected Mushroom,Bliss",
+    "durationMs": 401167,
+    "id": "2c7y5n1q4rwHNTUPzi4HOe",
+    "name": "Boss La Rosh",
+    "album": { "name": "IM25" },
+    "releaseDate": "2022-09-16"
+  },
+  {
+    "key": null,
+    "tempo": 124.988,
+    "artists": "CamelPhat,Cristoph,Jem Cooke",
+    "durationMs": 375100,
+    "id": "2ts4aOzrLbo8VmVIV6yz18",
+    "name": "Breathe (feat. Jem Cooke) - Dark Matter Edit",
+    "album": { "name": "Dark Matter" },
+    "releaseDate": "2020-10-30"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Belocca,Mauro Somm",
+    "durationMs": 402781,
+    "id": "0t9jWB6uyOHh9ogKTV4SyY",
+    "name": "Bring The Noise",
+    "album": { "name": "Bring The Noise" },
+    "releaseDate": "2023-07-21"
+  },
+  {
+    "key": 0,
+    "tempo": 124.956,
+    "artists": "The Swiss",
+    "durationMs": 463146,
+    "id": "0HBWOcEwX9HX8XYCqPDUVv",
+    "name": "Bubble Bath",
+    "album": { "name": "Bubble Bath EP" },
+    "releaseDate": "2009-01-01"
+  },
+  {
+    "key": 0,
+    "tempo": 127.996,
+    "artists": "Discobitch",
+    "durationMs": 342826,
+    "id": "5NPBB71WcCbXOPIoToikmh",
+    "name": "C'est beau la bourgeoisie - Extended Original Mix",
+    "album": { "name": "C'est beau la bourgeoisie" },
+    "releaseDate": "2009-06-22"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "HI-LO,Oliver Heldens",
+    "durationMs": 218020,
+    "id": "3jVmXFC8HWaCGsXDvsD7Ic",
+    "name": "CRESCENDO",
+    "album": { "name": "CRESCENDO" },
+    "releaseDate": "2023-07-14"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Undercatt",
+    "durationMs": 370408,
+    "id": "37g5iPHa1GqeiDVgqwtzu7",
+    "name": "Cabana",
+    "album": { "name": "Picture: Undercatt" },
+    "releaseDate": "2018-04-20"
+  },
+  {
+    "tempo": 130.017,
+    "artists": "Energy 52,Cosmic Boys",
+    "durationMs": 381787,
+    "id": "69RBXp7bvMLTqN3FIcX5Zd",
+    "name": "Café Del Mar - Cosmic Boys Remix",
+    "album": { "name": "Café Del Mar (Cosmic Boys Remix)" },
+    "releaseDate": "2023-08-11"
+  },
+  {
+    "key": 2,
+    "tempo": 144.951,
+    "artists": "Marlon Hoffstadt,DJ Daddy Trance",
+    "durationMs": 139000,
+    "id": "4iqtDvbICWuBERMTz9cz41",
+    "name": "Call Me",
+    "album": { "name": "Call Me" },
+    "releaseDate": "2023-05-19"
+  },
+  {
+    "key": 2,
+    "tempo": null,
+    "artists": "Modbit",
+    "durationMs": 266557,
+    "id": "4JEHQ0oRab4PQGRJDUsB0E",
+    "name": "Calypso",
+    "album": { "name": "Calypso" },
+    "releaseDate": "2021-07-16"
+  },
+  {
+    "key": 7,
+    "tempo": 123.009,
+    "artists": "Montezuma",
+    "durationMs": 416267,
+    "id": "5yNkX0lW8C2ccVN3Q1xRm9",
+    "name": "Caminata",
+    "album": { "name": "Caminata" },
+    "releaseDate": "2021-06-18"
+  },
+  {
+    "key": 7,
+    "tempo": 122.011,
+    "artists": "Monkey Safari",
+    "durationMs": 368054,
+    "id": "43ScSDevuS41iHjy9bGYoL",
+    "name": "Candela",
+    "album": { "name": "Candela" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "key": 1,
+    "tempo": 125,
+    "artists": "Boris Brejcha",
+    "durationMs": 501120,
+    "id": "04GXsXBP0VkEQyiLbnzvr6",
+    "name": "Captain Nemo",
+    "album": { "name": "Captain Nemo" },
+    "releaseDate": "2022-12-02"
+  },
+  {
+    "key": 1,
+    "tempo": 115.012,
+    "artists": "Kora (CA),Wuachuma,Keli Amarai",
+    "durationMs": 457043,
+    "id": "3J8G5FsHYtqKQ64S7jDUmG",
+    "name": "Caroussel",
+    "album": { "name": "Caroussel" },
+    "releaseDate": "2019-02-11"
+  },
+  {
+    "key": 11,
+    "tempo": 147.99,
+    "artists": "Franck",
+    "durationMs": 342483,
+    "id": "1VZcEYRfYUuFywp4ns4pxd",
+    "name": "Catch Me",
+    "album": { "name": "Sektion 3" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "key": 5,
+    "tempo": 121.001,
+    "artists": "Denis Horvat",
+    "durationMs": 366249,
+    "id": "2XfuQQzVSWQmX7OAkXplnv",
+    "name": "Cha Cha",
+    "album": { "name": "Cha Cha EP" },
+    "releaseDate": "2022-10-12"
+  },
+  {
+    "key": 9,
+    "tempo": 129.002,
+    "artists": "CAYAM,Maya Jane Coles",
+    "durationMs": 372150,
+    "id": "2dNYZepmpo2RrnytcoZTrW",
+    "name": "Chaos in the Distance",
+    "album": { "name": "Chaos in the Distance" },
+    "releaseDate": "2021-05-28"
+  },
+  {
+    "tempo": 140.001,
+    "artists": "Pussy Riot,Boys Noize,Alice Glass",
+    "durationMs": 205702,
+    "id": "0V6Mnx3yRZYa6UTpuTas5u",
+    "name": "Chastity",
+    "album": { "name": "Chastity" },
+    "releaseDate": "2023-05-05"
+  },
+  {
+    "key": 10,
+    "tempo": 124.995,
+    "artists": "Jonas Saalbach,SANDHAUS",
+    "durationMs": 216687,
+    "id": "6sFEubIG6L1RYPAVyZ6U2m",
+    "name": "Chemicals",
+    "album": { "name": "Reto V" },
+    "releaseDate": "2022-12-16"
+  },
+  {
+    "key": 1,
+    "tempo": 134.999,
+    "artists": "Push,Joyhauser",
+    "durationMs": 405439,
+    "id": "0V6GWgubCBR8955ZWtJ4WR",
+    "name": "Choir Of Spirits",
+    "album": { "name": "Choir Of Spirits" },
+    "releaseDate": "2022-05-06"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Zombies In Miami,Lauer",
+    "durationMs": 411954,
+    "id": "1jNPV5NpnuC2dtgI7lzQX4",
+    "name": "Clamato",
+    "album": { "name": "Michelada Brothers" },
+    "releaseDate": "2022-04-04"
+  },
+  {
+    "key": 11,
+    "tempo": 150.028,
+    "artists": "Alignment",
+    "durationMs": 301080,
+    "id": "5yQm4HrLdxmTEQgBN7XFnj",
+    "name": "Close Your Eyes",
+    "album": { "name": "Close Your Eyes EP" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 5,
+    "tempo": null,
+    "artists": "Hunter/Game,Hollt",
+    "durationMs": 358709,
+    "id": "5r0DosrDfrEol5ZruY5iLf",
+    "name": "Closure",
+    "album": { "name": "Closure" },
+    "releaseDate": "2023-04-28"
+  },
+  {
+    "key": 5,
+    "tempo": 137.982,
+    "artists": "Vini Vici,Neelix,MKLA",
+    "durationMs": 194347,
+    "id": "71aoIeMlKuQdrkHljBf0nU",
+    "name": "Come Close",
+    "album": { "name": "Come Close" },
+    "releaseDate": "2021-06-25"
+  },
+  {
+    "key": 7,
+    "tempo": 131.007,
+    "artists": "Felix Kröcher",
+    "durationMs": 339847,
+    "id": "0BbHndcqT2yrJtO6wxT9RT",
+    "name": "Communication",
+    "album": { "name": "Rave the Planet: Supporter Series, Vol. 014" },
+    "releaseDate": "2023-03-24"
+  },
+  {
+    "tempo": 126.017,
+    "artists": "Disfreq",
+    "durationMs": 338179,
+    "id": "2jWqS0gbqMeDmEAxFLaftX",
+    "name": "Como",
+    "album": { "name": "Picture: Disfreq" },
+    "releaseDate": "2023-01-13"
+  },
+  {
+    "key": 2,
+    "tempo": 104.986,
+    "artists": "La Femme",
+    "durationMs": 243986,
+    "id": "1jzAG6RmGFw86Il8BWXRKG",
+    "name": "Contaminado",
+    "album": { "name": "Teatro Lúcido" },
+    "releaseDate": "2022-11-04"
+  },
+  {
+    "tempo": 123.717,
+    "artists": "Eelke Kleijn",
+    "durationMs": 282279,
+    "id": "77Vf9L73DgcPplsVZ7Uhm3",
+    "name": "Control",
+    "album": { "name": "Oscillations" },
+    "releaseDate": "2020-09-25"
+  },
+  {
+    "key": 0,
+    "tempo": 126.004,
+    "artists": "HIGHLITE",
+    "durationMs": 332601,
+    "id": "4ByxUoZBhd2OoPI2UeWVCf",
+    "name": "Controlled Demolition",
+    "album": { "name": "Controlled Demolition EP" },
+    "releaseDate": "2022-12-29"
+  },
+  {
+    "key": 1,
+    "tempo": 108.014,
+    "artists": "Oliver Koletzki",
+    "durationMs": 364543,
+    "id": "2H3YKzC8C18Iz2iq5VhgL3",
+    "name": "Copal",
+    "album": { "name": "Made of Wood" },
+    "releaseDate": "2021-07-16"
+  },
+  {
+    "key": null,
+    "tempo": 123.976,
+    "artists": "Sonus In Homine",
+    "durationMs": 368000,
+    "id": "7q40rZzW6WYc2aCfxaBi2T",
+    "name": "Crave",
+    "album": { "name": "Crave" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 7,
+    "tempo": 138.001,
+    "artists": "Lilly Palmer,Thomas Schumacher",
+    "durationMs": 262299,
+    "id": "1VNThqTH5v8gi02dplXrSw",
+    "name": "Crave",
+    "album": { "name": "Crave" },
+    "releaseDate": "2023-06-30"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Roy Rosenfeld,Sébastien Léger",
+    "durationMs": 469123,
+    "id": "34MMIV7kIXwbDNAOS3IyVc",
+    "name": "Creme",
+    "album": { "name": "Hypnosa De La Rosa / Creme" },
+    "releaseDate": "2019-09-13"
+  },
+  {
+    "key": 9,
+    "tempo": 142.01,
+    "artists": "Ghost Rider,Durs,Major7,Rexalted",
+    "durationMs": 343098,
+    "id": "5pBEiBE1cCShb5fDt8973h",
+    "name": "Crossroads (Remix)",
+    "album": { "name": "Crossroads" },
+    "releaseDate": "2022-12-02"
+  },
+  {
+    "tempo": 121.997,
+    "artists": "Mia Mendi,Thomas Gandey",
+    "durationMs": 411790,
+    "id": "0YngBJ4YqtIzoUo24r5qNT",
+    "name": "Cultum",
+    "album": { "name": "Cultum" },
+    "releaseDate": "2020-12-04"
+  },
+  {
+    "key": null,
+    "tempo": 102.003,
+    "artists": "Sabo,Noema",
+    "durationMs": 506745,
+    "id": "1nmzvKF9fmnyToAc9daGoP",
+    "name": "Daikato",
+    "album": { "name": "Buddy System" },
+    "releaseDate": "2020-11-30"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "Sabo,Noema,DJ T.",
+    "durationMs": 396049,
+    "id": "1xu3Hsf6Cx0FWAnwOcF6dw",
+    "name": "Daikato - DJ T. Remix",
+    "album": { "name": "Buddy System Remixed" },
+    "releaseDate": "2022-04-08"
+  },
+  {
+    "key": 7,
+    "tempo": 125.003,
+    "artists": "Melawati,Tale Of Us",
+    "durationMs": 371520,
+    "id": "2Pa8letyPCIYViZZMyA5AG",
+    "name": "Daliah - Tale Of Us Remix",
+    "album": { "name": "Daliah EP" },
+    "releaseDate": "2020-07-23"
+  },
+  {
+    "key": 6,
+    "tempo": 124.003,
+    "artists": "Kevin de Vries",
+    "durationMs": 391590,
+    "id": "7i08AhQcrdD4GLlr2Pmamg",
+    "name": "Dance With Me",
+    "album": { "name": "Dance With Me EP" },
+    "releaseDate": "2022-09-07"
+  },
+  {
+    "key": 1,
+    "tempo": 123.009,
+    "artists": "Pastiche,AQUO",
+    "durationMs": 569756,
+    "id": "20zA2pGqhFVhwqJcmBRjiI",
+    "name": "Dangerous",
+    "album": { "name": "Dangerous" },
+    "releaseDate": "2020-11-02"
+  },
+  {
+    "key": null,
+    "tempo": 123.029,
+    "artists": "Eleonora,Marat Mode,Didaek,Mila Journée",
+    "durationMs": 413658,
+    "id": "2lyGyRBBTgvD01duoCwAQC",
+    "name": "Dark - Mila Journée Remix",
+    "album": { "name": "Dark" },
+    "releaseDate": "2020-11-09"
+  },
+  {
+    "key": 7,
+    "tempo": 131.988,
+    "artists": "U96,D72",
+    "durationMs": 150909,
+    "id": "1kSKolvHb1TVp2WU6fBTTl",
+    "name": "Das Boot (V2) - D72 Remix",
+    "album": { "name": "Das Boot (V2) [D72 Remix]" },
+    "releaseDate": "2023-02-03"
+  },
+  {
+    "key": 6,
+    "tempo": 123.995,
+    "artists": "EarthLife",
+    "durationMs": 343999,
+    "id": "5m16679cK6NYy3b4fCkspN",
+    "name": "Dascia",
+    "album": { "name": "Dascia" },
+    "releaseDate": "2022-11-04"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Eelke Kleijn",
+    "durationMs": 272058,
+    "id": "09vK2BVXfisWGRQ4YLGbRj",
+    "name": "De Orde Van De Nacht, Pt. 2",
+    "album": { "name": "Moments of Clarity" },
+    "releaseDate": "2018-11-16"
+  },
+  {
+    "key": 11,
+    "tempo": 123.978,
+    "artists": "Sevenn,Silver Panda",
+    "durationMs": 181209,
+    "id": "3XisBBYpK8TmL8ogBPCA8c",
+    "name": "Deep Space",
+    "album": { "name": "Deep Space" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 5,
+    "tempo": 143.994,
+    "artists": "Klangkuenstler,Flawless Issues",
+    "durationMs": 321666,
+    "id": "6C3vS3o69ZX3JvX0onzFkT",
+    "name": "Deine Angst",
+    "album": { "name": "Deine Angst" },
+    "releaseDate": "2022-03-18"
+  },
+  {
+    "key": 0,
+    "tempo": null,
+    "artists": "Paul Kalkbrenner",
+    "durationMs": 334760,
+    "id": "2qUAb0CdBpaiinRbxBHmOa",
+    "name": "Der Buhold",
+    "album": { "name": "Guten Tag" },
+    "releaseDate": "2012-08-12"
+  },
+  {
+    "tempo": null,
+    "artists": "Moojo,Demayä,ARKADYAN,Eribertho Cruz Collazo",
+    "durationMs": 408000,
+    "id": "5SDO2GkFtXM0PD5jpymcBD",
+    "name": "Desperado - Vocal Mix",
+    "album": { "name": "Desperado" },
+    "releaseDate": "2021-08-20"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Cahelo",
+    "durationMs": 422022,
+    "id": "5bmc9GYGhNfb7CZCmQdWCt",
+    "name": "Dina Bakh",
+    "album": { "name": "Solstice Vibes III" },
+    "releaseDate": "2020-09-11"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "&ME,Rampa,Adam Port,Sofie Royer",
+    "durationMs": 385103,
+    "id": "0ENV8cY0bwun9qSQkh195f",
+    "name": "Discoteca",
+    "album": { "name": "Discoteca" },
+    "releaseDate": "2021-03-26"
+  },
+  {
+    "key": 9,
+    "tempo": 121.003,
+    "artists": "Eelke Kleijn,Josha Daniel",
+    "durationMs": 279357,
+    "id": "7tO786j9bnDhgR7YkB0wMa",
+    "name": "Distance",
+    "album": { "name": "Oscillations" },
+    "releaseDate": "2020-09-25"
+  },
+  {
+    "key": 4,
+    "tempo": 132.008,
+    "artists": "Cali Martini",
+    "durationMs": 320129,
+    "id": "0fSxsnRYuDcAcf61K4j3GX",
+    "name": "Diversity",
+    "album": { "name": "Diversity" },
+    "releaseDate": "2019-11-29"
+  },
+  {
+    "key": 7,
+    "tempo": 120.003,
+    "artists": "Monolink",
+    "durationMs": 426013,
+    "id": "1sC1dSRRo1qYqnN4oqB2hQ",
+    "name": "Don't Hold Back",
+    "album": { "name": "Under Darkening Skies" },
+    "releaseDate": "2021-06-11"
+  },
+  {
+    "tempo": 140.042,
+    "artists": "Interactive Noise",
+    "durationMs": 310375,
+    "id": "0xhptxNOQnCsbbBJKPQmCH",
+    "name": "Dont Blame Me",
+    "album": { "name": "Dont Blame Me" },
+    "releaseDate": "2022-09-23"
+  },
+  {
+    "key": 1,
+    "tempo": 134.986,
+    "artists": "Charlotte de Witte",
+    "durationMs": 433971,
+    "id": "0TtgKq96j4bpE5UQUDXrwH",
+    "name": "Doppler",
+    "album": { "name": "Formula EP" },
+    "releaseDate": "2021-04-30"
+  },
+  {
+    "key": 7,
+    "tempo": 123.001,
+    "artists": "Township Rebellion",
+    "durationMs": 506434,
+    "id": "6uZqlAYVkF3hduXyjsK8QW",
+    "name": "Doppler",
+    "album": { "name": "Doppler" },
+    "releaseDate": "2022-05-20"
+  },
+  {
+    "tempo": null,
+    "artists": "Dang3r,Kova,NewGapy",
+    "durationMs": 278068,
+    "id": "73q270xh3XdySWtt9NZxWX",
+    "name": "Down",
+    "album": { "name": "Down" },
+    "releaseDate": "2023-01-09"
+  },
+  {
+    "key": null,
+    "tempo": 121.012,
+    "artists": "Kieran Apter,Leon Power",
+    "durationMs": 515907,
+    "id": "2fj4ZQCr7UnGdYu3evOuzd",
+    "name": "Drifting Spring - Extended Mix",
+    "album": { "name": "Anjunadeep 09 Sampler" },
+    "releaseDate": "2017-11-03"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Gui Boratto,Lhana Marlet",
+    "durationMs": 222926,
+    "id": "18CpVX2rKdyGGZYtQmLKTh",
+    "name": "Drink In Paris",
+    "album": { "name": "Drink In Paris" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "key": 6,
+    "tempo": 145.051,
+    "artists": "Johnny Carrera,Memento Mori,Umali",
+    "durationMs": 195724,
+    "id": "12kEO1dRdm31qliqSTQylT",
+    "name": "Drivin Me Insane",
+    "album": { "name": "Drivin Me Insane" },
+    "releaseDate": "2022-12-15"
+  },
+  {
+    "key": null,
+    "tempo": 119.998,
+    "artists": "DJ Koze,&ME,Sophia Kennedy",
+    "durationMs": 546471,
+    "id": "6iNhl5IcRJfm3F42plOPA4",
+    "name": "Drone Me Up, Flashy - &ME Remix",
+    "album": { "name": "Knock Knock Remixes" },
+    "releaseDate": "2022-04-08"
+  },
+  {
+    "key": null,
+    "tempo": 122.001,
+    "artists": "Øostil,Juan Hansen,Massano",
+    "durationMs": 440949,
+    "id": "74oc8wSuilCIueLaqNOi3B",
+    "name": "Drown - Massano Remix",
+    "album": { "name": "In My System EP" },
+    "releaseDate": "2022-04-15"
+  },
+  {
+    "key": 6,
+    "tempo": 123.976,
+    "artists": "Re-Type,Luke Coulson,Axel Haube",
+    "durationMs": 202929,
+    "id": "5XPJ4kUxUoHBVj3oM2R0UD",
+    "name": "Drowning - Axel Haube Radio Edit",
+    "album": { "name": "Drowning" },
+    "releaseDate": "2022-11-25"
+  },
+  {
+    "key": 2,
+    "tempo": 115.987,
+    "artists": "Sabo,UNER,Basel Khoury,Derun",
+    "durationMs": 399655,
+    "id": "7IDBtnkOf7LY8aQux7NZw4",
+    "name": "Duende - Derun Remix",
+    "album": { "name": "Buddy System Remixed" },
+    "releaseDate": "2022-04-08"
+  },
+  {
+    "key": null,
+    "tempo": 132.004,
+    "artists": "Daniel Levak",
+    "durationMs": 386363,
+    "id": "73TeOQxZq4VMxooPmZ4KEr",
+    "name": "Dust2",
+    "album": { "name": "Dust2" },
+    "releaseDate": "2022-06-03"
+  },
+  {
+    "tempo": 121.926,
+    "artists": "Motel Sazani,Monastetiq",
+    "durationMs": 371803,
+    "id": "6ekm0gjomdAeaZEv80NorC",
+    "name": "E Ke Keq Aty - Monastetiq Remix",
+    "album": { "name": "E Ke Keq Aty (Remixes)" },
+    "releaseDate": "2019-04-15"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "Stephan Bodzin,Mind Against",
+    "durationMs": 450725,
+    "id": "1cQCfrLGc5GpBC6bNPlsUm",
+    "name": "Earth - Mind Against Remix",
+    "album": { "name": "Boavista Remixes" },
+    "releaseDate": "2022-02-25"
+  },
+  {
+    "key": 9,
+    "tempo": 133.02,
+    "artists": "Daniel Levak,Channel B",
+    "durationMs": 187583,
+    "id": "2EMukdf4zK0H27I35Vvpmi",
+    "name": "Eckstein Eckstein",
+    "album": { "name": "Eckstein Eckstein" },
+    "releaseDate": "2022-12-30"
+  },
+  {
+    "tempo": 118,
+    "artists": "PAAX (Tulum)",
+    "durationMs": 409564,
+    "id": "5MfIp0er9yMlj3p6OwgAbq",
+    "name": "Eclipse Del Sol",
+    "album": { "name": "Global Entry 2" },
+    "releaseDate": "2021-05-07"
+  },
+  {
+    "key": 4,
+    "tempo": 122,
+    "artists": "The Advocate,Toshi,Lunar Plane",
+    "durationMs": 427377,
+    "id": "56XoWMkfgfFg7pSepzdOk2",
+    "name": "Ekata - Lunar Plane Remix",
+    "album": { "name": "Ekata" },
+    "releaseDate": "2020-11-27"
+  },
+  {
+    "key": 1,
+    "tempo": 123.868,
+    "artists": "Hidden Voices",
+    "durationMs": 191612,
+    "id": "51Qe04uIVTfMGKrSrb8Q5W",
+    "name": "El Condor",
+    "album": { "name": "El Condor" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "key": 2,
+    "tempo": 120.997,
+    "artists": "Chambord,Derun",
+    "durationMs": 406616,
+    "id": "3wFCxUjDhT4Tc9FCwysObq",
+    "name": "Electronic Tango - Derun Remix",
+    "album": { "name": "Electronic Tango" },
+    "releaseDate": "2020-07-17"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "Max Freegrant,Slow Fish",
+    "durationMs": 455167,
+    "id": "7qL8XqLYgfaggwe7NLiqJ3",
+    "name": "Elon On Mars",
+    "album": { "name": "Elon On Mars" },
+    "releaseDate": "2020-10-23"
+  },
+  {
+    "key": 7,
+    "tempo": 129.999,
+    "artists": "biskuwi,Sylvie Miles",
+    "durationMs": 319846,
+    "id": "06FMbmYdLCapqxnkTNp2q9",
+    "name": "Equal",
+    "album": { "name": "Equal" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "tempo": 128.007,
+    "artists": "Elrajas,Nagelsbaum,Acuhna",
+    "durationMs": 334687,
+    "id": "0nsmRXf0OHpZOuzMfemcsj",
+    "name": "Erinnerungen",
+    "album": { "name": "Erinnerungen" },
+    "releaseDate": "2022-10-31"
+  },
+  {
+    "key": 7,
+    "tempo": 131.996,
+    "artists": "Patrick Scuro,VNES",
+    "durationMs": 246000,
+    "id": "1KNxt1G0Vj86TLoWYgkvkl",
+    "name": "Escalate",
+    "album": { "name": "Escalate" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "S7RENS,Marlon Hoffstadt",
+    "durationMs": 374774,
+    "id": "1nvoh304h7a0RQgPgquxgZ",
+    "name": "Euro Visions - Marlon Hoffstadt AKA Dj Daddy Trance Remix",
+    "album": {
+      "name": "Euro Visions (Marlon Hoffstadt AKA Dj Daddy Trance Remix)"
+    },
+    "releaseDate": "2022-02-09"
+  },
+  {
+    "key": 11,
+    "tempo": 123.984,
+    "artists": "Anyma",
+    "durationMs": 220887,
+    "id": "5SfcsMI2nJhdZpmwCcNEGf",
+    "name": "Explore Your Future",
+    "album": { "name": "Explore Your Future" },
+    "releaseDate": "2023-03-23"
+  },
+  {
+    "key": 9,
+    "tempo": 120.004,
+    "artists": "Slow Hearts",
+    "durationMs": 416858,
+    "id": "4nsygGveshYJl7xr3qT98s",
+    "name": "Eyepads",
+    "album": { "name": "Melanda" },
+    "releaseDate": "2020-04-24"
+  },
+  {
+    "tempo": 115.992,
+    "artists": "LOR",
+    "durationMs": 353859,
+    "id": "6Pl8n3fHsOnc2aRQYaKElq",
+    "name": "Factories 1979 - Original",
+    "album": { "name": "Generation Nostalgia / Factories 1979" },
+    "releaseDate": "2016-10-03"
+  },
+  {
+    "key": 9,
+    "tempo": 149.982,
+    "artists": "ascendant vierge",
+    "durationMs": 260729,
+    "id": "4To8NdU1xiBavSOclFW21L",
+    "name": "Faire Et Refaire",
+    "album": { "name": "Vierge" },
+    "releaseDate": "2020-10-09"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "Final Request",
+    "durationMs": 259660,
+    "id": "4ieme0tVy0O5DwxXXdlSe2",
+    "name": "Fallen Enemies",
+    "album": { "name": "Fallen Enemies EP" },
+    "releaseDate": "2022-09-16"
+  },
+  {
+    "key": 3,
+    "tempo": null,
+    "artists": "Marat Mode,Haptic,Labert",
+    "durationMs": 479030,
+    "id": "7hhUFpwYVkxclgYAOsSbRM",
+    "name": "Feed the wolf - Labert Remix",
+    "album": { "name": "Feed the wolf" },
+    "releaseDate": "2021-01-04"
+  },
+  {
+    "key": 0,
+    "tempo": 142.02,
+    "artists": "Phazed",
+    "durationMs": 303820,
+    "id": "5s5fN7k5z3xyx0Ckz5OzzX",
+    "name": "Feel Alive",
+    "album": { "name": "Feel Alive" },
+    "releaseDate": "2022-11-25"
+  },
+  {
+    "key": 5,
+    "tempo": 144.001,
+    "artists": "Amelie Lens",
+    "durationMs": 258573,
+    "id": "6iKLdREEci9SyzXl9JNUVk",
+    "name": "Feel It",
+    "album": { "name": "Feel It" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "key": 7,
+    "tempo": 123.008,
+    "artists": "Space Motion",
+    "durationMs": 386288,
+    "id": "1krpWA0DkVTIJ4yMxBVrna",
+    "name": "Fire",
+    "album": { "name": "Fire" },
+    "releaseDate": "2021-08-23"
+  },
+  {
+    "key": null,
+    "tempo": 123.993,
+    "artists": "Final Request",
+    "durationMs": 305826,
+    "id": "3mIggtbhvHzvL42sWekwza",
+    "name": "Fly Without Wings",
+    "album": { "name": "Fly Without Wings" },
+    "releaseDate": "2022-10-14"
+  },
+  {
+    "key": 11,
+    "tempo": 124.992,
+    "artists": "Adonis FR",
+    "durationMs": 493440,
+    "id": "2QcDcTX51ZDpLmPzjRInjF",
+    "name": "Flying Turns",
+    "album": { "name": "Flying Turns" },
+    "releaseDate": "2020-07-17"
+  },
+  {
+    "tempo": 130.01,
+    "artists": "Sylvie Miles",
+    "durationMs": 483692,
+    "id": "0LJgZLFwIffaiJTrjxeXas",
+    "name": "Follow the Stars",
+    "album": { "name": "Follow the Stars" },
+    "releaseDate": "2023-05-26"
+  },
+  {
+    "key": null,
+    "tempo": 123.005,
+    "artists": "Johannes Klingebiel",
+    "durationMs": 431261,
+    "id": "1Cpt9uCBT8EnHK5O9wJcOe",
+    "name": "For Everything",
+    "album": { "name": "For Everything" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "tempo": 121.988,
+    "artists": "CamelPhat,ARTBAT,RHODES",
+    "durationMs": 331036,
+    "id": "32MUc0Mkv58jjpz26krdrn",
+    "name": "For a Feeling (feat. RHODES) - Dark Matter Edit",
+    "album": { "name": "Dark Matter" },
+    "releaseDate": "2020-10-30"
+  },
+  {
+    "key": 5,
+    "tempo": 120.074,
+    "artists": "Innellea",
+    "durationMs": 410965,
+    "id": "5XL6nKmwBy2AsVtkqFkleI",
+    "name": "Forced to Bend",
+    "album": { "name": "Picture: Innellea" },
+    "releaseDate": "2020-11-20"
+  },
+  {
+    "tempo": 123.016,
+    "artists": "Bontan,Pablo:Rita",
+    "durationMs": 204878,
+    "id": "4tEygMVNFYFcKDKqf5q86J",
+    "name": "Foreign Lands",
+    "album": { "name": "Foreign Lands" },
+    "releaseDate": "2020-10-09"
+  },
+  {
+    "tempo": 105.002,
+    "artists": "Feinheitsbrei",
+    "durationMs": 520027,
+    "id": "5YECP7XMRmXLNNA38yhTNU",
+    "name": "Forest Of Souls",
+    "album": { "name": "Stateless" },
+    "releaseDate": "2019-09-20"
+  },
+  {
+    "key": 10,
+    "tempo": 125.018,
+    "artists": "Max von Sternberg,Innellea",
+    "durationMs": 395312,
+    "id": "2T6f9bPc4ILWs5KfjYd6Sv",
+    "name": "Forgiveness - Innellea's CP Needs More Interfering Noise Remix",
+    "album": { "name": "Forgiveness Remix - EP" },
+    "releaseDate": "2021-11-05"
+  },
+  {
+    "key": null,
+    "tempo": 144.995,
+    "artists": "Menumas",
+    "durationMs": 498422,
+    "id": "103hE0nGP0bGLJmcnHIlAN",
+    "name": "Free Ourselves",
+    "album": { "name": "Free Ourselves" },
+    "releaseDate": "2022-10-17"
+  },
+  {
+    "key": 11,
+    "tempo": 163.854,
+    "artists": "Bomfunk MC's",
+    "durationMs": 306000,
+    "id": "2vlgOAH3M8Fmo19wOjeRyw",
+    "name": "Freestyler",
+    "album": { "name": "In Stereo" },
+    "releaseDate": "1999-06-02"
+  },
+  {
+    "key": 1,
+    "tempo": 148.001,
+    "artists": "In Verruf",
+    "durationMs": 369140,
+    "id": "3zuaDpUbBX1yepWVGdBYQG",
+    "name": "Frei",
+    "album": { "name": "Sektion 3" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "key": 8,
+    "tempo": 119.992,
+    "artists": "Solomun",
+    "durationMs": 547244,
+    "id": "1IbNYr8ByXsgwGbmOxLBXP",
+    "name": "Friends",
+    "album": { "name": "Friends" },
+    "releaseDate": "2014-07-07"
+  },
+  {
+    "key": null,
+    "tempo": 127.024,
+    "artists": "Hozho",
+    "durationMs": 482007,
+    "id": "6R6NgpfC94WWhP5xuRwaso",
+    "name": "Full Measures - Extended Mix",
+    "album": { "name": "Full Measures (Extended Mix)" },
+    "releaseDate": "2020-12-25"
+  },
+  {
+    "key": 1,
+    "tempo": 87.503,
+    "artists": "Ed Rush,Optical",
+    "durationMs": 453543,
+    "id": "4Mglt4L4tzqNxY4bf12JIk",
+    "name": "Funktion",
+    "album": { "name": "Retrospect, Vol. 4 (Compiled by Bryan Gee)" },
+    "releaseDate": "2014-10-27"
+  },
+  {
+    "key": 8,
+    "tempo": 133.984,
+    "artists": "Mha Iri",
+    "durationMs": 410531,
+    "id": "1PBh6aYwGLMhguJz9gT6wC",
+    "name": "Further",
+    "album": { "name": "Rave the Planet: Supporter Series, Vol. 015" },
+    "releaseDate": "2023-05-12"
+  },
+  {
+    "key": null,
+    "tempo": 123.983,
+    "artists": "Marc Van Linden,D-Gor,Fur Coat",
+    "durationMs": 350806,
+    "id": "0WXQ0klg5oUGMJC3jxAdUM",
+    "name": "Future - Fur Coat Remix",
+    "album": { "name": "Future (Fur Coat Remix)" },
+    "releaseDate": "2022-12-23"
+  },
+  {
+    "key": 10,
+    "tempo": 127.002,
+    "artists": "Hozho",
+    "durationMs": 525125,
+    "id": "3SU8vSoDShZUMiBImbPjss",
+    "name": "Für Heisenberg",
+    "album": { "name": "Yin Yang" },
+    "releaseDate": "2019-06-30"
+  },
+  {
+    "key": 11,
+    "tempo": 128.988,
+    "artists": "Luca Gaeta",
+    "durationMs": 398563,
+    "id": "2R5YnHj9Fh84QIGULC7t7a",
+    "name": "Galattica - Original Mix",
+    "album": { "name": "Galattica" },
+    "releaseDate": "2020-02-14"
+  },
+  {
+    "key": 1,
+    "tempo": 135.002,
+    "artists": "Deborah de Luca,Mauro Pilato,Max Monti",
+    "durationMs": 248888,
+    "id": "1mWbB1bGjvdZR3vFtaT2gL",
+    "name": "Gam Gam - 2023",
+    "album": { "name": "Gam Gam (2023)" },
+    "releaseDate": "2023-03-24"
+  },
+  {
+    "key": 11,
+    "tempo": 99.993,
+    "artists": "Zuma Dionys",
+    "durationMs": 453612,
+    "id": "7z08xzgHCSpbhZycnjeDxl",
+    "name": "Gazel",
+    "album": { "name": "Gazel" },
+    "releaseDate": "2019-03-05"
+  },
+  {
+    "tempo": 123.99,
+    "artists": "Final Request",
+    "durationMs": 348000,
+    "id": "1JodsMEYniHmmURS8HC7kQ",
+    "name": "God Rays",
+    "album": { "name": "God Rays" },
+    "releaseDate": "2022-12-16"
+  },
+  {
+    "key": 4,
+    "tempo": 150.008,
+    "artists": "Mha Iri",
+    "durationMs": 322293,
+    "id": "0Xy9SDulwgZhez4ybnRfuz",
+    "name": "Good Energy",
+    "album": { "name": "Good Energy" },
+    "releaseDate": "2023-05-26"
+  },
+  {
+    "key": 0,
+    "tempo": 147.005,
+    "artists": "DJ Gigola",
+    "durationMs": 405939,
+    "id": "4I4361g8EeO8BAvxarpd8a",
+    "name": "Gratitude Practice",
+    "album": { "name": "Gratitude Practice" },
+    "releaseDate": "2022-11-15"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Space 92",
+    "durationMs": 365568,
+    "id": "0VTnsXnW2kuMFlwdKSTSBy",
+    "name": "Gravity",
+    "album": { "name": "Gravity" },
+    "releaseDate": "2023-02-17"
+  },
+  {
+    "key": 1,
+    "tempo": 127.006,
+    "artists": "Joachim Pastor,Gregor Tresher",
+    "durationMs": 245669,
+    "id": "1MID5h4utgHR6fP86J88XZ",
+    "name": "Green Washer - Gregor Tresher Remix",
+    "album": { "name": "Green Washer (Gregor Tresher Remix)" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 1,
+    "tempo": 122.007,
+    "artists": "Valdovinos,Josefina Barreix",
+    "durationMs": 477984,
+    "id": "2q9MxkasX02QRMxIwmOuyh",
+    "name": "Grizzly",
+    "album": { "name": "Grizzly EP" },
+    "releaseDate": "2020-05-22"
+  },
+  {
+    "key": 4,
+    "tempo": 120.004,
+    "artists": "Steppenwolf",
+    "durationMs": 424918,
+    "id": "0Tsiqq0oEWVled2kByQOit",
+    "name": "Guerilla - Original Mix",
+    "album": { "name": "Permian EP" },
+    "releaseDate": "2016-06-13"
+  },
+  {
+    "key": 3,
+    "tempo": 130.008,
+    "artists": "DANNY COSTTA,feat. SHIUKA",
+    "durationMs": 450533,
+    "id": "0bxZFwC6AWchBPeNm9vxqK",
+    "name": "HORIZON 2010 - Original mix",
+    "album": { "name": "HORIZON 2010" },
+    "releaseDate": "2010-09-10"
+  },
+  {
+    "key": 11,
+    "tempo": 142.017,
+    "artists": "Nina Kraviz",
+    "durationMs": 460813,
+    "id": "7K8hVSM4s25QKgyyioLWTP",
+    "name": "Hace Ejercicios",
+    "album": { "name": "hace ejercicios" },
+    "releaseDate": "2022-12-09"
+  },
+  {
+    "key": null,
+    "tempo": 125,
+    "artists": "Rubio,OIBAF&WALLEN",
+    "durationMs": 369309,
+    "id": "2AvFvwiwIXu8XvK7mE0MqQ",
+    "name": "Hacia El Fondo - OIBAF&WALLEN Remix",
+    "album": { "name": "Hacia El Fondo (Remixes)" },
+    "releaseDate": "2021-09-24"
+  },
+  {
+    "tempo": 106.322,
+    "artists": "Astrix,Omiki,TERRA",
+    "durationMs": 432676,
+    "id": "0IQ2lKaun7QeB4ixCbJoIb",
+    "name": "He.art (Omiki & Terra Remix)",
+    "album": { "name": "He.art (Omiki & Terra Remix)" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Omerar Nanda",
+    "durationMs": 484644,
+    "id": "77x1HkfcXYEjVfTvHrEGpt",
+    "name": "Hebele Hubulu",
+    "album": { "name": "Hebele Hubulu & Belantash" },
+    "releaseDate": "2019-05-20"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "HXTC",
+    "durationMs": 431612,
+    "id": "26BdNfrmJoBsFJ36sbP1ce",
+    "name": "Helvetios",
+    "album": { "name": "Together, Vol. 2" },
+    "releaseDate": "2022-02-04"
+  },
+  {
+    "key": 11,
+    "tempo": 135.027,
+    "artists": "Maddix",
+    "durationMs": 204444,
+    "id": "1eMUGMEWrvTXYWrPobq2dH",
+    "name": "Heute Nacht",
+    "album": { "name": "Heute Nacht" },
+    "releaseDate": "2022-10-14"
+  },
+  {
+    "key": null,
+    "tempo": 124.003,
+    "artists": "Henri Bergmann,Fat Cosmoe,Wennink",
+    "durationMs": 396843,
+    "id": "4PYmuwsR4TcCXEr2PBhrXi",
+    "name": "Higher Dimension",
+    "album": { "name": "Higher Dimension" },
+    "releaseDate": "2022-04-08"
+  },
+  {
+    "key": 5,
+    "tempo": null,
+    "artists": "HIGHLITE",
+    "durationMs": 426885,
+    "id": "5EyxAbeZDTyFfsu6sHbp2h",
+    "name": "Hindiedance",
+    "album": { "name": "Hindiedance" },
+    "releaseDate": "2021-01-15"
+  },
+  {
+    "key": null,
+    "tempo": 125.969,
+    "artists": "KAS:ST,Be No Rain,Tale Of Us",
+    "durationMs": 398095,
+    "id": "3Allgqu3MaHE8QFvzoP90S",
+    "name": "Hold Me To The Light - Tale Of Us Remix",
+    "album": { "name": "Hold Me To The Light" },
+    "releaseDate": "2019-12-13"
+  },
+  {
+    "key": 11,
+    "tempo": 137.987,
+    "artists": "Durs,Who Knows?",
+    "durationMs": 282125,
+    "id": "3f2WFDZHrY19p2uIa0K056",
+    "name": "Hollows",
+    "album": { "name": "Hollows" },
+    "releaseDate": "2022-09-09"
+  },
+  {
+    "key": 2,
+    "tempo": null,
+    "artists": "Solomun",
+    "durationMs": 221090,
+    "id": "01mTrac137TL0EgIktc4fo",
+    "name": "Home",
+    "album": { "name": "Nobody Is Not Loved" },
+    "releaseDate": "2021-05-28"
+  },
+  {
+    "key": null,
+    "tempo": 127.996,
+    "artists": "Parov Stelar",
+    "durationMs": 212933,
+    "id": "3L6RomK0DibEtgkmGOOCwW",
+    "name": "Homesick",
+    "album": { "name": "Shine" },
+    "releaseDate": "2007-10-05"
+  },
+  {
+    "key": 1,
+    "tempo": 174.961,
+    "artists": "Ram Trilogy",
+    "durationMs": 351066,
+    "id": "4CQxy3WoosCBMijLKQ0o8L",
+    "name": "Human Future",
+    "album": { "name": "Molten Beats" },
+    "releaseDate": "1999-11-22"
+  },
+  {
+    "tempo": null,
+    "artists": "Alex Stein,Victor Ruiz",
+    "durationMs": 416818,
+    "id": "25VtvV3hr1j4VUr4KnTrQS",
+    "name": "Human Robot",
+    "album": { "name": "Human Robot" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "key": 10,
+    "tempo": 104.999,
+    "artists": "Shunus",
+    "durationMs": 457142,
+    "id": "5REw61iFhOIVv5kEbvAu3h",
+    "name": "Hypatia",
+    "album": { "name": "Sabah" },
+    "releaseDate": "2019-02-25"
+  },
+  {
+    "key": 6,
+    "tempo": 124.011,
+    "artists": "CamelPhat,Yannis,ARTBAT",
+    "durationMs": 510967,
+    "id": "3FjrPIo2CGtyNI9yfzU5md",
+    "name": "Hypercolour - ARTBAT Remix",
+    "album": { "name": "Hypercolour (ARTBAT Remix)" },
+    "releaseDate": "2020-07-24"
+  },
+  {
+    "key": 1,
+    "tempo": 123.002,
+    "artists": "Anja Schneider",
+    "durationMs": 392000,
+    "id": "5nQ42FeEsRBGZWXHxdeABt",
+    "name": "I Care For You",
+    "album": { "name": "I Care For You" },
+    "releaseDate": "2022-03-25"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "Vynek",
+    "durationMs": 393070,
+    "id": "5szsM762klZL0eyTmzUrYG",
+    "name": "I Feel Everything",
+    "album": { "name": "I Feel Everything" },
+    "releaseDate": "2020-11-27"
+  },
+  {
+    "tempo": 122.002,
+    "artists": "Park & Sons,Nathan Nicholson",
+    "durationMs": 318140,
+    "id": "5Nme1wJ3GshMubYB0ol5d0",
+    "name": "Icarus (To The Sun) - Extended Mix",
+    "album": { "name": "Icarus (To The Sun)" },
+    "releaseDate": "2018-11-30"
+  },
+  {
+    "key": null,
+    "tempo": 132.018,
+    "artists": "Felix Kröcher",
+    "durationMs": 376726,
+    "id": "120IM0v3CnflrIbUSQYHvQ",
+    "name": "Imagination",
+    "album": { "name": "Imagination" },
+    "releaseDate": "2023-08-11"
+  },
+  {
+    "key": 0,
+    "tempo": 125.02,
+    "artists": "Boris Brejcha",
+    "durationMs": 487680,
+    "id": "3I72hk46KJ6MFDtNBjJ99P",
+    "name": "In The Shadows",
+    "album": { "name": "Club Vibes Part 03" },
+    "releaseDate": "2022-09-23"
+  },
+  {
+    "key": 4,
+    "tempo": null,
+    "artists": "ascendant vierge",
+    "durationMs": 211559,
+    "id": "2hL8heHC7OBiLvnpNSllsH",
+    "name": "Influenceur",
+    "album": { "name": "Vierge" },
+    "releaseDate": "2020-10-09"
+  },
+  {
+    "key": 9,
+    "tempo": 140.001,
+    "artists": "ascendant vierge,Bauernfeind,Krampf",
+    "durationMs": 392749,
+    "id": "2rPtQVGtHRQLUee3oujtRo",
+    "name": "Influenceur - Bauernfeind & Krampf's LFEK Remix",
+    "album": { "name": "Influenceur" },
+    "releaseDate": "2020-07-10"
+  },
+  {
+    "key": 6,
+    "tempo": 124.003,
+    "artists": "CRBRVS",
+    "durationMs": 465514,
+    "id": "4BQXdfoxmHzGGhJQ64UdrU",
+    "name": "Insomnia",
+    "album": { "name": "Insomnia" },
+    "releaseDate": "2023-01-18"
+  },
+  {
+    "key": 9,
+    "tempo": 126.001,
+    "artists": "Maceo Plex,Faithless",
+    "durationMs": 465865,
+    "id": "1C64MJBqmR3kl32px5BX3r",
+    "name": "Insomnia 2021 - Epic Mix",
+    "album": { "name": "Insomnia 2021" },
+    "releaseDate": "2021-06-11"
+  },
+  {
+    "key": 4,
+    "tempo": 124.023,
+    "artists": "Fideles",
+    "durationMs": 374335,
+    "id": "21owja58iMNZwyvfZO41yR",
+    "name": "Interface Technology",
+    "album": { "name": "Realm Of Consciousness Pt.V" },
+    "releaseDate": "2021-07-23"
+  },
+  {
+    "key": 11,
+    "tempo": 124.016,
+    "artists": "Victor Ruiz",
+    "durationMs": 470322,
+    "id": "7hDSzr92dTsFPCFIGiynck",
+    "name": "Interstellar",
+    "album": { "name": "Interstellar EP" },
+    "releaseDate": "2015-07-23"
+  },
+  {
+    "key": 1,
+    "tempo": 128.001,
+    "artists": "NTO,Paul Kalkbrenner",
+    "durationMs": 457036,
+    "id": "2xUsXYIiK18wSnv2SXFGtj",
+    "name": "Invisible - Paul Kalkbrenner Remix",
+    "album": { "name": "Invisible (Paul Kalkbrenner Remix)" },
+    "releaseDate": "2021-04-14"
+  },
+  {
+    "key": 11,
+    "tempo": 121.967,
+    "artists": "Innellea",
+    "durationMs": 380503,
+    "id": "76zC50pGjKLQrauWqoRkqO",
+    "name": "Irreversible",
+    "album": { "name": "Distorted Youth EP" },
+    "releaseDate": "2022-02-04"
+  },
+  {
+    "key": 9,
+    "tempo": 121.982,
+    "artists": "Vanita",
+    "durationMs": 388480,
+    "id": "49pk4bitGqA6WJk9qJj0QQ",
+    "name": "Isolation",
+    "album": { "name": "Katermukke & With You: Rumours by the Lake" },
+    "releaseDate": "2022-12-09"
+  },
+  {
+    "key": 10,
+    "tempo": 173.994,
+    "artists": "Roni Size,Utah Jazz",
+    "durationMs": 360012,
+    "id": "5eoOlqmQgdThwZolUnW6OH",
+    "name": "It's a Jazz Thing - Utah Jazz Remix",
+    "album": { "name": "It's a Jazz Thing / It's a Big up Thing (Remixes)" },
+    "releaseDate": "2006-05-08"
+  },
+  {
+    "key": 2,
+    "tempo": 155.004,
+    "artists": "Brutalismus 3000",
+    "durationMs": 280226,
+    "id": "25xqUhCDGyJejMANoigvrI",
+    "name": "JE N'EXISTE PAS",
+    "album": { "name": "ULTRAKUNST" },
+    "releaseDate": "2023-04-07"
+  },
+  {
+    "key": 2,
+    "tempo": 117.992,
+    "artists": "Raidho,T.Etno",
+    "durationMs": 472760,
+    "id": "1mCM9NSk2A5afGa3X8uOLx",
+    "name": "Jaguar Dance",
+    "album": { "name": "Jaguar Dance" },
+    "releaseDate": "2022-10-28"
+  },
+  {
+    "tempo": 118.004,
+    "artists": "Bahramji,Medusa Odyssey,Goldcap",
+    "durationMs": 520677,
+    "id": "5C9tieiUziJDqexOWdr9zX",
+    "name": "Jana - Goldcap Remix",
+    "album": { "name": "Jana" },
+    "releaseDate": "2020-10-19"
+  },
+  {
+    "key": null,
+    "tempo": 124.006,
+    "artists": "Colyn",
+    "durationMs": 239668,
+    "id": "1ngJbqd6UWfkH1ze9sGoVK",
+    "name": "Jatayu",
+    "album": { "name": "Jatayu" },
+    "releaseDate": "2022-03-24"
+  },
+  {
+    "tempo": 128.004,
+    "artists": "Jamie xx",
+    "durationMs": 223536,
+    "id": "5CE0k1VmTXgCtaa5L288LP",
+    "name": "KILL DEM",
+    "album": { "name": "KILL DEM" },
+    "releaseDate": "2022-09-20"
+  },
+  {
+    "key": 7,
+    "tempo": 127,
+    "artists": "Stephan Barnem",
+    "durationMs": 381743,
+    "id": "6rxCbFwb8NBT77udW8rkLN",
+    "name": "Kaizen",
+    "album": { "name": "Kaizen" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": 0,
+    "tempo": null,
+    "artists": "Sébastien Léger",
+    "durationMs": 499528,
+    "id": "5g5vJWkpyRGRnDbRmuNB8k",
+    "name": "Kanga",
+    "album": { "name": "Summer Sampler 2019" },
+    "releaseDate": "2019-08-09"
+  },
+  {
+    "tempo": 159.989,
+    "artists": "Reinier Zonneveld,Kiki Solvej",
+    "durationMs": 260250,
+    "id": "0UkGdrKm6PaVCxTwPzP2xX",
+    "name": "Keine Liebe, Kein Rave",
+    "album": { "name": "Keine Liebe, Kein Rave" },
+    "releaseDate": "2023-03-17"
+  },
+  {
+    "key": 7,
+    "tempo": 124.985,
+    "artists": "Markus Volker",
+    "durationMs": 437760,
+    "id": "2L0mnGFMl4sdTCJKUoluca",
+    "name": "Kratos",
+    "album": { "name": "Kratos" },
+    "releaseDate": "2020-10-02"
+  },
+  {
+    "key": 11,
+    "tempo": 127.011,
+    "artists": "Solomun,Maceo Plex,Isolation Berlin",
+    "durationMs": 265511,
+    "id": "3SRACm2ch6cz1u4XsmSVIp",
+    "name": "Kreatur der Nacht (feat. Isolation Berlin) - Maceo Plex Remix",
+    "album": { "name": "Nobody Is Not Loved (Remixed)" },
+    "releaseDate": "2022-12-02"
+  },
+  {
+    "tempo": null,
+    "artists": "Joyhauser",
+    "durationMs": 399022,
+    "id": "3T8drVfyLMXG9eyOCqJgjb",
+    "name": "LXR02",
+    "album": { "name": "In Memoro" },
+    "releaseDate": "2023-06-23"
+  },
+  {
+    "key": 2,
+    "tempo": 126.018,
+    "artists": "Lavern,Francis Lai",
+    "durationMs": 154285,
+    "id": "3NWRapFZSlpHXO38LW21rw",
+    "name": "La leçon particulière",
+    "album": { "name": "La leçon particulière" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "key": 8,
+    "tempo": null,
+    "artists": "Moonwalk",
+    "durationMs": 390606,
+    "id": "1wWn0BeuZJ19LGcHuy6AaT",
+    "name": "Labyrinth",
+    "album": { "name": "Stil vor Talent Berlin: Alexanderplatz" },
+    "releaseDate": "2017-08-25"
+  },
+  {
+    "key": 10,
+    "tempo": 123.986,
+    "artists": "Cassian",
+    "durationMs": 360242,
+    "id": "4QKgq7twx3wHL3fS73WKHo",
+    "name": "Landa",
+    "album": { "name": "Unity Pt. 3" },
+    "releaseDate": "2022-07-20"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Zuma Dionys",
+    "durationMs": 398644,
+    "id": "5n9U9n1EPoBpll9cDtB8S8",
+    "name": "Larie",
+    "album": { "name": "Larie" },
+    "releaseDate": "2022-12-23"
+  },
+  {
+    "key": 6,
+    "tempo": null,
+    "artists": "Hidden Empire",
+    "durationMs": 415542,
+    "id": "3vRA3f2BSYJLlXhWEkxrMK",
+    "name": "Last Call",
+    "album": { "name": "Momentum" },
+    "releaseDate": "2023-04-07"
+  },
+  {
+    "key": 1,
+    "tempo": 131.989,
+    "artists": "Alex M",
+    "durationMs": 320000,
+    "id": "3ZFuZ5KBpPMjXnsQTU552T",
+    "name": "Latina Sniff - Original Mix",
+    "album": { "name": "Latina Sniff" },
+    "releaseDate": "2020-09-10"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Soleeman",
+    "durationMs": 480000,
+    "id": "79SKYBPtab8NgnT4mEjmgK",
+    "name": "Le Labyrinthe",
+    "album": { "name": "Equinox" },
+    "releaseDate": "2016-04-29"
+  },
+  {
+    "key": 1,
+    "tempo": 100,
+    "artists": "Yaman S",
+    "durationMs": 480000,
+    "id": "3mKgICVG1gNJXgIV0tYmJW",
+    "name": "Le Sol Noir",
+    "album": { "name": "Delta" },
+    "releaseDate": "2018-01-01"
+  },
+  {
+    "tempo": 144.988,
+    "artists": "KI/KI",
+    "durationMs": 418003,
+    "id": "3lYjpF9y8rLpDjKtPVIg7P",
+    "name": "Leave it to the vibe",
+    "album": { "name": "slash 004 - Leave it to the vibe" },
+    "releaseDate": "2023-04-21"
+  },
+  {
+    "key": 4,
+    "tempo": 129.976,
+    "artists": "KAS:ST,Gordo,Ki Bae",
+    "durationMs": 303431,
+    "id": "6koq1DWY1e6JVFy7wQgYCo",
+    "name": "Leaving Earth",
+    "album": { "name": "Leaving Earth" },
+    "releaseDate": "2022-06-23"
+  },
+  {
+    "key": 0,
+    "tempo": 118,
+    "artists": "MoM,Alvaro Suarez,Huun-Huur-Tu,Bulgarian Voices Angelite",
+    "durationMs": 392658,
+    "id": "3wjK2ANsarr8xy9VRDscav",
+    "name": "Legend",
+    "album": { "name": "Summer Sol V" },
+    "releaseDate": "2020-06-19"
+  },
+  {
+    "key": 10,
+    "tempo": 127.01,
+    "artists": "Jil Tanner",
+    "durationMs": 348959,
+    "id": "7lKOrMhonHXZEEImIMqfn3",
+    "name": "Let the Games Begin",
+    "album": { "name": "Let the Games Begin" },
+    "releaseDate": "2022-09-29"
+  },
+  {
+    "key": 5,
+    "tempo": 130.01,
+    "artists": "Röyksopp,Pixx,Enrico Sangiuliano",
+    "durationMs": 483692,
+    "id": "6JM8Xyt18sXMibYPXxySoR",
+    "name": "Like an Old Dog - Enrico Sangiuliano Remix",
+    "album": { "name": "Like an Old Dog (Enrico Sangiuliano Remix)" },
+    "releaseDate": "2023-07-27"
+  },
+  {
+    "key": 11,
+    "tempo": 122.016,
+    "artists": "TH;EN",
+    "durationMs": 402888,
+    "id": "4MfWdd44BMBGqJxcJABJKq",
+    "name": "London",
+    "album": { "name": "Four To The Floor 26" },
+    "releaseDate": "2023-03-17"
+  },
+  {
+    "tempo": 129.999,
+    "artists": "AKKI (DE)",
+    "durationMs": 369692,
+    "id": "00IWep1lbWW2wJog8Ewgsj",
+    "name": "Loneliness - Original Mix",
+    "album": { "name": "Loneliness" },
+    "releaseDate": "2022-12-02"
+  },
+  {
+    "key": 11,
+    "tempo": 140.063,
+    "artists": "KH",
+    "durationMs": 174417,
+    "id": "7tGg6b28XOHM8ICKt8lEBV",
+    "name": "Looking at Your Pager",
+    "album": { "name": "Looking At Your Pager" },
+    "releaseDate": "2022-06-10"
+  },
+  {
+    "key": 4,
+    "tempo": 118.016,
+    "artists": "Satoshi Fumi",
+    "durationMs": 482000,
+    "id": "22GWkcJriUvnnE0YuWn2BW",
+    "name": "Lotus - Original Mix",
+    "album": { "name": "Lotus" },
+    "releaseDate": "2021-03-29"
+  },
+  {
+    "key": 3,
+    "tempo": 140.019,
+    "artists": "The Rocketman,VE/RA,3rd Dale Universe",
+    "durationMs": 360025,
+    "id": "5UJegVmminlxe2u9dz6jBH",
+    "name": "Love & Peace",
+    "album": { "name": "Love & Peace" },
+    "releaseDate": "2023-02-10"
+  },
+  {
+    "key": 5,
+    "tempo": 154.997,
+    "artists": "Eskha",
+    "durationMs": 398035,
+    "id": "1Gb8pvTmj3l2cyfZmPMLnG",
+    "name": "Love Get's You",
+    "album": { "name": "Beauty of Obscenity, Vol.1" },
+    "releaseDate": "2023-05-26"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Kollektiv Ost",
+    "durationMs": 367078,
+    "id": "0L7tuyMZF1V61SrXL1tvrI",
+    "name": "Love Is What",
+    "album": { "name": "Love Is What" },
+    "releaseDate": "2022-05-27"
+  },
+  {
+    "key": 6,
+    "tempo": 120.998,
+    "artists": "Henry Saiz,Kris Davis",
+    "durationMs": 480084,
+    "id": "4BMbAzWJVolQJzo6vOZ0UY",
+    "name": "Lucero Del Alba - Kris Davis Remix",
+    "album": { "name": "Night Cult Remixes" },
+    "releaseDate": "2016-12-05"
+  },
+  {
+    "key": 7,
+    "tempo": 124.965,
+    "artists": "Roman Flügel",
+    "durationMs": 277025,
+    "id": "4SV4nbqN8WuarKTKZnPRzw",
+    "name": "Luv Armour",
+    "album": { "name": "Lucky Charm" },
+    "releaseDate": "2023-07-14"
+  },
+  {
+    "key": 9,
+    "tempo": 118.11,
+    "artists": "Normal Brain",
+    "durationMs": 259272,
+    "id": "7qow6fhxIQ5vMrXuErjwxs",
+    "name": "M-U-S-I-C - Original Mix",
+    "album": { "name": "Get Lost V mixed by Acid Pauli" },
+    "releaseDate": "2012-11-12"
+  },
+  {
+    "key": 7,
+    "tempo": 140.014,
+    "artists": "EARGASM GOD",
+    "durationMs": 308575,
+    "id": "1zQEINYrCNSF6mSW8ZOGnn",
+    "name": "MEDICINE",
+    "album": { "name": "MEDICINE" },
+    "releaseDate": "2020-06-05"
+  },
+  {
+    "tempo": 101.994,
+    "artists": "Kutiman,Doctor Flake",
+    "durationMs": 470837,
+    "id": "5G2pbqhXrpVbGOYoWaz04J",
+    "name": "Maasai - Doctor Flake Remix",
+    "album": { "name": "Maasai (Doctor Flake Remix)" },
+    "releaseDate": "2020-12-11"
+  },
+  {
+    "key": 0,
+    "tempo": 138.009,
+    "artists": "Klopfgeister,Mind Void,Jost H. Walter",
+    "durationMs": 344350,
+    "id": "2xqspo1QaN7gGPwgnf3sWz",
+    "name": "Mad Ancestors",
+    "album": { "name": "Mad Ancestors" },
+    "releaseDate": "2020-01-03"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "ELDON,CamelPhat",
+    "durationMs": 360952,
+    "id": "4M55ZkExkGTMHwKBWp1RrD",
+    "name": "Magic Me - CamelPhat Remix",
+    "album": { "name": "Magic Me" },
+    "releaseDate": "2022-10-07"
+  },
+  {
+    "key": 7,
+    "tempo": 124.99,
+    "artists": "Ae:ther",
+    "durationMs": 456960,
+    "id": "2rXBBsBWyIjTLedZPy6ZIr",
+    "name": "Magician",
+    "album": { "name": "Magician" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "tempo": 124.005,
+    "artists": "German Brigante",
+    "durationMs": 447474,
+    "id": "5oCCvJ5pRxYD0WEoeH7sKa",
+    "name": "Mahesha",
+    "album": { "name": "Dharma" },
+    "releaseDate": "2022-12-30"
+  },
+  {
+    "key": null,
+    "tempo": 124.009,
+    "artists": "Monkey Safari",
+    "durationMs": 342813,
+    "id": "2tBkZtLiwS21plFaRcDrDP",
+    "name": "Malmedy",
+    "album": { "name": "Malmedy" },
+    "releaseDate": "2023-08-11"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Web Web,Michel Cleis",
+    "durationMs": 546040,
+    "id": "7rHviDJBi1dizQefCZYby4",
+    "name": "Maroc Blues - Michel Cleis Remix",
+    "album": {
+      "name": "Remixes #1 EP (incl. Remixes by Mousse T., Hector Romero & Ayala, Khalab, URBS, L One, Michel Cleis)"
+    },
+    "releaseDate": "2020-10-16"
+  },
+  {
+    "key": 6,
+    "tempo": 128.109,
+    "artists": "Armin van Buuren,AVIRA,Sam Martin",
+    "durationMs": 392335,
+    "id": "6I3LRA0FzYveyvmHs6hdRH",
+    "name": "Mask (Mixed)",
+    "album": { "name": "Live at Tomorrowland 2020 - Around The World" },
+    "releaseDate": "2020-08-03"
+  },
+  {
+    "key": 2,
+    "tempo": 121.017,
+    "artists": "Perel",
+    "durationMs": 368000,
+    "id": "7G4fOvwtIkEtj4BQY0Z2vK",
+    "name": "Matrix",
+    "album": { "name": "Jesus Was An Alien" },
+    "releaseDate": "2022-05-13"
+  },
+  {
+    "key": 7,
+    "tempo": 192.047,
+    "artists": "AIWAA",
+    "durationMs": 390000,
+    "id": "0kkoAARK1KhHg0nwnjvfkq",
+    "name": "Maya",
+    "album": { "name": "Maya & Wise" },
+    "releaseDate": "2020-08-16"
+  },
+  {
+    "key": 6,
+    "tempo": 128.005,
+    "artists": "Droplex,Corner",
+    "durationMs": 322560,
+    "id": "02MtsbY7EGI0RZNMMg9rrt",
+    "name": "Minimal Illumination",
+    "album": { "name": "Electronic Beats, Vol. 1." },
+    "releaseDate": "2017-05-30"
+  },
+  {
+    "key": 1,
+    "tempo": 119.014,
+    "artists": "Sam Shure",
+    "durationMs": 388477,
+    "id": "1zCNy5adNEZVXYYLvhPw46",
+    "name": "Mirage",
+    "album": { "name": "Laconia" },
+    "releaseDate": "2019-09-20"
+  },
+  {
+    "key": 8,
+    "tempo": 140.011,
+    "artists": "Nicolas Binder",
+    "durationMs": 204000,
+    "id": "4rGKCr6pj3tKNWJvICbOaZ",
+    "name": "Moment",
+    "album": { "name": "Moment" },
+    "releaseDate": "2021-05-16"
+  },
+  {
+    "key": 9,
+    "tempo": 127.973,
+    "artists": "Joey Smith",
+    "durationMs": 330000,
+    "id": "2YAAbvC3VGCLnWYV6Cx2kM",
+    "name": "Momo - Original Mix",
+    "album": { "name": "Momo" },
+    "releaseDate": "2018-09-17"
+  },
+  {
+    "key": 7,
+    "tempo": 104.989,
+    "artists": "Zimt",
+    "durationMs": 406384,
+    "id": "0UzJBnSUySLPyFuTN2uk8M",
+    "name": "Mount Kaskar",
+    "album": { "name": "Restless Nights" },
+    "releaseDate": "2017-04-10"
+  },
+  {
+    "key": 4,
+    "tempo": 123.004,
+    "artists": "Rafael Cerato,Kinky Sound",
+    "durationMs": 325853,
+    "id": "0fouEhRoo3FApnQPIXKgOY",
+    "name": "Move",
+    "album": { "name": "Move" },
+    "releaseDate": "2022-10-07"
+  },
+  {
+    "key": 11,
+    "tempo": 124.995,
+    "artists": "Gardens of God",
+    "durationMs": 422653,
+    "id": "7oWKQrFAffaiyfROl2GAcI",
+    "name": "Mura",
+    "album": { "name": "Odd Echoes, Vol. 3" },
+    "releaseDate": "2020-06-12"
+  },
+  {
+    "key": null,
+    "tempo": 139.999,
+    "artists": "Fabio Fusco,livicious",
+    "durationMs": 306857,
+    "id": "6jzgprpVQTyDlNHD8E8jEI",
+    "name": "Music Is My Remedy",
+    "album": { "name": "Music Is My Remedy" },
+    "releaseDate": "2021-04-02"
+  },
+  {
+    "key": 11,
+    "tempo": 134.977,
+    "artists": "Dr. Motte,Jam El Mar",
+    "durationMs": 375111,
+    "id": "38akpmlBcX319KV61SG0yC",
+    "name": "Music Is The Answer",
+    "album": { "name": "Rave the Planet: Supporter Series, Vol. 016" },
+    "releaseDate": "2023-06-30"
+  },
+  {
+    "key": null,
+    "tempo": 123.004,
+    "artists": "Raphael Mader",
+    "durationMs": 390338,
+    "id": "7iyJW68Gw1zcxI7lGPRA6f",
+    "name": "Myleneum",
+    "album": { "name": "Myleneum" },
+    "releaseDate": "2019-09-27"
+  },
+  {
+    "key": 10,
+    "tempo": 142.021,
+    "artists": "Avalon,Flegma",
+    "durationMs": 550985,
+    "id": "6LPQmTty2Vnr2Im63pvmMd",
+    "name": "Mystical Experience",
+    "album": { "name": "Mystical Experience" },
+    "releaseDate": "2022-11-14"
+  },
+  {
+    "key": 10,
+    "tempo": 155.002,
+    "artists": "Miksu / Macloud,makko",
+    "durationMs": 158080,
+    "id": "5qEGAHerczFt3HmL9lhh4j",
+    "name": "Nachts wach (Lila Wolken Bootleg)",
+    "album": { "name": "Nachts wach" },
+    "releaseDate": "2022-08-26"
+  },
+  {
+    "tempo": 102.029,
+    "artists": "Shkoon,JPattersson",
+    "durationMs": 380616,
+    "id": "2vPP6FNAzYoo2pplHp7Vop",
+    "name": "Napauken - Jpattersson Remix",
+    "album": { "name": "Zehna" },
+    "releaseDate": "2018-01-12"
+  },
+  {
+    "key": 7,
+    "tempo": 105.992,
+    "artists": "Zuma Dionys",
+    "durationMs": 421157,
+    "id": "3E1q8mwa5Itob0oitWJW3l",
+    "name": "Narodnaya",
+    "album": { "name": "Narodnaya" },
+    "releaseDate": "2020-08-23"
+  },
+  {
+    "key": 4,
+    "tempo": 138.003,
+    "artists": "Phaxe,Morten Granau",
+    "durationMs": 419130,
+    "id": "72eKr4Y8oTl3N6YowhUmgI",
+    "name": "Natural Connection",
+    "album": { "name": "Natural Connection" },
+    "releaseDate": "2022-08-05"
+  },
+  {
+    "key": 11,
+    "tempo": 130.992,
+    "artists": "Gizmo & Mac,Gizmo,Mac",
+    "durationMs": 352671,
+    "id": "64yD9dBhlp8Hmcn6zJ5I69",
+    "name": "Nemesis",
+    "album": { "name": "Nemesis" },
+    "releaseDate": "2023-03-10"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Khainz",
+    "durationMs": 390967,
+    "id": "68aueb4O4xxqwsBPiP7dLS",
+    "name": "Nightshift",
+    "album": { "name": "Nightshift" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 0,
+    "tempo": 98.013,
+    "artists": "Geju",
+    "durationMs": 408800,
+    "id": "1DZ5alireHmDdsOYnwgrlG",
+    "name": "Niv",
+    "album": { "name": "Niv (Remixes)" },
+    "releaseDate": "2016-10-14"
+  },
+  {
+    "tempo": 124.038,
+    "artists": "AN21,Maunt",
+    "durationMs": 236155,
+    "id": "1KiKIjnfm2is7U2iBEebda",
+    "name": "No Tomorrow",
+    "album": { "name": "No Tomorrow" },
+    "releaseDate": "2022-12-02"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "Pale Blue,DJ Tennis",
+    "durationMs": 428547,
+    "id": "04u3tew2BvVix4AvCJCzh9",
+    "name": "No Words - DJ Tennis Remix",
+    "album": { "name": "No Words" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 8,
+    "tempo": 123.992,
+    "artists": "Kloos",
+    "durationMs": 390000,
+    "id": "75DeRP6EFJxUbBIzdkMeQm",
+    "name": "Noctis",
+    "album": { "name": "Best of BeMassive 2015-2020" },
+    "releaseDate": "2020-12-28"
+  },
+  {
+    "key": 5,
+    "tempo": 123.002,
+    "artists": "Edu Imbernon,Nico Casal,Solomon Grey",
+    "durationMs": 443189,
+    "id": "3HHsTf003jTaiysd5xFQML",
+    "name": "Noso",
+    "album": { "name": "Noso" },
+    "releaseDate": "2021-07-09"
+  },
+  {
+    "key": 11,
+    "tempo": 131.991,
+    "artists": "DANNY AVILA",
+    "durationMs": 223636,
+    "id": "2XCfdXbtoqVTXxw3vIOGTo",
+    "name": "Notre Dame - Original Mix",
+    "album": { "name": "Notre Dame" },
+    "releaseDate": "2023-04-14"
+  },
+  {
+    "key": 8,
+    "tempo": 133.001,
+    "artists": "Novaa,LIE NING,Solomun",
+    "durationMs": 221957,
+    "id": "69V3ab9N7fahkgWc4vLddT",
+    "name": "Novaacation (Solomun Remix)",
+    "album": { "name": "Novaacation (Solomun Remix)" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "key": null,
+    "tempo": 128.026,
+    "artists": "Droplex,Monolix",
+    "durationMs": 323056,
+    "id": "1gvP7k8PpEEuAGVFp01fau",
+    "name": "Now or Never",
+    "album": { "name": "Now or Never" },
+    "releaseDate": "2018-11-06"
+  },
+  {
+    "key": 4,
+    "tempo": 158.117,
+    "artists": "Congo Natty",
+    "durationMs": 206866,
+    "id": "0IcjWuoXbhOFMyaDDINOyc",
+    "name": "Nu Beginingz",
+    "album": { "name": "Jungle Revolution" },
+    "releaseDate": "2013-07-01"
+  },
+  {
+    "key": 4,
+    "tempo": 124.001,
+    "artists": "Final Request",
+    "durationMs": 345893,
+    "id": "0q5sSlzHJuncv8MS0Nwoat",
+    "name": "Nuke",
+    "album": { "name": "Fallen Enemies EP" },
+    "releaseDate": "2022-09-16"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Alinka",
+    "durationMs": 516450,
+    "id": "4f8vW0WQrPw36pMSMRwIhd",
+    "name": "Numbers",
+    "album": { "name": "Numbers EP" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "tempo": 121.982,
+    "artists": "Massano",
+    "durationMs": 397089,
+    "id": "6jrBiQawm4yBEdAQXJzcqO",
+    "name": "Odyssey",
+    "album": { "name": "In My System EP" },
+    "releaseDate": "2022-04-15"
+  },
+  {
+    "key": 2,
+    "tempo": 122.01,
+    "artists": "Lexer",
+    "durationMs": 445161,
+    "id": "5rUqHtMZmSfYM2Hpn4Z7TS",
+    "name": "Odyssey",
+    "album": { "name": "Odyssey" },
+    "releaseDate": "2020-09-11"
+  },
+  {
+    "key": 0,
+    "tempo": 122.989,
+    "artists": "Matteo Spedicati",
+    "durationMs": 209032,
+    "id": "3xWRnhPcw1SxkfRidbdEuK",
+    "name": "Olvidar Eliza",
+    "album": { "name": "Prelude To A Makeout EP" },
+    "releaseDate": "2018-09-07"
+  },
+  {
+    "key": 7,
+    "tempo": 121.978,
+    "artists": "DJ Danzik",
+    "durationMs": 377704,
+    "id": "2uD6mpz7aOvM1IsJfCZeOC",
+    "name": "Om",
+    "album": { "name": "Om" },
+    "releaseDate": "2022-11-09"
+  },
+  {
+    "key": 6,
+    "tempo": 115.005,
+    "artists": "Alvaro Suarez",
+    "durationMs": 458965,
+    "id": "7b6fdGls7viJvuJKoc2c0I",
+    "name": "On the Limits of Perception",
+    "album": { "name": "Alpha" },
+    "releaseDate": "2017-01-30"
+  },
+  {
+    "key": 3,
+    "tempo": 114.998,
+    "artists": "Karmaâ,Cafe De Anatolia",
+    "durationMs": 444521,
+    "id": "15bvvFfGDwreh0bwLhfLqh",
+    "name": "Orient Calling",
+    "album": { "name": "Orient Calling" },
+    "releaseDate": "2021-04-23"
+  },
+  {
+    "tempo": 99.991,
+    "artists": "Rapossa",
+    "durationMs": 503400,
+    "id": "1ljBBK6uIhjuxmL7etHP39",
+    "name": "Oriental Tales",
+    "album": { "name": "Shanti" },
+    "releaseDate": "2018-06-05"
+  },
+  {
+    "key": 10,
+    "tempo": 121.001,
+    "artists": "D.E.C.A.D.A",
+    "durationMs": 367450,
+    "id": "1zkrIEXZl1JnpRvb4VuTcy",
+    "name": "Oscillate - Original Mix",
+    "album": { "name": "Beauty Imperfection 2" },
+    "releaseDate": "2016-09-19"
+  },
+  {
+    "key": 8,
+    "tempo": 119.997,
+    "artists": "Djuma Soundsystem,Emok,Olith",
+    "durationMs": 544250,
+    "id": "2IiYV4muGj5HVGPRASTRpJ",
+    "name": "Osuga",
+    "album": { "name": "Sagas of Iziki | Chapter 2" },
+    "releaseDate": "2021-03-19"
+  },
+  {
+    "key": 6,
+    "tempo": null,
+    "artists": "Bigfett",
+    "durationMs": 333952,
+    "id": "42OXGxUgDvdP1L02Tvpg2e",
+    "name": "Overload",
+    "album": { "name": "Nokta" },
+    "releaseDate": "2023-04-14"
+  },
+  {
+    "key": 7,
+    "tempo": 120.961,
+    "artists": "Jean-Michel Jarre",
+    "durationMs": 272986,
+    "id": "0d4LN93pKJdLESklxAZ0F1",
+    "name": "Oxygene 2 - JMJ Rework of Kosinski Remix",
+    "album": {
+      "name": "Welcome To The Other Side (Concert From Virtual Notre-Dame)"
+    },
+    "releaseDate": "2020-12-31"
+  },
+  {
+    "key": 7,
+    "tempo": 130.006,
+    "artists": "HI-LO,Oliver Heldens",
+    "durationMs": 234721,
+    "id": "316urhiKblYLrzwW3WO51a",
+    "name": "PURA VIDA",
+    "album": { "name": "PURA VIDA" },
+    "releaseDate": "2023-01-27"
+  },
+  {
+    "key": 10,
+    "tempo": 122.994,
+    "artists": "Oliver Schories,Jan Blomqvist,Monkey Safari",
+    "durationMs": 428023,
+    "id": "3ndlEFNgShqgHvu5Ro5FlN",
+    "name": "Packard - Monkey Safari Extended Remix",
+    "album": { "name": "Packard (Monkey Safari Remix)" },
+    "releaseDate": "2020-10-30"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Paradoks",
+    "durationMs": 361167,
+    "id": "3Hrnx8eE7k9c4XZcGYiGkI",
+    "name": "Panarea",
+    "album": { "name": "Panarea" },
+    "releaseDate": "2021-03-19"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "Echonomist,Jenia Tarsol",
+    "durationMs": 389500,
+    "id": "0C9du8peZ67lvOp0boyr2F",
+    "name": "Panic Attack",
+    "album": { "name": "Panic Attack" },
+    "releaseDate": "2021-10-15"
+  },
+  {
+    "key": 9,
+    "tempo": null,
+    "artists": "Hyenah,Pablo Fierro",
+    "durationMs": 409692,
+    "id": "2J47rywEY1jZcgNJlJt6m6",
+    "name": "Panoramica",
+    "album": { "name": "The Golden Cage Of Yesterday" },
+    "releaseDate": "2019-04-01"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Argy,Goom Gum",
+    "durationMs": 272255,
+    "id": "2fY9O2PpELY5hubBbC2zEG",
+    "name": "Pantheon",
+    "album": { "name": "Pantheon" },
+    "releaseDate": "2023-01-13"
+  },
+  {
+    "key": 8,
+    "tempo": 137.009,
+    "artists": "Day Din,Gaudium",
+    "durationMs": 404317,
+    "id": "1yJ6dZFRecONfZHGnIrYru",
+    "name": "Parallels",
+    "album": { "name": "Parallels" },
+    "releaseDate": "2019-09-30"
+  },
+  {
+    "key": null,
+    "tempo": 129.989,
+    "artists": "Paul Kalkbrenner",
+    "durationMs": 243386,
+    "id": "3pQK5lgb8S01XeIWwHRSLH",
+    "name": "Part Four",
+    "album": { "name": "Parts of Life" },
+    "releaseDate": "2018-05-18"
+  },
+  {
+    "key": 8,
+    "tempo": 125.002,
+    "artists": "Sorlong,Opposite Ways",
+    "durationMs": 372359,
+    "id": "5X1O8dgkKGsoPFSbHwAgBN",
+    "name": "Perspectives - Opposite Ways Remix",
+    "album": { "name": "Perspectives" },
+    "releaseDate": "2021-07-16"
+  },
+  {
+    "key": 1,
+    "tempo": 144.021,
+    "artists": "Anfisa Letyago,ParteNope",
+    "durationMs": 311670,
+    "id": "52YiBbdDeJhVpKghqPN5ev",
+    "name": "Perzechella",
+    "album": { "name": "Babylonia" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": null,
+    "tempo": 135.018,
+    "artists": "Layton Giordani",
+    "durationMs": 222222,
+    "id": "4kh3BO905A2aAY17lug2eV",
+    "name": "Phantom",
+    "album": { "name": "Phantom" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "key": null,
+    "tempo": 127.006,
+    "artists": "Nils Andreas",
+    "durationMs": 707967,
+    "id": "2XwOGZEUEojjw3kWdtkMpU",
+    "name": "Phoenix",
+    "album": {
+      "name": "Melodic Generation, Vol. 2 - The Melodic Techno Collection"
+    },
+    "releaseDate": "2015-09-18"
+  },
+  {
+    "key": 1,
+    "tempo": 122.004,
+    "artists": "KACHLI",
+    "durationMs": 566622,
+    "id": "79IliFpGW4IV5sy2BD5pNb",
+    "name": "Phsyxhs",
+    "album": { "name": "The Long Way" },
+    "releaseDate": "2022-05-11"
+  },
+  {
+    "key": 0,
+    "tempo": 120.015,
+    "artists": "Digitalism",
+    "durationMs": 338295,
+    "id": "1lfVngSLGVB7016sN7aT4P",
+    "name": "Picnic",
+    "album": { "name": "Diytalism EP" },
+    "releaseDate": "2022-03-25"
+  },
+  {
+    "tempo": 134.994,
+    "artists": "Mario Ochoa",
+    "durationMs": 391111,
+    "id": "3eu66kYYZFybIvVjiaik88",
+    "name": "Pillars of Eternity",
+    "album": { "name": "Pillars of Eternity" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "tempo": 122.013,
+    "artists": "Township Rebellion",
+    "durationMs": 322377,
+    "id": "2HQkssMOOGP5S9Pp29Nock",
+    "name": "Plastic World",
+    "album": { "name": "2020" },
+    "releaseDate": "2020-10-23"
+  },
+  {
+    "key": 4,
+    "tempo": 121.988,
+    "artists": "Adam Port,Monolink",
+    "durationMs": 283902,
+    "id": "6PzfuuQ95fRU9JRFSFFq77",
+    "name": "Point Of No Return",
+    "album": { "name": "Point Of No Return" },
+    "releaseDate": "2023-03-15"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Rebūke",
+    "durationMs": 207874,
+    "id": "0HgxhNKiQy2LYxExwyZMWI",
+    "name": "Portal",
+    "album": { "name": "Portal / Echoes" },
+    "releaseDate": "2023-08-11"
+  },
+  {
+    "tempo": 123.983,
+    "artists": "Moonwalk",
+    "durationMs": 364838,
+    "id": "5U7LGWuifQ0agJ8kWoJ0ra",
+    "name": "Power of Universe",
+    "album": { "name": "Power of Universe" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Armen Miran",
+    "durationMs": 393200,
+    "id": "5yK0lEffT7BqplloPOrg2g",
+    "name": "Precious Story",
+    "album": { "name": "Buddha Bar: The Ultimate Experience" },
+    "releaseDate": "2016-11-25"
+  },
+  {
+    "key": 6,
+    "tempo": 123.99,
+    "artists": "Vakabular",
+    "durationMs": 301935,
+    "id": "2AtRS5SrPg2I2qGKD8zEps",
+    "name": "Proper Time",
+    "album": { "name": "Proper Time" },
+    "releaseDate": "2023-05-12"
+  },
+  {
+    "tempo": 99.013,
+    "artists": "Mose,Nalini Blossom",
+    "durationMs": 724848,
+    "id": "4S5l4A3kxznpNG0s1jCfVC",
+    "name": "Prophecy",
+    "album": { "name": "Medicine Women" },
+    "releaseDate": "2018-04-21"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "Kore-G",
+    "durationMs": 206653,
+    "id": "5jiqaaUn7jcCxw2jdvlFWE",
+    "name": "Psychosis",
+    "album": { "name": "Psychosis" },
+    "releaseDate": "2022-11-10"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Patrick Scuro",
+    "durationMs": 254769,
+    "id": "63mFPNs3UaFmBB55YiW0it",
+    "name": "Pulchra",
+    "album": { "name": "Pulchra" },
+    "releaseDate": "2022-12-02"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Gizmo & Mac,Marie Vaunt",
+    "durationMs": 360000,
+    "id": "0rUd34miBQcQTzevrULn3G",
+    "name": "Pulse - Marie Vaunt Remix",
+    "album": { "name": "Pulse" },
+    "releaseDate": "2022-06-24"
+  },
+  {
+    "tempo": 75.023,
+    "artists": "Creeds",
+    "durationMs": 139300,
+    "id": "3AjSfp5FDvwtMU9XBsbS8j",
+    "name": "Push Up - Main Edit",
+    "album": { "name": "Push Up (Main Edit)" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 0,
+    "tempo": 119.992,
+    "artists": "&ME,Rampa,Adam Port,Keinemusik,Nomi Ruiz,DESIREE",
+    "durationMs": 357435,
+    "id": "3p4obn8kIkhvsGSji3CuXM",
+    "name": "Pussy Power - DESIREE Remix",
+    "album": { "name": "Pussy Power (Desiree Remix)" },
+    "releaseDate": "2023-02-03"
+  },
+  {
+    "key": 9,
+    "tempo": 123.999,
+    "artists": "Guy Gerber",
+    "durationMs": 452522,
+    "id": "684uOIvMjiQVU0NSLOr36C",
+    "name": "Pyramid Of The Moon",
+    "album": { "name": "Pyramid Of The Moon" },
+    "releaseDate": "2022-03-18"
+  },
+  {
+    "key": 5,
+    "tempo": null,
+    "artists": "The YellowHeads",
+    "durationMs": 347192,
+    "id": "4qHSNroR0Vts9zR7vMcKuo",
+    "name": "Quarth",
+    "album": { "name": "Quarth" },
+    "releaseDate": "2023-06-30"
+  },
+  {
+    "key": 2,
+    "tempo": 128.013,
+    "artists": "Montezuma",
+    "durationMs": 457843,
+    "id": "3onp9CePJ7sNcJjIARM5YG",
+    "name": "Quetzal",
+    "album": { "name": "Quetzal" },
+    "releaseDate": "2021-04-02"
+  },
+  {
+    "key": 2,
+    "tempo": 124.028,
+    "artists": "Gordo,Marina Maximilian",
+    "durationMs": 189677,
+    "id": "7qEYvfP5ONliv8obMM2A4E",
+    "name": "R U 4REAL (feat. Marina Maximilian)",
+    "album": { "name": "R U 4REAL (feat. Marina Maximilian)" },
+    "releaseDate": "2023-02-24"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "Electric Universe,Off Limits",
+    "durationMs": 400000,
+    "id": "3F3SpNYeqT1vTgE2L5wAAx",
+    "name": "Rain - Off Limits Remix",
+    "album": { "name": "Rain" },
+    "releaseDate": "2022-06-17"
+  },
+  {
+    "key": 0,
+    "tempo": null,
+    "artists": "Mose,Suyana",
+    "durationMs": 768000,
+    "id": "2iD8IJr73i7mBRMcuFufBT",
+    "name": "Raise Your Voice",
+    "album": { "name": "Medicine Women" },
+    "releaseDate": "2018-04-21"
+  },
+  {
+    "key": 4,
+    "tempo": 135.995,
+    "artists": "Mark Dekoda",
+    "durationMs": 360000,
+    "id": "1tkS8yt5NwTZkqFvZMxM0F",
+    "name": "Rave Harder Techno Bass",
+    "album": { "name": "Rave Harder Techno Bass" },
+    "releaseDate": "2022-03-18"
+  },
+  {
+    "key": 11,
+    "tempo": 127.009,
+    "artists": "Hozho",
+    "durationMs": 515910,
+    "id": "3mP9fqeY5kKb2j4Np2wiGf",
+    "name": "Realities",
+    "album": { "name": "Singles Collection, Vol. 1" },
+    "releaseDate": "2019-09-25"
+  },
+  {
+    "key": 8,
+    "tempo": 123.002,
+    "artists": "Coeus",
+    "durationMs": 485125,
+    "id": "3ZFRMmkZIyGq2r8eDxiY8n",
+    "name": "Rebirth",
+    "album": { "name": "Unity" },
+    "releaseDate": "2020-04-03"
+  },
+  {
+    "key": 7,
+    "tempo": 108.004,
+    "artists": "Sabo,Dandara,Shawni",
+    "durationMs": 372262,
+    "id": "7L8i0SN0jkJf6kE5Y9k7sQ",
+    "name": "Red Lotus",
+    "album": { "name": "Buddy System" },
+    "releaseDate": "2020-11-30"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "AÏA",
+    "durationMs": 192755,
+    "id": "6rjqR7Uty9kXWB3WObTtRx",
+    "name": "Reformation",
+    "album": { "name": "Reformation" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "key": 1,
+    "tempo": 125.009,
+    "artists": "Âme",
+    "durationMs": 488920,
+    "id": "5l3TZLe5uEk7vdXbHghZZW",
+    "name": "Rej",
+    "album": { "name": "Rej EP" },
+    "releaseDate": "2005"
+  },
+  {
+    "key": null,
+    "tempo": 123.007,
+    "artists": "Re.You,Stereo MC's,Rodriguez Jr.",
+    "durationMs": 382315,
+    "id": "2NQRDLwREZOf61gvk2UOVW",
+    "name": "Relocate - Rodriguez Jr. Remix",
+    "album": { "name": "Maison 'The Remixes'" },
+    "releaseDate": "2020-07-24"
+  },
+  {
+    "key": null,
+    "tempo": 122.999,
+    "artists": "Remcord",
+    "durationMs": 425436,
+    "id": "4bStRggnvTHOcZOCXnois3",
+    "name": "Resinous Head - Original Mix",
+    "album": { "name": "Resinous Head EP" },
+    "releaseDate": "2020-12-28"
+  },
+  {
+    "tempo": 124.005,
+    "artists": "Hidden Empire",
+    "durationMs": 381258,
+    "id": "2sMjP9i4XVbg7GHXprQIuo",
+    "name": "Resurgence",
+    "album": { "name": "Resurgence" },
+    "releaseDate": "2021-01-08"
+  },
+  {
+    "key": null,
+    "tempo": 123.001,
+    "artists": "Angelov",
+    "durationMs": 499208,
+    "id": "5jpe3La1qz7jKxTRv85JE9",
+    "name": "Retrida",
+    "album": { "name": "Cabora EP" },
+    "releaseDate": "2019-10-11"
+  },
+  {
+    "key": 10,
+    "tempo": null,
+    "artists": "Kör",
+    "durationMs": 377419,
+    "id": "6csMOGY1Sxuqh0JpCsjtu3",
+    "name": "Revelation",
+    "album": { "name": "Revelation" },
+    "releaseDate": "2022-12-16"
+  },
+  {
+    "key": 10,
+    "tempo": 122.995,
+    "artists": "Stereo Express",
+    "durationMs": 433170,
+    "id": "6Sx4f9KKwMl2YRguEqiL0A",
+    "name": "Revision",
+    "album": { "name": "Revision" },
+    "releaseDate": "2022-12-15"
+  },
+  {
+    "key": 0,
+    "tempo": 128.019,
+    "artists": "Maceo Plex,Program2,Giovanni",
+    "durationMs": 391333,
+    "id": "05Q2QXgj7NPOmYvito5OOm",
+    "name": "Revision feat Giovanni - Original Mix",
+    "album": { "name": "Revision feat. Giovanni" },
+    "releaseDate": "2021-10-29"
+  },
+  {
+    "tempo": 118.005,
+    "artists": "Ed Ed",
+    "durationMs": 407796,
+    "id": "2T3WCmCjU1uB8SbkqD4kbU",
+    "name": "Riding To Mercury",
+    "album": { "name": "Riding to Mercury" },
+    "releaseDate": "2020-10-02"
+  },
+  {
+    "key": 5,
+    "tempo": 123.993,
+    "artists": "Stereo Express",
+    "durationMs": 425927,
+    "id": "12cknKcAEanf3PlwPOYvg5",
+    "name": "Rise Of The 2nd Sun",
+    "album": { "name": "Rise Of The 2nd Sun" },
+    "releaseDate": "2023-03-16"
+  },
+  {
+    "key": 11,
+    "tempo": 121.002,
+    "artists": "Rey&Kjavik",
+    "durationMs": 421659,
+    "id": "2gc1QJMAs8kY7WPwkjJLfj",
+    "name": "Rkadash",
+    "album": { "name": "Rkadash" },
+    "releaseDate": "2017-07-07"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Liquid Bloom,Mose,Ixchel Prisma",
+    "durationMs": 896603,
+    "id": "7hZhj3K9DjIcIZtfsjQFH5",
+    "name": "Roots Of The Earth - Mose Remix",
+    "album": { "name": "ReGen Mose Remixes" },
+    "releaseDate": "2018-03-20"
+  },
+  {
+    "key": null,
+    "tempo": 129.994,
+    "artists": "Deborah de Luca",
+    "durationMs": 341538,
+    "id": "11EKozq0l2p0yJ3w8LBZrI",
+    "name": "Rosalia",
+    "album": { "name": "Rosalia" },
+    "releaseDate": "2023-02-03"
+  },
+  {
+    "key": 1,
+    "tempo": 120.013,
+    "artists": "Kadosh (IL),Johannes Albert,Abrão",
+    "durationMs": 311666,
+    "id": "5wxSvvLTBMxrXi2EB6FjSz",
+    "name": "Sandcastles",
+    "album": { "name": "Sandcastles" },
+    "releaseDate": "2022-07-01"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Agents Of Time",
+    "durationMs": 374093,
+    "id": "4td58LU39TUuZ5ksh5nkiF",
+    "name": "Santiago",
+    "album": { "name": "Midnight Drive In Santiago" },
+    "releaseDate": "2020-11-27"
+  },
+  {
+    "key": 7,
+    "tempo": 121.991,
+    "artists": "DJ Pressing",
+    "durationMs": 476372,
+    "id": "2COo4W9HoVSsv2uxMp57ZP",
+    "name": "Sara",
+    "album": { "name": "Altiplano" },
+    "releaseDate": "2020-05-25"
+  },
+  {
+    "key": 4,
+    "tempo": 128.007,
+    "artists": "Shade k",
+    "durationMs": 225081,
+    "id": "2Lqz1ZN0yRMDrBmpPcZK09",
+    "name": "Say Arrr",
+    "album": { "name": "Say Arrr" },
+    "releaseDate": "2018-01-29"
+  },
+  {
+    "key": 7,
+    "tempo": 126,
+    "artists": "Swimming Paul",
+    "durationMs": 200329,
+    "id": "77Q0qbZPx8ikjqvPOADORA",
+    "name": "Say Something",
+    "album": { "name": "Say Something" },
+    "releaseDate": "2023-07-21"
+  },
+  {
+    "key": 7,
+    "tempo": 125.011,
+    "artists": "Boris Brejcha",
+    "durationMs": 517440,
+    "id": "6VXfOGpSnnTWXsD2Vcr3CP",
+    "name": "Schaltzentrale - Joker Remake",
+    "album": { "name": "Robotic Intelligence" },
+    "releaseDate": "2021-05-21"
+  },
+  {
+    "key": 5,
+    "tempo": null,
+    "artists": "BOHO,Fukkk Offf,MILLA LOU",
+    "durationMs": 345882,
+    "id": "741cCbsEjqoetLDqS9FISP",
+    "name": "Sehnsucht",
+    "album": { "name": "The Drama" },
+    "releaseDate": "2022-12-05"
+  },
+  {
+    "key": 11,
+    "tempo": 133.996,
+    "artists": "Belocca,Nusha",
+    "durationMs": 415522,
+    "id": "24ODAgW6PvaHTl7QUgaoqk",
+    "name": "Serenity",
+    "album": { "name": "Serenity" },
+    "releaseDate": "2022-10-07"
+  },
+  {
+    "key": 2,
+    "tempo": 122,
+    "artists": "Xinobi",
+    "durationMs": 444590,
+    "id": "1tVocVBVgkjoznr48QHX5T",
+    "name": "Shake & Shimmer",
+    "album": { "name": "DTX Marks the Spot, Vol. II" },
+    "releaseDate": "2022-12-30"
+  },
+  {
+    "key": 3,
+    "tempo": 97.994,
+    "artists": "Mose,Suyana",
+    "durationMs": 902692,
+    "id": "5oiuZwrK7FMyz4MoLtlRfR",
+    "name": "Shante Ishta",
+    "album": { "name": "Medicine Women" },
+    "releaseDate": "2018-04-21"
+  },
+  {
+    "tempo": 132.001,
+    "artists": "Sebastiaan Hooft",
+    "durationMs": 225457,
+    "id": "1OyplKi2QaBP40LDdGDV9S",
+    "name": "Shelter",
+    "album": { "name": "Shelter" },
+    "releaseDate": "2023-06-20"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Mandragora,Shanti People,Dudiish",
+    "durationMs": 349764,
+    "id": "0WLTMOUNg6zHjSlFR4Hv3m",
+    "name": "Shiva Style, Pt. 2",
+    "album": { "name": "Shiva Style, Pt. 2" },
+    "releaseDate": "2022-12-31"
+  },
+  {
+    "key": 0,
+    "tempo": 120.994,
+    "artists": "ulises,David Mayer",
+    "durationMs": 430983,
+    "id": "6QPsEsb8PnTeKN1YAbS4jh",
+    "name": "Sian - David Mayer Remix",
+    "album": { "name": "Más Allá" },
+    "releaseDate": "2020-05-18"
+  },
+  {
+    "tempo": 123.999,
+    "artists": "Third Person,Ben Haydie",
+    "durationMs": 454838,
+    "id": "1FPEhnFrN5HocCoGftJtMa",
+    "name": "Signs",
+    "album": { "name": "Signs" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "key": 2,
+    "tempo": 120.992,
+    "artists": "Budakid",
+    "durationMs": 385580,
+    "id": "7ejkF9KOwiMsOzwLJpJRD6",
+    "name": "Silent Summer",
+    "album": { "name": "Silent Summer / Story Of Tokay" },
+    "releaseDate": "2021-04-12"
+  },
+  {
+    "key": 10,
+    "tempo": 106.004,
+    "artists": "Nobodys Face,Siriusmo",
+    "durationMs": 201640,
+    "id": "6wQlfm6qN5ycOoy5WFrHaM",
+    "name": "Silly Walk",
+    "album": { "name": "Silly Walk" },
+    "releaseDate": "2023-07-21"
+  },
+  {
+    "key": 9,
+    "tempo": 123.019,
+    "artists": "Space Motion",
+    "durationMs": 402439,
+    "id": "6lBySALfpud2idAf6X6Pqi",
+    "name": "Silver Screen",
+    "album": { "name": "Silver Screen" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": 1,
+    "tempo": null,
+    "artists": "Hardy Hard,Dr. Rhythm",
+    "durationMs": 383306,
+    "id": "0RbqRBermG2Ku0CkudIZIR",
+    "name": "Silver Surfer - DJ Rhythm DJ Cut",
+    "album": { "name": "Silver Surfer" },
+    "releaseDate": "1999-12-01"
+  },
+  {
+    "tempo": 125.981,
+    "artists": "Hozho,Droplex",
+    "durationMs": 476531,
+    "id": "0CVcDGYGXOY8qBhRZ4vVlf",
+    "name": "Sitting In This Cage",
+    "album": { "name": "Sitting In This Cage" },
+    "releaseDate": "2022-12-09"
+  },
+  {
+    "key": 4,
+    "tempo": 86.989,
+    "artists": "Degs,Pola & Bryson",
+    "durationMs": 277188,
+    "id": "11jALbqbvABzPKe44hM5KS",
+    "name": "Sleepless",
+    "album": { "name": "Sleepless" },
+    "releaseDate": "2020-02-21"
+  },
+  {
+    "tempo": 125.002,
+    "artists": "Moritz Hofbauer",
+    "durationMs": 185430,
+    "id": "3z737qBlgokgOqHUG4KSDW",
+    "name": "Sleepless Mind - Edit",
+    "album": { "name": "Sleepless Mind (Edit)" },
+    "releaseDate": "2023-05-26"
+  },
+  {
+    "key": 4,
+    "tempo": null,
+    "artists": "Cristoph,Jem Cooke",
+    "durationMs": 242184,
+    "id": "0nRSoJxUMDqgwtHgUjOFnV",
+    "name": "Slowly Burning 2019",
+    "album": { "name": "Slowly Burning 2019" },
+    "releaseDate": "2019-07-19"
+  },
+  {
+    "key": 4,
+    "tempo": null,
+    "artists": "ÄTNA,Solomun",
+    "durationMs": 260125,
+    "id": "63B2YBX69c9GaQ2Svk25Il",
+    "name": "Smile (Solomun Remix) - Radio Edit",
+    "album": { "name": "Smile (Solomun Remix)" },
+    "releaseDate": "2022-06-03"
+  },
+  {
+    "key": 7,
+    "tempo": 103.007,
+    "artists": "Alef",
+    "durationMs": 400865,
+    "id": "4FlR74PQh9SUnxDyFkoK1a",
+    "name": "Sol",
+    "album": { "name": "Sol y Luna" },
+    "releaseDate": "2018-02-24"
+  },
+  {
+    "key": 3,
+    "tempo": null,
+    "artists": "Solomun",
+    "durationMs": 548640,
+    "id": "5453frA2hsBPjGRVDHm1PJ",
+    "name": "Somebody's Story",
+    "album": { "name": "Black Label #36" },
+    "releaseDate": "2008-08-29"
+  },
+  {
+    "tempo": 124.011,
+    "artists": "Equinoxx",
+    "durationMs": 383225,
+    "id": "3hBhaASB4DtndOtihxSZh7",
+    "name": "Sonata",
+    "album": { "name": "Sonata" },
+    "releaseDate": "2021-01-22"
+  },
+  {
+    "key": null,
+    "tempo": 125.001,
+    "artists": "BLOND:ISH,Madonna,Miss Monique,Eran Hersh,Darmon",
+    "durationMs": 187200,
+    "id": "4nb5Y4lJWwSccQRiFsHHcL",
+    "name": "Sorry (with Madonna) - Miss Monique Remix",
+    "album": { "name": "Sorry (with Madonna) [Miss Monique Remix]" },
+    "releaseDate": "2023-07-26"
+  },
+  {
+    "key": 2,
+    "tempo": 120.989,
+    "artists": "Peer Kusiv,Rauschhaus,Lenny",
+    "durationMs": 202368,
+    "id": "5yq3Z9bZRTjjcZ0Irj4skn",
+    "name": "Space - Edit",
+    "album": { "name": "Space" },
+    "releaseDate": "2023-03-03"
+  },
+  {
+    "key": 11,
+    "tempo": 132.007,
+    "artists": "Julian König",
+    "durationMs": 381828,
+    "id": "4fuibJEl8wo60XJ01vzIg2",
+    "name": "Sphere",
+    "album": { "name": "Sphere EP" },
+    "releaseDate": "2023-05-12"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "MIDICODE",
+    "durationMs": 459047,
+    "id": "3BoFxlx7Vd3eR1FogWnTPc",
+    "name": "Stars",
+    "album": { "name": "Sky's Message" },
+    "releaseDate": "2020-11-27"
+  },
+  {
+    "key": 7,
+    "tempo": 118.005,
+    "artists": "Namito,Satori,Ahmad Zahir",
+    "durationMs": 565534,
+    "id": "071BITLZcUvNiEspOR1BgI",
+    "name": "Stone Flower - Satori Re:Imagined Mix",
+    "album": { "name": "Re:Imagined" },
+    "releaseDate": "2020-10-09"
+  },
+  {
+    "key": 2,
+    "tempo": null,
+    "artists": "Antonio Alterino,Aetius Boutefoy",
+    "durationMs": 472000,
+    "id": "1K3ywxfaZinaefRcYESofW",
+    "name": "Story Of Dune - Aetius Boutefoy Remix",
+    "album": { "name": "Story Of Dune" },
+    "releaseDate": "2021-07-19"
+  },
+  {
+    "key": 11,
+    "tempo": 127.016,
+    "artists": "Hozho",
+    "durationMs": 565125,
+    "id": "5jNh73wwbT7JimkQNTOaYW",
+    "name": "Storyteller",
+    "album": { "name": "Yin Yang" },
+    "releaseDate": "2019-06-30"
+  },
+  {
+    "key": 8,
+    "tempo": 120.019,
+    "artists": "Adana Twins,Acid Pauli,Nu",
+    "durationMs": 445004,
+    "id": "7oGpDFkWJdq0l4rRG6fGiO",
+    "name": "Strange - Acid Pauli & Nu Remix",
+    "album": { "name": "Strange" },
+    "releaseDate": "2013-03-11"
+  },
+  {
+    "key": null,
+    "tempo": 124.001,
+    "artists": "Grigoré",
+    "durationMs": 236129,
+    "id": "4SHFAf2zHYBbk2HTMlR2vj",
+    "name": "Strange World",
+    "album": { "name": "Strange World" },
+    "releaseDate": "2023-04-14"
+  },
+  {
+    "key": 8,
+    "tempo": 125.013,
+    "artists": "Ramskiy",
+    "durationMs": 433460,
+    "id": "6mQHhjO0tBDawTCNAs4bC2",
+    "name": "Stranger",
+    "album": { "name": "Dark Matter" },
+    "releaseDate": "2021-07-22"
+  },
+  {
+    "key": 7,
+    "tempo": 133.013,
+    "artists": "DJ Gigola",
+    "durationMs": 364455,
+    "id": "2rL6RiorPm6fWSEFUNX8cF",
+    "name": "Stream State",
+    "album": { "name": "Fluid Meditations" },
+    "releaseDate": "2023-02-03"
+  },
+  {
+    "key": 6,
+    "tempo": 123.994,
+    "artists": "Yeröm",
+    "durationMs": 389101,
+    "id": "2g7ZTcfgc5kfGaBUxpwm5S",
+    "name": "Suave",
+    "album": { "name": "Anomaly" },
+    "releaseDate": "2021-01-29"
+  },
+  {
+    "key": 11,
+    "tempo": null,
+    "artists": "Nick Holder",
+    "durationMs": 468000,
+    "id": "2sbUWtAhUyGYXiCch6OcmO",
+    "name": "Summer Daze",
+    "album": { "name": "Underground Alternatives" },
+    "releaseDate": "2005-09-05"
+  },
+  {
+    "key": 9,
+    "tempo": 129.969,
+    "artists": "Tiga,Zyntherius",
+    "durationMs": 223506,
+    "id": "1F8IWVxyW60Crr06qhEBsl",
+    "name": "Sunglasses at Night - Radio Edit",
+    "album": { "name": "Sunglasses at Night" },
+    "releaseDate": "2002-04-10"
+  },
+  {
+    "key": 8,
+    "tempo": 122.99,
+    "artists": "Stylo,Space Motion",
+    "durationMs": 405853,
+    "id": "6fDD3rLRNp7f6nm0frUZcJ",
+    "name": "Sunshine",
+    "album": { "name": "Wrong Or Right" },
+    "releaseDate": "2020-09-07"
+  },
+  {
+    "key": 9,
+    "tempo": 186.015,
+    "artists": "La Femme",
+    "durationMs": 229840,
+    "id": "1su9FWmWVgf71pqY78k5Ib",
+    "name": "Sur la planche 2013",
+    "album": { "name": "Psycho Tropical Berlin" },
+    "releaseDate": "2013-04-20"
+  },
+  {
+    "key": 2,
+    "tempo": 120,
+    "artists": "Makebo,Amonita",
+    "durationMs": 496729,
+    "id": "0BZxv1E9EqjwWQneH7zFYQ",
+    "name": "Symphonic Fantasy",
+    "album": { "name": "A Winter Sampler II" },
+    "releaseDate": "2020-01-31"
+  },
+  {
+    "key": 2,
+    "tempo": 103.999,
+    "artists": "Satori,Unders",
+    "durationMs": 487000,
+    "id": "4gPajk6ojip36b3P7sSyvw",
+    "name": "Syria - Satori Remix",
+    "album": { "name": "Syria" },
+    "releaseDate": "2016-03-28"
+  },
+  {
+    "key": null,
+    "tempo": 124.004,
+    "artists": "Emrod",
+    "durationMs": 240000,
+    "id": "4eE4vEaakr3ZnSt1UNfOhz",
+    "name": "Tango",
+    "album": { "name": "Tango" },
+    "releaseDate": "2018-06-29"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Oliver Koletzki",
+    "durationMs": 453506,
+    "id": "55kDJdv7pymmG4URJlVTYR",
+    "name": "Tankwa Town",
+    "album": { "name": "The Arc of Tension" },
+    "releaseDate": "2017-05-19"
+  },
+  {
+    "key": null,
+    "tempo": 123.011,
+    "artists": "Hidden Spheres,INA",
+    "durationMs": 439013,
+    "id": "7faObkpb4luRpU8ULZ61ya",
+    "name": "Tanzen - Club Mix",
+    "album": { "name": "Tanzen (Club Mix)" },
+    "releaseDate": "2023-03-23"
+  },
+  {
+    "key": null,
+    "tempo": 122.007,
+    "artists": "Artbat,Cari Golden,Haptic",
+    "durationMs": 448825,
+    "id": "0MxkOgxKyCQWnzzifTzgQ4",
+    "name": "Target - Original Mix",
+    "album": { "name": "Suara Showroom 30" },
+    "releaseDate": "2017-10-09"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Argy",
+    "durationMs": 328780,
+    "id": "1vdYudatKL5iRIM7i6vkvG",
+    "name": "Tataki",
+    "album": { "name": "Tataki" },
+    "releaseDate": "2022-01-07"
+  },
+  {
+    "key": 6,
+    "tempo": 125.988,
+    "artists": "Supermode,MEDUZA",
+    "durationMs": 171428,
+    "id": "7jrMFjEq0t09f7m3HnnWXl",
+    "name": "Tell Me Why - MEDUZA Remix",
+    "album": { "name": "Tell Me Why (MEDUZA Remix)" },
+    "releaseDate": "2022-09-02"
+  },
+  {
+    "key": 2,
+    "tempo": 124.007,
+    "artists": "Tunnelvisions",
+    "durationMs": 314894,
+    "id": "24WTaptxyciL36c3z5O6dN",
+    "name": "Test Tone Control",
+    "album": { "name": "Picture: Tunnelvisions" },
+    "releaseDate": "2020-04-10"
+  },
+  {
+    "key": 2,
+    "tempo": 131.991,
+    "artists": "Hardwell,Space 92",
+    "durationMs": 438750,
+    "id": "6YUnruRH7cz1pe1YruJrdR",
+    "name": "The Abyss",
+    "album": { "name": "The Abyss" },
+    "releaseDate": "2023-08-04"
+  },
+  {
+    "key": null,
+    "tempo": 119.967,
+    "artists": "Innellea",
+    "durationMs": 316934,
+    "id": "49RvQpiPDosCWOzlsp0p32",
+    "name": "The Awakening - Five Phases Project (1/5)",
+    "album": { "name": "Five Phases - The Awakening" },
+    "releaseDate": "2023-01-18"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "HIJCKD",
+    "durationMs": 192000,
+    "id": "4NGwhkwJzROYFJKNFmFHus",
+    "name": "The Captain",
+    "album": { "name": "The Captain" },
+    "releaseDate": "2022-07-12"
+  },
+  {
+    "key": 4,
+    "tempo": 103.999,
+    "artists": "Sonophone",
+    "durationMs": 305500,
+    "id": "5J2T34DA9yLpfYD4JIRraM",
+    "name": "The Chain",
+    "album": { "name": "Back on Track" },
+    "releaseDate": "2019-07-30"
+  },
+  {
+    "key": 11,
+    "tempo": 120.008,
+    "artists": "Bozart,Jennifer Cardini",
+    "durationMs": 234480,
+    "id": "0lBXFOrDC2JlIPp6soVYpR",
+    "name": "The Dark, The Light (Edit)",
+    "album": { "name": "The Dark, The Light" },
+    "releaseDate": "2023-06-02"
+  },
+  {
+    "key": 11,
+    "tempo": 118.983,
+    "artists": "Adam Port,Theus Mago,Keinemusik,Martina Camargo",
+    "durationMs": 210156,
+    "id": "2dwU9cQumllxZFtXgautY4",
+    "name": "The Dream (feat. Martina Camargo)",
+    "album": { "name": "The Dream (feat. Martina Camargo)" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "key": null,
+    "tempo": 125.018,
+    "artists": "Cedric Gervais",
+    "durationMs": 194610,
+    "id": "1WscjSlapVYosUIeplDqIp",
+    "name": "The Duty",
+    "album": { "name": "The Duty" },
+    "releaseDate": "2023-05-12"
+  },
+  {
+    "key": 1,
+    "tempo": 123.988,
+    "artists": "Emanuel Satie,DJ T.",
+    "durationMs": 372266,
+    "id": "72PYW7dkUR68gU9vVoxTiH",
+    "name": "The Feeling",
+    "album": { "name": "The Feeling EP" },
+    "releaseDate": "2023-07-14"
+  },
+  {
+    "key": 11,
+    "tempo": 123.983,
+    "artists": "Massano",
+    "durationMs": 368840,
+    "id": "4ZhVRSxT1JP0SWp4VF0EL9",
+    "name": "The Feeling - 2022 Remaster",
+    "album": { "name": "In My System EP" },
+    "releaseDate": "2022-04-15"
+  },
+  {
+    "key": 4,
+    "tempo": null,
+    "artists": "Stereo Express",
+    "durationMs": 389940,
+    "id": "4JaCQuCXKEMo3jVDql5pqY",
+    "name": "The Gates Of Babylonia",
+    "album": { "name": "The Gates Of Babylonia" },
+    "releaseDate": "2023-08-10"
+  },
+  {
+    "key": 10,
+    "tempo": 126.004,
+    "artists": "Daniel Nike,Viktor Newman",
+    "durationMs": 206190,
+    "id": "6p1eYd8A0zi7NsmQ2ufxT7",
+    "name": "The King - Radio Edit",
+    "album": { "name": "The King (Radio Edit)" },
+    "releaseDate": "2020-05-13"
+  },
+  {
+    "key": 6,
+    "tempo": 122.008,
+    "artists": "Eelke Kleijn",
+    "durationMs": 383851,
+    "id": "7fceKQDCkWIizEsURt4g68",
+    "name": "The Magician - Extended Mix",
+    "album": { "name": "The Magician" },
+    "releaseDate": "2020-04-23"
+  },
+  {
+    "key": 9,
+    "tempo": 123.005,
+    "artists": "Coeus",
+    "durationMs": 474193,
+    "id": "1WjDLeH5YSfYEx0FWQh0Vr",
+    "name": "The Mirror Game",
+    "album": { "name": "Odd Echoes, Vol. 3" },
+    "releaseDate": "2020-06-12"
+  },
+  {
+    "key": 10,
+    "tempo": 120.018,
+    "artists": "&ME",
+    "durationMs": 512696,
+    "id": "126B1mu0tb4gEqyjufUjms",
+    "name": "The Rapture Pt.II",
+    "album": { "name": "The Rapture Pt.II" },
+    "releaseDate": "2018-11-23"
+  },
+  {
+    "tempo": 123.003,
+    "artists": "Hugo Cantarra,Jinadu,Cadillac Express",
+    "durationMs": 445365,
+    "id": "3dmSkZHdhI4niRJOgmYOFH",
+    "name": "The Sign - Cadillac Express Remix",
+    "album": { "name": "The Sign" },
+    "releaseDate": "2020-10-16"
+  },
+  {
+    "key": null,
+    "tempo": 130.009,
+    "artists": "Enrico Sangiuliano",
+    "durationMs": 498461,
+    "id": "7CYS0ibZaJm201ZKonnqih",
+    "name": "The Sound Of Space",
+    "album": { "name": "Sound Of Space EP" },
+    "releaseDate": "2022-09-30"
+  },
+  {
+    "key": 7,
+    "tempo": 121.997,
+    "artists": "Xinobi,Meta_",
+    "durationMs": 348020,
+    "id": "6XZrEFdwo0cnbwy24llaLI",
+    "name": "The Stars",
+    "album": { "name": "The Stars" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "key": 2,
+    "tempo": 125.007,
+    "artists": "Ed Ed",
+    "durationMs": 399367,
+    "id": "22NQtvh5oakBDU6h3DKYdy",
+    "name": "The Tale Of RAA",
+    "album": { "name": "Moodmusic 25 Years, Pt. III" },
+    "releaseDate": "2022-01-07"
+  },
+  {
+    "key": 10,
+    "tempo": 127.986,
+    "artists": "Metodi Hristov",
+    "durationMs": 330468,
+    "id": "00Je3Ur2xmGEhZd08FtQLQ",
+    "name": "Through My Skin",
+    "album": { "name": "Triation, Vol. V" },
+    "releaseDate": "2022-12-09"
+  },
+  {
+    "key": 9,
+    "tempo": 127.023,
+    "artists": "Kölsch,Beacon",
+    "durationMs": 375933,
+    "id": "5Fp5aKLCTyRXljqyQcnu0N",
+    "name": "Time",
+    "album": { "name": "Now Here No Where" },
+    "releaseDate": "2020-09-25"
+  },
+  {
+    "key": 5,
+    "tempo": null,
+    "artists": "Patrick Scuro,Nicolas Julian",
+    "durationMs": 212000,
+    "id": "20QjNItuQEZvwXnIy5Va37",
+    "name": "Time",
+    "album": { "name": "Time" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "key": 7,
+    "tempo": 119.998,
+    "artists": "Ditian",
+    "durationMs": 449160,
+    "id": "0jj1tCb1DCGsKsYmf8zFNS",
+    "name": "Time Is An Illusion",
+    "album": { "name": "Time Is An Illusion EP" },
+    "releaseDate": "2019-08-15"
+  },
+  {
+    "key": 1,
+    "tempo": 125.01,
+    "artists": "Moritz Hofbauer",
+    "durationMs": 234440,
+    "id": "1fuOLh6glZaxNvDxU6vXp4",
+    "name": "Time Of My Life - Edit",
+    "album": { "name": "Time Of My Life (Edit) + Remixes" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "tempo": null,
+    "artists": "Hozho",
+    "durationMs": 600500,
+    "id": "5QxuFcNJ9WsSJmRzj8Z1GZ",
+    "name": "Time To Move On",
+    "album": { "name": "Time To Move On" },
+    "releaseDate": "2020-10-30"
+  },
+  {
+    "key": null,
+    "tempo": 132.989,
+    "artists": "Mha Iri",
+    "durationMs": 403308,
+    "id": "76P1a7VfRpxXqBUqcIi3Ub",
+    "name": "Timeless - Original Mix",
+    "album": { "name": "Timeless EP" },
+    "releaseDate": "2022-06-24"
+  },
+  {
+    "tempo": 123.998,
+    "artists": "Booka Shade,Eli & Fur,Einmusik",
+    "durationMs": 452000,
+    "id": "6yCjfTARifCLjtZ611DWvA",
+    "name": "To the Sea - Einmusik Remix",
+    "album": { "name": "To the Sea" },
+    "releaseDate": "2020-06-12"
+  },
+  {
+    "key": 11,
+    "tempo": 120.01,
+    "artists": "Gab Rhome,Kora (CA)",
+    "durationMs": 488000,
+    "id": "0HJPkPDVwra5uWHGPg9AXu",
+    "name": "Toboggan",
+    "album": { "name": "Toboggan" },
+    "releaseDate": "2019-04-19"
+  },
+  {
+    "key": 0,
+    "tempo": 123.013,
+    "artists": "Jimi Jules",
+    "durationMs": 284000,
+    "id": "3ezs97FpxasPrTnlptVVau",
+    "name": "Too Far",
+    "album": { "name": "Too Far" },
+    "releaseDate": "2022-03-11"
+  },
+  {
+    "key": null,
+    "tempo": 128.778,
+    "artists": "Secession",
+    "durationMs": 440173,
+    "id": "39BlhCFjidmrC0ZLSCFvod",
+    "name": "Touch - Part 4",
+    "album": { "name": "Touch" },
+    "releaseDate": "1984-09-28"
+  },
+  {
+    "key": 6,
+    "tempo": 127.005,
+    "artists": "Jil Tanner",
+    "durationMs": 413376,
+    "id": "4T9VMHgMz7S3bEfHxaN7Ow",
+    "name": "Toxic People",
+    "album": { "name": "Fury" },
+    "releaseDate": "2022-06-03"
+  },
+  {
+    "key": 2,
+    "tempo": 123.985,
+    "artists": "Korolova,Jonas Saalbach,SBSTN",
+    "durationMs": 279543,
+    "id": "13wSFbVCKZEWteQbaGq6Se",
+    "name": "Traces",
+    "album": { "name": "Traces" },
+    "releaseDate": "2023-05-26"
+  },
+  {
+    "key": 2,
+    "tempo": 124.002,
+    "artists": "Eelke Kleijn,Joris Voorn",
+    "durationMs": 224274,
+    "id": "08T5Ibykp5D758EGSAFJb8",
+    "name": "Transmission - Joris Voorn Remix",
+    "album": { "name": "Transmission (Joris Voorn Remix)" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": 7,
+    "tempo": 127.014,
+    "artists": "Hozho",
+    "durationMs": 487458,
+    "id": "3j91xXYvtSu43kB9wRrgjX",
+    "name": "Troubles in Paradise",
+    "album": { "name": "Troubles in Paradise" },
+    "releaseDate": "2022-08-12"
+  },
+  {
+    "key": 7,
+    "tempo": 122.968,
+    "artists": "Ivory (IT)",
+    "durationMs": 219840,
+    "id": "12Pnf23BSnTZTTOOrzYBIu",
+    "name": "Try",
+    "album": { "name": "Feelin'" },
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "key": 9,
+    "tempo": 174.934,
+    "artists": "Benny Page",
+    "durationMs": 348670,
+    "id": "5UeLuozsBQbBj1MmB6joHz",
+    "name": "Turn Down the Lights",
+    "album": { "name": "Turn Down the Lights" },
+    "releaseDate": "2014-03-31"
+  },
+  {
+    "key": 7,
+    "tempo": 124.984,
+    "artists": "Boris Brejcha",
+    "durationMs": 474240,
+    "id": "0CZSpSDgVP5OoRGckOPUwx",
+    "name": "Twisted Reality",
+    "album": { "name": "Never Stop Dancing" },
+    "releaseDate": "2021-11-26"
+  },
+  {
+    "tempo": null,
+    "artists": "You Man",
+    "durationMs": 271906,
+    "id": "4MKb3ULfmzOcPpoho89AaJ",
+    "name": "Ummo",
+    "album": { "name": "Doors To Shambhala" },
+    "releaseDate": "2023-06-30"
+  },
+  {
+    "key": 11,
+    "tempo": 120.005,
+    "artists": "Monolink,Innellea",
+    "durationMs": 405887,
+    "id": "5nHc8CmiPllMzHbJhhx3KS",
+    "name": "Under Dark - Innellea Remix",
+    "album": { "name": "Under Dark (Innellea Remix)" },
+    "releaseDate": "2021-10-22"
+  },
+  {
+    "key": 11,
+    "tempo": 121.975,
+    "artists": "Nico Pusch",
+    "durationMs": 350655,
+    "id": "07BTmCO0X0GppSBsRlGpQe",
+    "name": "Under the Ground",
+    "album": { "name": "Under the Ground" },
+    "releaseDate": "2023-03-31"
+  },
+  {
+    "key": 6,
+    "tempo": 124,
+    "artists": "Edu Imbernon,Mordem,Innellea",
+    "durationMs": 424187,
+    "id": "0XeHdbeP11lIhahfoboRse",
+    "name": "Underwater Breathtaking - Innellea Remix",
+    "album": { "name": "Underwater Breathtaking (Innellea Remix)" },
+    "releaseDate": "2020-08-07"
+  },
+  {
+    "key": 4,
+    "tempo": 131.972,
+    "artists": "Droplex,Steve C",
+    "durationMs": 312746,
+    "id": "4lotSTi1ufPLtyfTLZ4VNF",
+    "name": "Unity - Original Mix",
+    "album": { "name": "Unity (Original Mix)" },
+    "releaseDate": "2023-02-14"
+  },
+  {
+    "tempo": 135.989,
+    "artists": "AKKI (DE)",
+    "durationMs": 232941,
+    "id": "1TjZTPkdqO3OCo7DX10a0l",
+    "name": "Venezia",
+    "album": { "name": "Venezia" },
+    "releaseDate": "2023-02-24"
+  },
+  {
+    "tempo": 100.002,
+    "artists": "Mose",
+    "durationMs": 700800,
+    "id": "2C7wcwjjSmJfHtnIWHs3q1",
+    "name": "Vida",
+    "album": { "name": "Vida" },
+    "releaseDate": "2017-09-22"
+  },
+  {
+    "key": 2,
+    "tempo": 118.998,
+    "artists": "Chris IDH,Valeron",
+    "durationMs": 415995,
+    "id": "1hZQOiPAF3eU7HZCA2YXqF",
+    "name": "Vieem - Valeron Remix",
+    "album": { "name": "Vieem" },
+    "releaseDate": "2021-07-21"
+  },
+  {
+    "key": 9,
+    "tempo": 117.997,
+    "artists": "Nhii",
+    "durationMs": 258305,
+    "id": "295hLyxdrjPkge7iDB5CZC",
+    "name": "Viene Y Se Va",
+    "album": { "name": "Viene Y Se Va" },
+    "releaseDate": "2023-07-28"
+  },
+  {
+    "key": null,
+    "tempo": 165.073,
+    "artists": "Raz,Henrique Camacho",
+    "durationMs": 325962,
+    "id": "4ZkFgEWxurnQt1IA2nKL8z",
+    "name": "Vikings",
+    "album": { "name": "Vikings" },
+    "releaseDate": "2022-09-28"
+  },
+  {
+    "tempo": 119.999,
+    "artists": "M.O.S.,Bona Fide",
+    "durationMs": 488291,
+    "id": "0tXkXQGbUaiMy8an4fJNOn",
+    "name": "Volga - Extended Mix",
+    "album": { "name": "Volga / Bengali" },
+    "releaseDate": "2019-05-07"
+  },
+  {
+    "key": 4,
+    "tempo": null,
+    "artists": "Dan Bay,Max Clouth,Timboletti",
+    "durationMs": 637455,
+    "id": "73dICB4SbDjpD4ShzTyLM1",
+    "name": "Voodoo Guitar - Timboletti Remix",
+    "album": { "name": "Voodoo Guitar" },
+    "releaseDate": "2020-04-03"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "Purple Disco Machine,Bosq,Kaleta",
+    "durationMs": 232745,
+    "id": "7sMYJtxTHZKCDr48rAoA4J",
+    "name": "Wake Up! (feat. Kaleta)",
+    "album": { "name": "Wake Up! (feat. Kaleta)" },
+    "releaseDate": "2022-06-03"
+  },
+  {
+    "key": 1,
+    "tempo": 119.995,
+    "artists": "Mind Against",
+    "durationMs": 425906,
+    "id": "6j0ao2DgHem5dpnGeHwufi",
+    "name": "Walking Away",
+    "album": { "name": "Walking Away" },
+    "releaseDate": "2020-03-13"
+  },
+  {
+    "key": null,
+    "tempo": 101.989,
+    "artists": "Lannka,AIWAA",
+    "durationMs": 414132,
+    "id": "2LE04JE5AJsIWXGrN9paGz",
+    "name": "Wanderlust - AIWAA Remix",
+    "album": { "name": "Wanderlust" },
+    "releaseDate": "2017-09-04"
+  },
+  {
+    "key": 2,
+    "tempo": null,
+    "artists": "Lannka,Mose",
+    "durationMs": 646153,
+    "id": "5sD6rQHUQv5eNpw1LfXlVb",
+    "name": "Wanderlust - Mose Remix",
+    "album": { "name": "Wanderlust" },
+    "releaseDate": "2017-09-04"
+  },
+  {
+    "key": null,
+    "tempo": 169.826,
+    "artists": "Krust,Steppa",
+    "durationMs": 513280,
+    "id": "5aHkhW2AgKCsvgYyqLxkrh",
+    "name": "Warhead - Steppa Mix",
+    "album": { "name": "Warhead / Check Dis Out" },
+    "releaseDate": "1997-09-08"
+  },
+  {
+    "key": null,
+    "tempo": 137.946,
+    "artists": "Joyhauser",
+    "durationMs": 292173,
+    "id": "5nwL8tSlpy4T6XLb0NdzVW",
+    "name": "Wasted",
+    "album": { "name": "Wasted" },
+    "releaseDate": "2023-03-10"
+  },
+  {
+    "key": 9,
+    "tempo": 119.992,
+    "artists": "Alex Dimou,Vili",
+    "durationMs": 372529,
+    "id": "0OT5INmUSI26APf1t5MlsY",
+    "name": "What Keeps You There",
+    "album": { "name": "What Keeps You There" },
+    "releaseDate": "2019-07-26"
+  },
+  {
+    "key": 7,
+    "tempo": 122.001,
+    "artists": "Guy Gerber,&ME",
+    "durationMs": 504590,
+    "id": "0RMQgXHIBTsAVcaS7qahLq",
+    "name": "What To Do - &ME Remix",
+    "album": { "name": "What To Do (Remixes)" },
+    "releaseDate": "2018-10-26"
+  },
+  {
+    "key": 7,
+    "tempo": null,
+    "artists": "BAR,Shahrokh Dini",
+    "durationMs": 470774,
+    "id": "2iTbtxUDjTf10YnkdqBSUK",
+    "name": "White Noise - Shahrokh Dini Remix",
+    "album": { "name": "Compost Black Label #126" },
+    "releaseDate": "2015-07-31"
+  },
+  {
+    "tempo": 123.993,
+    "artists": "RÜFÜS DU SOL,Colyn",
+    "durationMs": 462978,
+    "id": "6l4DAumg138A324aTQfXUi",
+    "name": "Wildfire - Colyn Remix",
+    "album": { "name": "Surrender (Remixes)" },
+    "releaseDate": "2022-08-12"
+  },
+  {
+    "key": 9,
+    "tempo": 122.003,
+    "artists": "Gadi Mitrani",
+    "durationMs": 528311,
+    "id": "36HUKp9PJ6QQZfadgIiyx9",
+    "name": "Willing (Afterhours Mix)",
+    "album": { "name": "Willing" },
+    "releaseDate": "2019-12-06"
+  },
+  {
+    "key": null,
+    "tempo": 104.007,
+    "artists": "Rapossa",
+    "durationMs": 341538,
+    "id": "7KscUCiwl5HXugtIb9EwiC",
+    "name": "Wind of Freedom",
+    "album": { "name": "Mystic Flavor" },
+    "releaseDate": "2017-08-20"
+  },
+  {
+    "key": 8,
+    "tempo": 128.027,
+    "artists": "2raumwohnung,Paul Kalkbrenner",
+    "durationMs": 587040,
+    "id": "6X8Ma5Du7eytD3vMeL2YFy",
+    "name": "Wir werden sehen - Paul Kalkbrenner Remix",
+    "album": { "name": "Lasso - Remixe" },
+    "releaseDate": "2010-07-02"
+  },
+  {
+    "key": null,
+    "tempo": 124.008,
+    "artists": "Gregor Tresher",
+    "durationMs": 444455,
+    "id": "3jkNXVa9mrjNnNuiC6VDOX",
+    "name": "Witchcraft",
+    "album": { "name": "Trident" },
+    "releaseDate": "2020-09-18"
+  },
+  {
+    "key": 9,
+    "tempo": null,
+    "artists": "Satori,Derun,Qiyans Krets",
+    "durationMs": 555873,
+    "id": "5GbeUZ1VhajPZfBI8iPL0Q",
+    "name": "Yedi Kule - Satori Re:Imagined Mix",
+    "album": { "name": "Re:Imagined" },
+    "releaseDate": "2020-10-09"
+  },
+  {
+    "key": 9,
+    "tempo": 107.984,
+    "artists": "Moon's Voyager,Sevana Tchakerian",
+    "durationMs": 329954,
+    "id": "4twqXg7phKygdkFQQ3NGdB",
+    "name": "Yeri Jan",
+    "album": { "name": "Summer Sol VI" },
+    "releaseDate": "2021-06-21"
+  },
+  {
+    "key": 6,
+    "tempo": 124.019,
+    "artists": "Opposite Ways,Stjepanek,Eleonora",
+    "durationMs": 394843,
+    "id": "0KU8uRszR35IKBtloUCZ6T",
+    "name": "You & Me",
+    "album": { "name": "Il Buio Svanirà" },
+    "releaseDate": "2020-07-27"
+  },
+  {
+    "key": 1,
+    "tempo": 129.993,
+    "artists": "AKKI (DE)",
+    "durationMs": 391384,
+    "id": "3aKfZuMFknpoj4nYqWiGv2",
+    "name": "You & Me",
+    "album": { "name": "You & Me" },
+    "releaseDate": "2023-01-27"
+  },
+  {
+    "key": 10,
+    "tempo": 137.987,
+    "artists": "Neelix,Kleysky,Deep Kontakt",
+    "durationMs": 361739,
+    "id": "2cldsTRjQboX0flJkYdxtg",
+    "name": "You (Kleysky & Deep Kontakt Remix)",
+    "album": { "name": "You (Kleysky & Deep Kontakt Remix)" },
+    "releaseDate": "2022-07-29"
+  },
+  {
+    "key": 11,
+    "tempo": 140.035,
+    "artists": "Infected Mushroom",
+    "durationMs": 390011,
+    "id": "1zCEQgOjjQRzGieDb3OVKh",
+    "name": "You Wanna Stay",
+    "album": { "name": "Shroomeez" },
+    "releaseDate": "2021-05-24"
+  },
+  {
+    "key": 6,
+    "tempo": 119.994,
+    "artists": "Agoria,Blasé,Solomun",
+    "durationMs": 503082,
+    "id": "08Uz2WDG2HpZwCX7qOn7OJ",
+    "name": "You're Not Alone - Solomun Remix",
+    "album": { "name": "You're Not Alone (Solomun Remix)" },
+    "releaseDate": "2019-01-25"
+  },
+  {
+    "key": null,
+    "tempo": null,
+    "artists": "Ed Solo,Deekline,General Levy",
+    "durationMs": 168000,
+    "id": "6MrSyETdquEhHmDMRjjusX",
+    "name": "Your Love",
+    "album": { "name": "Your Love" },
+    "releaseDate": "2022-08-05"
+  },
+  {
+    "key": 6,
+    "tempo": 110,
+    "artists": "Tuğçe Kurtiş,Santi,Santi & Tuğçe",
+    "durationMs": 369921,
+    "id": "543Mnm9jdFYtgk1iI5RiaC",
+    "name": "Yıldızların Altında",
+    "album": { "name": "Yıldızların Altında" },
+    "releaseDate": "2018-04-23"
+  },
+  {
+    "key": 1,
+    "tempo": 128.002,
+    "artists": "Carlo Ruetz",
+    "durationMs": 391875,
+    "id": "3VZvZ58FrDYGRD8wzerwGb",
+    "name": "Zero to Ten",
+    "album": { "name": "Zero to Ten" },
+    "releaseDate": "2023-03-17"
+  }
+]
