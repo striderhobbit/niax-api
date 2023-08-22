@@ -24,6 +24,12 @@ declare namespace Resource {
   interface SingleRoute<I extends Item, P extends PropertyPath<I>> {
     path: P;
     type: InverseTypeMap<GetFieldType<I, P>>;
+    nullable: Exclude<
+      GetFieldType<I, P>,
+      boolean | number | string
+    > extends never
+      ? false
+      : true;
   }
 
   type Routes<I extends Item> = {
@@ -49,7 +55,7 @@ declare namespace Resource {
   interface SingleTableField<I extends Item, P extends PropertyPath<I>>
     extends SingleRoute<I, P> {
     resource: Pick<I, 'id'>;
-    value?: GetFieldType<I, P> | null;
+    value: GetFieldType<I, P>;
   }
 
   type TableFields<I extends Item> = {

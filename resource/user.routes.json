@@ -1,26 +1,32 @@
 [
   {
     "path": "id",
-    "type": "string"
+    "type": "string",
+    "nullable": false
   },
   {
     "path": "name.first",
-    "type": "string"
+    "type": "string",
+    "nullable": false
   },
   {
     "path": "name.last",
-    "type": "string"
+    "type": "string",
+    "nullable": false
   },
   {
     "path": "age",
-    "type": "number"
+    "type": "number",
+    "nullable": false
   },
   {
     "path": "eyeColor",
-    "type": "string"
+    "type": "string",
+    "nullable": true
   },
   {
     "path": "isMarried",
-    "type": "boolean"
+    "type": "boolean",
+    "nullable": false
   }
 ]
