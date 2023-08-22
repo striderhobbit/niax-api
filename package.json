@@ -31,7 +31,7 @@
   "nodemonConfig": {
     "ignore": [
       "*.json",
-      "src/node.ts"
+      "src/*node.ts"
     ]
   }
 }
