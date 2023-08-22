@@ -1,6 +1,6 @@
 import { GetFieldType } from 'lodash';
 import { PagingObject } from './paging';
-import { PropertyPath } from './utility';
+import { IsNullable, PropertyPath } from './utility';
 
 interface TypeMap {
   boolean: boolean;
@@ -24,12 +24,7 @@ declare namespace Resource {
   interface SingleRoute<I extends Item, P extends PropertyPath<I>> {
     path: P;
     type: InverseTypeMap<GetFieldType<I, P>>;
-    nullable: Exclude<
-      GetFieldType<I, P>,
-      boolean | number | string
-    > extends never
-      ? false
-      : true;
+    nullable: IsNullable<GetFieldType<I, P>>;
   }
 
   type Routes<I extends Item> = {

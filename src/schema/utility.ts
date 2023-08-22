@@ -12,3 +12,5 @@ export type PropertyPath<T> = (
 ) extends infer D
   ? Extract<D, string>
   : never;
+
+export type IsNullable<T> = Extract<T, null> extends never ? false : true;
