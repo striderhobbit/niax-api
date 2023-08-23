@@ -13,7 +13,8 @@
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "object-hash": "^3.0.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "ws": "^8.13.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
@@ -23,6 +24,7 @@
     "@types/morgan": "^1.9.4",
     "@types/object-hash": "^3.0.2",
     "@types/qs": "^6.9.7",
+    "@types/ws": "^8.5.5",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "eslint": "^8.46.0",

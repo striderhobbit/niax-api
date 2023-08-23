@@ -18,9 +18,11 @@ import {
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { Subject, defer, mergeAll } from 'rxjs';
+import { WebSocketServer } from 'ws';
 import { paginate } from './paging';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
+import { WebSocket } from './schema/ws';
 
 class TableCache<I extends Resource.Item> {
   private readonly tables: Resource.Table<I>[] = [];
@@ -71,6 +73,7 @@ export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly queue = new Subject<any>();
   private readonly tableCache = new TableCache<I>(5);
+  private readonly wss = new WebSocketServer({ port: this.webSocketPort });
 
   private readonly router = express
     .Router()
@@ -87,12 +90,12 @@ export class Server<I extends Resource.Item> {
           const limit = Math.min(+(req.query.limit ?? 50), 100);
 
           const items: I[] = await readFile(
-            `resource/${resourceName}.items.json`,
+            `resource/items/${resourceName}.json`,
             'utf-8'
           ).then(JSON.parse);
 
           const routes: Resource.Route<I>[] = await readFile(
-            `resource/${resourceName}.routes.json`,
+            `resource/routes/${resourceName}.json`,
             'utf-8'
           ).then(JSON.parse);
 
@@ -296,7 +299,7 @@ export class Server<I extends Resource.Item> {
             return item;
           };
 
-          return readFile(`resource/${resourceName}.items.json`, 'utf-8')
+          return readFile(`resource/items/${resourceName}.json`, 'utf-8')
             .then<I[]>(JSON.parse)
             .then((items) => {
               set(getItem(items, id), path, value);
@@ -307,7 +310,7 @@ export class Server<I extends Resource.Item> {
             })
             .then((items) =>
               writeFile(
-                `resource/${resourceName}.items.json`,
+                `resource/items/${resourceName}.json`,
                 JSON.stringify(items, null, '\t')
               ).then(() => res.send(getItem(items, id)))
             );
@@ -315,7 +318,12 @@ export class Server<I extends Resource.Item> {
       )
     );
 
-  constructor(private readonly port: number) {
+  constructor(
+    private readonly port: number,
+    private readonly webSocketPort: number
+  ) {
+    console.clear();
+
     this.queue.pipe(mergeAll(1)).subscribe();
 
     this.app.use(json());
@@ -339,9 +347,33 @@ export class Server<I extends Resource.Item> {
     this.app.use(errorResponder);
     this.app.use(invalidPathHandler);
 
-    this.app.listen(this.port, () => {
-      console.clear();
-      console.info(`Server is listening on port ${this.port}.`);
+    this.app.listen(this.port, () =>
+      console.info(`Server is listening on port ${this.port}.`)
+    );
+
+    this.wss.on('listening', () =>
+      console.info(
+        `WebSocketServer is listening on port ${this.webSocketPort}.`
+      )
+    );
+
+    this.wss.on('connection', (ws) => {
+      ws.on('close', () =>
+        console.info(`Client disconnected (total = ${this.wss.clients.size}).`)
+      );
+
+      console.info(`New client connected (total = ${this.wss.clients.size}).`);
+
+      this.broadcast({
+        type: 'text',
+        body: 'ping',
+      });
     });
+  }
+
+  private broadcast(message: WebSocket.Message): void {
+    const data = JSON.stringify(message);
+
+    this.wss.clients.forEach((ws) => ws.send(data));
   }
 }

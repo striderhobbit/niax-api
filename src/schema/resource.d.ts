@@ -16,7 +16,7 @@ type InverseTypeMap<K> = K extends boolean
   ? 'string'
   : never;
 
-declare namespace Resource {
+export namespace Resource {
   interface Item {
     id: string;
   }

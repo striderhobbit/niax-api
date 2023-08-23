@@ -1,4 +1,4 @@
-export interface Track {
+interface I {
   album: {
     name: string;
   };
@@ -8,5 +8,5 @@ export interface Track {
   key?: number | null;
   name: string;
   releaseDate: string;
-  tempo: number | null;
+  tempo: number;
 }

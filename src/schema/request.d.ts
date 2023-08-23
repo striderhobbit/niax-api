@@ -9,7 +9,7 @@ interface RequestHandlerParams {
   ReqQuery: ParsedQs;
 }
 
-declare namespace Request {
+export namespace Request {
   interface GetResourceTable<I extends Resource.Item>
     extends RequestHandlerParams {
     ReqParams: {};
