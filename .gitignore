@@ -1,2 +1,3 @@
 /node_modules
+/resource/.cache
 /src/*node.ts
