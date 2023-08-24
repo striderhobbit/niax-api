@@ -8,5 +8,5 @@ interface I {
   key?: number | null;
   name: string;
   releaseDate: string;
-  tempo: number;
+  tempo: number | null;
 }

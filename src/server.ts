@@ -2,7 +2,6 @@ import { json } from 'body-parser';
 import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
-import { readFile, writeFile } from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import {
   find,
@@ -17,9 +16,10 @@ import {
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
-import { Subject, defer, mergeAll } from 'rxjs';
+import { Subject, debounceTime, defer, mergeAll } from 'rxjs';
 import { WebSocketServer } from 'ws';
 import { paginate } from './paging';
+import { ResourceService } from './resource';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 import { WebSocket } from './schema/ws';
@@ -71,8 +71,9 @@ class TableCache<I extends Resource.Item> {
 
 export class Server<I extends Resource.Item> {
   private readonly app = express();
-  private readonly queue = new Subject<any>();
+  private readonly requests = new Subject<any>();
   private readonly tableCache = new TableCache<I>(5);
+  private readonly typeChecks = new Subject<void>();
   private readonly wss = new WebSocketServer({ port: this.webSocketPort });
 
   private readonly router = express
@@ -83,21 +84,18 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTable<I>['ReqBody'],
       Request.GetResourceTable<I>['ReqQuery']
     >('/api/resource/table', (req, res, next) =>
-      this.queue.next(
+      this.requests.next(
         defer(async () => {
-          const { cols = '', resourceId, resourceName } = req.query;
-
+          const { cols = '' } = req.query;
           const limit = Math.min(+(req.query.limit ?? 50), 100);
 
-          const items: I[] = await readFile(
-            `resource/items/${resourceName}.json`,
-            'utf-8'
-          ).then(JSON.parse);
+          const resource = new ResourceService<I>(
+            req.query.resourceName,
+            req.query.resourceId
+          );
 
-          const routes: Resource.Route<I>[] = await readFile(
-            `resource/routes/${resourceName}.json`,
-            'utf-8'
-          ).then(JSON.parse);
+          const items = await resource.getItems();
+          const routes = await resource.getRoutes();
 
           const columns: Resource.TableColumn<I>[] = (function (
             requestedColumns
@@ -152,8 +150,8 @@ export class Server<I extends Resource.Item> {
             columns,
             items,
             limit,
-            resourceId,
-            resourceName,
+            resourceId: resource.id,
+            resourceName: resource.name,
             routes,
           });
 
@@ -213,13 +211,13 @@ export class Server<I extends Resource.Item> {
               rowsPages: paginate(
                 filteredAndSortedRows,
                 limit,
-                (row) => row.resource.id === resourceId
+                (row) => row.resource.id === resource.id
               ),
               query: {
                 limit,
                 cols,
-                resourceId,
-                resourceName,
+                resourceId: resource.id,
+                resourceName: resource.name,
               },
               token,
               totalRows: filteredAndSortedRows.length,
@@ -229,7 +227,7 @@ export class Server<I extends Resource.Item> {
           }
 
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
-            find(rowsPage.items, { resource: { id: resourceId } })
+            find(rowsPage.items, { resource: { id: resource.id } })
           );
 
           res.send({
@@ -277,43 +275,27 @@ export class Server<I extends Resource.Item> {
       Request.PatchResourceItem<I>['ReqBody'],
       Request.PatchResourceItem<I>['ReqQuery']
     >('/api/resource/item', (req, res, next) =>
-      this.queue.next(
+      this.requests.next(
         defer(() => {
           const table = this.tableCache.getItem(req.query.tableToken),
-            { resourceName } = table!.query,
-            {
-              resource: { id },
-              path,
-              value,
-            } = req.body;
+            { path, value } = req.body;
 
-          const getItem = (items: I[], id: string): I => {
-            const item = items.find((item) => item.id === id);
+          const resource = new ResourceService<I>(
+            table!.query.resourceName,
+            req.body.resource.id
+          );
 
-            if (item == null) {
-              throw new Error(
-                `${resourceName} ${JSON.stringify(id)} not found`
-              );
-            }
-
-            return item;
-          };
-
-          return readFile(`resource/items/${resourceName}.json`, 'utf-8')
-            .then<I[]>(JSON.parse)
+          return resource
+            .getItems()
             .then((items) => {
-              set(getItem(items, id), path, value);
+              set(resource.findItemIn(items), path, value);
 
               this.tableCache.delete(table);
 
               return items;
             })
-            .then((items) =>
-              writeFile(
-                `resource/items/${resourceName}.json`,
-                JSON.stringify(items, null, '\t')
-              ).then(() => res.send(getItem(items, id)))
-            );
+            .then((items) => resource.setItems(items))
+            .then((items) => res.send(resource.findItemIn(items)));
         })
       )
     );
@@ -324,7 +306,9 @@ export class Server<I extends Resource.Item> {
   ) {
     console.clear();
 
-    this.queue.pipe(mergeAll(1)).subscribe();
+    this.requests.pipe(mergeAll(1)).subscribe();
+
+    this.typeChecks.pipe(debounceTime(1e3));
 
     this.app.use(json());
     this.app.use(cors());
