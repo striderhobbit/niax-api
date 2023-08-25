@@ -4,15 +4,14 @@ import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import {
-  find,
-  get,
-  keyBy,
-  map,
-  orderBy,
-  pick,
-  pull,
-  set,
-  sortBy,
+    get,
+    keyBy,
+    map,
+    orderBy,
+    pick,
+    pull,
+    set,
+    sortBy
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
@@ -32,7 +31,7 @@ class TableCache<I extends Resource.Item> {
   constructor(private readonly LIMIT: number) {}
 
   public add(table: Resource.Table<I>): Resource.Table<I> {
-    if (find(this.tables, pick(table, 'token')) != null) {
+    if (this.getItem(table.token) != null) {
       throw new Error(`duplicate table ${table.token}`);
     }
 
@@ -47,12 +46,8 @@ class TableCache<I extends Resource.Item> {
     pull(this.tables, table);
   }
 
-  public first(): Resource.Table<I> | undefined {
-    return this.tables[0];
-  }
-
   public getItem(token: string): Resource.Table<I> | undefined {
-    return find(this.tables, { token });
+    return this.tables.find((table) => table.token === token);
   }
 
   public promote(table: Resource.Table<I>): Resource.Table<I> {
@@ -103,7 +98,9 @@ export class Server<I extends Resource.Item> {
             requestedColumns
           ) {
             return routes.map((route) => {
-              const column = find(requestedColumns, { path: route.path });
+              const column = requestedColumns.find(
+                (column) => column.path === route.path
+              );
 
               return column == null
                 ? route
@@ -268,9 +265,9 @@ export class Server<I extends Resource.Item> {
       const { tableToken, pageToken } = req.query;
 
       res.send(
-        find(this.tableCache.getItem(tableToken)!.rowsPages, {
-          pageToken,
-        })
+        this.tableCache
+          .getItem(tableToken)!
+          .rowsPages.find((rowsPage) => rowsPage.pageToken === pageToken)
       );
     })
     .patch<
