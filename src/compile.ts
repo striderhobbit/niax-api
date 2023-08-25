@@ -11,8 +11,7 @@ interface CompilerVersion {
 }
 
 export const checkTypes = async (resourceName: string): Promise<string> => {
-  const resource = new ResourceService(resourceName);
-  const bundle = await resource.getBundle();
+  const bundle = await new ResourceService(resourceName).getBundle();
 
   const bundleHash = objectHash(bundle);
   const versionHash = objectHash(await getCompilerVersion());

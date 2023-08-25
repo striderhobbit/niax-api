@@ -171,12 +171,12 @@ export class Server<I extends Resource.Item> {
             );
 
             const rows = items.map((item, index) => ({
-              resource: pick(item, 'id'),
+              resourceId: item.id,
               fields: keyBy(
                 requestedRoutes.map(
                   (route): Resource.TableField<I> => ({
                     ...route,
-                    resource: pick(item, 'id'),
+                    resourceId: item.id,
                     value: get(item, route.path),
                   })
                 ),
@@ -213,7 +213,7 @@ export class Server<I extends Resource.Item> {
               rowsPages: paginate(
                 filteredAndSortedRows,
                 limit,
-                (row) => row.resource.id === resource.id
+                (row) => row.resourceId === resource.id
               ),
               query: {
                 limit,
@@ -229,7 +229,7 @@ export class Server<I extends Resource.Item> {
           }
 
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
-            find(rowsPage.items, { resource: { id: resource.id } })
+            rowsPage.items.find((row) => row.resourceId === resource.id)
           );
 
           res.send({
@@ -254,6 +254,8 @@ export class Server<I extends Resource.Item> {
               timestamp: new Date().toISOString(),
             },
           });
+
+          this.typeChecks.next(resource.name);
         })
       )
     )
@@ -284,7 +286,7 @@ export class Server<I extends Resource.Item> {
 
           const resource = new ResourceService<I>(
             table!.query.resourceName,
-            req.body.resource.id
+            req.body.resourceId
           );
 
           return resource

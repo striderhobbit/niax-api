@@ -49,7 +49,7 @@ export namespace Resource {
 
   interface SingleTableField<I extends Item, P extends PropertyPath<I>>
     extends SingleRoute<I, P> {
-    resource: Pick<I, 'id'>;
+    resourceId: string;
     value: GetFieldType<I, P>;
   }
 
@@ -60,7 +60,7 @@ export namespace Resource {
   type TableField<I extends Item> = TableFields<I>[PropertyPath<I>];
 
   interface TableRow<I extends Item> {
-    resource: Pick<I, 'id'>;
+    resourceId: string;
     fields: TableFields<I>;
     index: number;
   }
