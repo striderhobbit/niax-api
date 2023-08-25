@@ -13,7 +13,7 @@
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "object-hash": "^3.0.0",
-    "rxjs": "^7.8.1",
+    "rxjs": "~7.5.0",
     "ws": "^8.13.0"
   },
   "devDependencies": {

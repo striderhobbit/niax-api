@@ -1,4 +1,5 @@
 import { GetFieldType } from 'lodash';
+import { Subject } from 'rxjs';
 import { PagingObject } from './paging';
 import { IsNullable, PropertyPath } from './utility';
 
@@ -76,6 +77,7 @@ export namespace Resource {
     token: string;
     totalRows: number;
     signature?: TableSignature<I>;
+    rowsPagesUpdates?: Subject<void>;
   }
 
   interface TableQuery {
