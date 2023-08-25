@@ -6,12 +6,12 @@ import { StatusCodes } from 'http-status-codes';
 import { get, keyBy, map, orderBy, pick, pull, set, sortBy } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
-import { Subject, defer, from, mergeAll, tap } from 'rxjs';
+import { Subject, defer, from, mergeAll } from 'rxjs';
 import { WebSocketServer } from 'ws';
 import { checkTypes } from './compile';
 import { paginate } from './paging';
 import { ResourceService } from './resource';
-import { multiBufferExhaustMap } from './rxjs';
+import { groupBufferSwitchMap } from './rxjs';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 import { WebSocket } from './schema/ws';
@@ -303,19 +303,16 @@ export class Server<I extends Resource.Item> {
 
     this.typeChecks
       .pipe(
-        multiBufferExhaustMap((resourceName) =>
-          from(checkTypes(resourceName)).pipe(
-            tap((errors) =>
-              this.broadcast({
-                type: 'text',
-                subType: 'error',
-                body: errors,
-              })
-            )
-          )
-        )
+        groupBufferSwitchMap((resourceName) => from(checkTypes(resourceName)))
       )
-      .subscribe();
+      .subscribe({
+        next: (errors) =>
+          this.broadcast({
+            type: 'text',
+            subType: 'error',
+            body: errors,
+          }),
+      });
 
     this.app.use(json());
     this.app.use(cors());
@@ -354,12 +351,6 @@ export class Server<I extends Resource.Item> {
       );
 
       console.info(`New client connected (total = ${this.wss.clients.size}).`);
-
-      this.broadcast({
-        type: 'text',
-        subType: 'info',
-        body: 'ping',
-      });
     });
   }
 
