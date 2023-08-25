@@ -4,24 +4,24 @@ import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import {
-    find,
-    get,
-    keyBy,
-    map,
-    orderBy,
-    pick,
-    pull,
-    set,
-    sortBy,
+  find,
+  get,
+  keyBy,
+  map,
+  orderBy,
+  pick,
+  pull,
+  set,
+  sortBy,
 } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
-import { Subject, debounceTime, defer, from, mergeAll, tap } from 'rxjs';
+import { Subject, defer, from, mergeAll, tap } from 'rxjs';
 import { WebSocketServer } from 'ws';
 import { checkTypes } from './compile';
 import { paginate } from './paging';
 import { ResourceService } from './resource';
-import { bufferExhaustMap } from './rxjs';
+import { multiBufferExhaustMap } from './rxjs';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 import { WebSocket } from './schema/ws';
@@ -313,8 +313,7 @@ export class Server<I extends Resource.Item> {
 
     this.typeChecks
       .pipe(
-        debounceTime(5e2),
-        bufferExhaustMap((resourceName) =>
+        multiBufferExhaustMap((resourceName) =>
           from(checkTypes(resourceName)).pipe(
             tap((errors) =>
               this.broadcast({
