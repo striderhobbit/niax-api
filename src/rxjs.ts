@@ -47,7 +47,7 @@ export function bufferSwitchMap<T, R>(
 
 /**
  *
- * @summary It's like {@link bufferSwitchMap}, but source values are grouped before being merged into one single stream: at first each group piping in is being assigned one slot in that main queue. Once that slot's ready, the last value from the resp. group will be sent to projection; when projection is finished the slot will be freed again. So while waiting for actual projection, items will be buffered; items piping in while their group is already being projected will be getting assigned a new slot later.
+ * @summary It's like {@link bufferSwitchMap}, but source values are grouped before being merged into one single stream: At first each group piping in is being assigned one slot in that main queue. Once that slot's ready, the last value from the resp. group will be sent to projection, while older values are being omitted; when projection is finished the slot will be freed again. So while waiting for actual projection, items can still pipe in; items piping in while their group is already being projected are remembered and will be getting a new slot later.
  *
  * @example https://stackblitz.com/edit/rxjs-4vqyuh?file=index.ts
  */
