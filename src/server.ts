@@ -3,16 +3,7 @@ import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import {
-    get,
-    keyBy,
-    map,
-    orderBy,
-    pick,
-    pull,
-    set,
-    sortBy
-} from 'lodash';
+import { get, keyBy, map, orderBy, pick, pull, set, sortBy } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { Subject, defer, from, mergeAll, tap } from 'rxjs';
@@ -316,7 +307,8 @@ export class Server<I extends Resource.Item> {
           from(checkTypes(resourceName)).pipe(
             tap((errors) =>
               this.broadcast({
-                type: 'error',
+                type: 'text',
+                subType: 'error',
                 body: errors,
               })
             )
@@ -365,6 +357,7 @@ export class Server<I extends Resource.Item> {
 
       this.broadcast({
         type: 'text',
+        subType: 'info',
         body: 'ping',
       });
     });
