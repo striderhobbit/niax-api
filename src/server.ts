@@ -16,63 +16,70 @@ import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 import { WebSocket } from './schema/ws';
 
-interface TableCacheConfig {
+interface ItemsCacheConfig<T> {
   limit: number;
+  startWith?: T[];
 }
 
-class TableCache<I extends Resource.Item> {
-  private readonly tables: Resource.Table<I>[] = [];
+class ItemsCache<T extends { token: string }> {
+  private readonly items: T[];
 
-  constructor(private readonly config: TableCacheConfig) {}
+  constructor(private readonly config: ItemsCacheConfig<T>) {
+    this.items = config.startWith?.slice(0, config.limit) ?? [];
+  }
 
-  public add(table: Resource.Table<I>): Resource.Table<I> {
-    if (this.tryGetItem(table.token) != null) {
-      throw new Error(`duplicate table ${table.token}`);
+  public add(item: T): T {
+    if (this.tryGetItem(item.token) != null) {
+      throw new Error(`duplicate item ${item.token}`);
     }
 
-    this.tables.unshift(table);
+    this.items.unshift(item);
 
-    this.tables.length = Math.min(this.tables.length, this.config.limit);
+    this.items.length = Math.min(this.items.length, this.config.limit);
 
-    return table;
+    return item;
   }
 
-  public deleteItem(token: string): Resource.Table<I> {
+  public deleteItem(token: string): T {
     this.getItem(token);
 
-    return remove(this.tables, (table) => table.token === token)[0];
+    return remove(this.items, (item) => item.token === token)[0];
   }
 
-  public getItem(token: string): Resource.Table<I> {
+  public getItem(token: string): T {
     const item = this.tryGetItem(token);
 
     if (item == null) {
-      throw new Error(`table ${token} not found`);
+      throw new Error(`item ${token} not found`);
     }
 
     return item;
   }
 
-  public promoteItem(token: string): Resource.Table<I> {
-    this.tables.unshift(this.deleteItem(token));
-
-    return this.tables[0];
+  public getItems(): T[] {
+    return this.items.slice();
   }
 
-  public tryGetItem(token: string): Resource.Table<I> | undefined {
-    return this.tables.find((table) => table.token === token);
+  public promoteItem(token: string): T {
+    this.items.unshift(this.deleteItem(token));
+
+    return this.items[0];
+  }
+
+  public tryGetItem(token: string): T | undefined {
+    return this.items.find((item) => item.token === token);
   }
 }
 
-interface ServerConfig {
+interface ServerConfig<I extends Resource.Item> {
   port: number;
   webSocketPort: number;
+  restoreTables?: Resource.Table<I>[];
 }
 
 export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly requests = new Subject<any>();
-  private readonly tableCache = new TableCache<I>({ limit: 5 });
   private readonly typeChecks = new Subject<string>();
   private readonly wss = new WebSocketServer({
     port: this.config.webSocketPort,
@@ -307,7 +314,12 @@ export class Server<I extends Resource.Item> {
       )
     );
 
-  constructor(private readonly config: ServerConfig) {
+  public readonly tableCache = new ItemsCache<Resource.Table<I>>({
+    limit: 5,
+    startWith: this.config.restoreTables,
+  });
+
+  constructor(private readonly config: ServerConfig<I>) {
     console.clear();
 
     this.requests.pipe(mergeAll(1)).subscribe();
