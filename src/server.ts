@@ -3,7 +3,7 @@ import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { get, keyBy, map, orderBy, pick, pull, set, sortBy } from 'lodash';
+import { get, keyBy, map, orderBy, pick, remove, set, sortBy } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { Subject, defer, from, mergeAll } from 'rxjs';
@@ -16,44 +16,51 @@ import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 import { WebSocket } from './schema/ws';
 
+interface TableCacheConfig {
+  limit: number;
+}
+
 class TableCache<I extends Resource.Item> {
   private readonly tables: Resource.Table<I>[] = [];
 
-  constructor(private readonly LIMIT: number) {}
+  constructor(private readonly config: TableCacheConfig) {}
 
   public add(table: Resource.Table<I>): Resource.Table<I> {
-    if (this.getItem(table.token) != null) {
+    if (this.tryGetItem(table.token) != null) {
       throw new Error(`duplicate table ${table.token}`);
     }
 
     this.tables.unshift(table);
 
-    this.tables.length = Math.min(this.tables.length, this.LIMIT);
+    this.tables.length = Math.min(this.tables.length, this.config.limit);
 
     return table;
   }
 
-  public delete(table: Resource.Table<I> | undefined): void {
-    pull(this.tables, table);
+  public deleteItem(token: string): Resource.Table<I> {
+    this.getItem(token);
+
+    return remove(this.tables, (table) => table.token === token)[0];
   }
 
-  public getItem(token: string): Resource.Table<I> | undefined {
-    return this.tables.find((table) => table.token === token);
-  }
+  public getItem(token: string): Resource.Table<I> {
+    const item = this.tryGetItem(token);
 
-  public promote(table: Resource.Table<I>): Resource.Table<I> {
-    switch (this.tables.indexOf(table)) {
-      case -1:
-        throw new Error(`table ${table.token} not found`);
-      case 0:
-        break;
-      default:
-        pull(this.tables, table);
-
-        this.tables.unshift(table);
+    if (item == null) {
+      throw new Error(`table ${token} not found`);
     }
 
-    return table;
+    return item;
+  }
+
+  public promoteItem(token: string): Resource.Table<I> {
+    this.tables.unshift(this.deleteItem(token));
+
+    return this.tables[0];
+  }
+
+  public tryGetItem(token: string): Resource.Table<I> | undefined {
+    return this.tables.find((table) => table.token === token);
   }
 }
 
@@ -65,7 +72,7 @@ interface ServerConfig {
 export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly requests = new Subject<any>();
-  private readonly tableCache = new TableCache<I>(5);
+  private readonly tableCache = new TableCache<I>({ limit: 5 });
   private readonly typeChecks = new Subject<string>();
   private readonly wss = new WebSocketServer({
     port: this.config.webSocketPort,
@@ -152,10 +159,10 @@ export class Server<I extends Resource.Item> {
             routes,
           });
 
-          const restored = this.tableCache.getItem(token);
+          const restoredTable = this.tableCache.tryGetItem(token);
           let table: Resource.Table<I>;
 
-          if (restored == null) {
+          if (restoredTable == null) {
             const requestedRoutes = routes.filter(
               (route) =>
                 columns.find((column) => column.path === route.path)!.include
@@ -220,7 +227,7 @@ export class Server<I extends Resource.Item> {
               totalRows: filteredAndSortedRows.length,
             });
           } else {
-            table = this.tableCache.promote(restored);
+            table = this.tableCache.promoteItem(restoredTable.token);
           }
 
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
@@ -244,7 +251,7 @@ export class Server<I extends Resource.Item> {
             signature: {
               ...pick(table, 'token', 'totalRows'),
               originalUrl: req.originalUrl,
-              restoredFromCache: restored != null,
+              restoredFromCache: restoredTable != null,
               revision: execSync('git rev-parse HEAD').toString().trim(),
               timestamp: new Date().toISOString(),
             },
@@ -264,7 +271,7 @@ export class Server<I extends Resource.Item> {
 
       res.send(
         this.tableCache
-          .getItem(tableToken)!
+          .getItem(tableToken)
           .rowsPages.find((rowsPage) => rowsPage.pageToken === pageToken)
       );
     })
@@ -280,7 +287,7 @@ export class Server<I extends Resource.Item> {
             { path, value } = req.body;
 
           const resource = new ResourceService<I>(
-            table!.query.resourceName,
+            table.query.resourceName,
             req.body.resourceId
           );
 
@@ -289,7 +296,7 @@ export class Server<I extends Resource.Item> {
             .then((items) => {
               set(resource.findItemIn(items), path, value);
 
-              this.tableCache.delete(table);
+              this.tableCache.deleteItem(table.token);
 
               return items;
             })
