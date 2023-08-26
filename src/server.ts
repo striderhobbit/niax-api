@@ -3,11 +3,12 @@ import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { get, keyBy, map, orderBy, pick, remove, set, sortBy } from 'lodash';
+import { get, keyBy, map, orderBy, pick, set, sortBy } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
 import { Subject, defer, from, mergeAll } from 'rxjs';
 import { WebSocketServer } from 'ws';
+import { ItemsCache } from './cache';
 import { checkTypes } from './compile';
 import { paginate } from './paging';
 import { ResourceService } from './resource';
@@ -15,61 +16,6 @@ import { groupBufferSwitchMap } from './rxjs';
 import { Request } from './schema/request';
 import { Resource } from './schema/resource';
 import { WebSocket } from './schema/ws';
-
-interface ItemsCacheConfig<T> {
-  limit: number;
-  startWith?: T[];
-}
-
-class ItemsCache<T extends { token: string }> {
-  private readonly items: T[];
-
-  constructor(private readonly config: ItemsCacheConfig<T>) {
-    this.items = config.startWith?.slice(0, config.limit) ?? [];
-  }
-
-  public add(item: T): T {
-    if (this.tryGetItem(item.token) != null) {
-      throw new Error(`duplicate item ${item.token}`);
-    }
-
-    this.items.unshift(item);
-
-    this.items.length = Math.min(this.items.length, this.config.limit);
-
-    return item;
-  }
-
-  public deleteItem(token: string): T {
-    this.getItem(token);
-
-    return remove(this.items, (item) => item.token === token)[0];
-  }
-
-  public getItem(token: string): T {
-    const item = this.tryGetItem(token);
-
-    if (item == null) {
-      throw new Error(`item ${token} not found`);
-    }
-
-    return item;
-  }
-
-  public getItems(): T[] {
-    return this.items.slice();
-  }
-
-  public promoteItem(token: string): T {
-    this.items.unshift(this.deleteItem(token));
-
-    return this.items[0];
-  }
-
-  public tryGetItem(token: string): T | undefined {
-    return this.items.find((item) => item.token === token);
-  }
-}
 
 interface ServerConfig<I extends Resource.Item> {
   port: number;
