@@ -57,12 +57,19 @@ class TableCache<I extends Resource.Item> {
   }
 }
 
+interface ServerConfig {
+  port: number;
+  webSocketPort: number;
+}
+
 export class Server<I extends Resource.Item> {
   private readonly app = express();
   private readonly requests = new Subject<any>();
   private readonly tableCache = new TableCache<I>(5);
   private readonly typeChecks = new Subject<string>();
-  private readonly wss = new WebSocketServer({ port: this.webSocketPort });
+  private readonly wss = new WebSocketServer({
+    port: this.config.webSocketPort,
+  });
 
   private readonly router = express
     .Router()
@@ -293,10 +300,7 @@ export class Server<I extends Resource.Item> {
       )
     );
 
-  constructor(
-    private readonly port: number,
-    private readonly webSocketPort: number
-  ) {
+  constructor(private readonly config: ServerConfig) {
     console.clear();
 
     this.requests.pipe(mergeAll(1)).subscribe();
@@ -335,13 +339,13 @@ export class Server<I extends Resource.Item> {
     this.app.use(errorResponder);
     this.app.use(invalidPathHandler);
 
-    this.app.listen(this.port, () =>
-      console.info(`Server is listening on port ${this.port}.`)
+    this.app.listen(this.config.port, () =>
+      console.info(`Server is listening on port ${this.config.port}.`)
     );
 
     this.wss.on('listening', () =>
       console.info(
-        `WebSocketServer is listening on port ${this.webSocketPort}.`
+        `WebSocketServer is listening on port ${this.config.webSocketPort}.`
       )
     );
 
