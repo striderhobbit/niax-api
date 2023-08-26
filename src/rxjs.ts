@@ -1,25 +1,25 @@
 import {
-  EMPTY,
-  Observable,
-  ObservableInput,
-  OperatorFunction,
-  ReplaySubject,
-  Subject,
-  buffer,
-  defer,
-  finalize,
-  firstValueFrom,
-  from,
-  groupBy,
-  identity,
-  mergeAll,
-  mergeMap,
-  throttle,
+    EMPTY,
+    Observable,
+    ObservableInput,
+    OperatorFunction,
+    ReplaySubject,
+    Subject,
+    buffer,
+    defer,
+    finalize,
+    firstValueFrom,
+    from,
+    groupBy,
+    identity,
+    mergeAll,
+    mergeMap,
+    throttle,
 } from 'rxjs';
 
 /**
  *
- * @summary Sometimes we want the throttling behavior of exhaustMap without losing the last emission. This is helpful in situations where we want to only issue one request at a time, but if we are told to issue another while issuing the first, we respect that. Think of it as a nicer switchMap.
+ * Sometimes we want the throttling behavior of exhaustMap without losing the last emission. This is helpful in situations where we want to only issue one request at a time, but if we are told to issue another while issuing the first, we respect that. Think of it as a nicer switchMap.
  *
  * @see https://github.com/ReactiveX/rxjs/issues/5004
  *
@@ -47,7 +47,7 @@ export function bufferSwitchMap<T, R>(
 
 /**
  *
- * @summary It's like {@link bufferSwitchMap}, but source values are grouped before being merged into one single stream: At first each group piping in is being assigned one slot in that main queue. Once that slot's ready, the last value from the resp. group will be sent to projection, while older values are being omitted; when projection is finished the slot will be freed again. So while waiting for actual projection, items can still pipe in; items piping in while their group is already being projected are remembered and will be getting a new slot later.
+ * It's like {@link bufferSwitchMap}, but source values are grouped before being merged into one single stream: At first each group piping in is being assigned one slot in that main queue. Once that slot's ready, the last value from the resp. group will be sent to projection, while older values are being omitted; when projection is finished the slot will be freed again. So while waiting for actual projection, items can still pipe in; items piping in while their group is already being projected are remembered and will be getting a new slot later.
  *
  * @example https://stackblitz.com/edit/rxjs-4vqyuh?file=index.ts
  */
