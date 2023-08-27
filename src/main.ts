@@ -1,3 +1,4 @@
+import { configDotenv } from "dotenv";
 import { readFile, writeFile } from 'fs/promises';
 import { Resource } from './schema/resource';
 import { Server } from './server';
@@ -24,5 +25,7 @@ function startServer<I extends Resource.Item>(
         }))
     );
 }
+
+configDotenv();
 
 startServer('src/~backup.json');

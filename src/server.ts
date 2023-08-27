@@ -3,6 +3,7 @@ import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import { createServer } from 'https';
 import { get, keyBy, map, orderBy, pick, set, sortBy } from 'lodash';
 import morgan from 'morgan';
 import objectHash from 'object-hash';
@@ -304,13 +305,19 @@ export class Server<I extends Resource.Item> {
     this.app.use(errorResponder);
     this.app.use(invalidPathHandler);
 
-    this.app.listen(this.config.port, () =>
-      console.info(`Server is listening on port ${this.config.port}.`)
+    createServer(
+      {
+        key: process.env['SSL_KEY'],
+        cert: process.env['SSL_CERT'],
+      },
+      this.app
+    ).listen(this.config.port, () =>
+      console.info(`Server listening on port ${this.config.port}.`)
     );
 
     this.wss.on('listening', () =>
       console.info(
-        `WebSocketServer is listening on port ${this.config.webSocketPort}.`
+        `WebSocketServer listening on port ${this.config.webSocketPort}.`
       )
     );
 
