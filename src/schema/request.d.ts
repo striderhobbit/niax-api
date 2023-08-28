@@ -27,7 +27,6 @@ export namespace Request {
     ReqParams: {};
     ResBody: Resource.TableRowsPage<I>;
     ReqQuery: {
-      tableToken: string;
       pageToken: string;
     };
   }
@@ -37,8 +36,6 @@ export namespace Request {
     ReqParams: {};
     ResBody: I;
     ReqBody: Resource.TableField<I>;
-    ReqQuery: {
-      tableToken: string;
-    };
+    ReqQuery: {};
   }
 }

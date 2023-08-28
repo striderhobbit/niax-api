@@ -185,6 +185,8 @@ export class Server<I extends Resource.Item> {
             table = this.tableCache.promoteItem(restoredTable.token);
           }
 
+          req.session.table = pick(table, 'token');
+
           const requestedRowsPage = table.rowsPages.find((rowsPage) =>
             rowsPage.items.find((row) => row.resourceId === resource.id)
           );
@@ -222,11 +224,11 @@ export class Server<I extends Resource.Item> {
       Request.GetResourceTableRowsPage<I>['ReqBody'],
       Request.GetResourceTableRowsPage<I>['ReqQuery']
     >('/api/resource/table/rows/page', (req, res, next) => {
-      const { tableToken, pageToken } = req.query;
+      const { pageToken } = req.query;
 
       res.send(
         this.tableCache
-          .getItem(tableToken)
+          .getItem(req.session.table!.token)
           .rowsPages.find((rowsPage) => rowsPage.pageToken === pageToken)
       );
     })
@@ -238,7 +240,7 @@ export class Server<I extends Resource.Item> {
     >('/api/resource/item', (req, res, next) =>
       this.requests.next(
         defer(() => {
-          const table = this.tableCache.getItem(req.query.tableToken),
+          const table = this.tableCache.getItem(req.session.table!.token),
             { path, value } = req.body;
 
           const resource = new ResourceService<I>(
