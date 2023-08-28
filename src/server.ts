@@ -2,6 +2,7 @@ import { json } from 'body-parser';
 import { execSync } from 'child_process';
 import cors from 'cors';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
+import session from 'express-session';
 import { StatusCodes } from 'http-status-codes';
 import { createServer } from 'https';
 import { get, keyBy, map, orderBy, pick, set, sortBy } from 'lodash';
@@ -286,6 +287,13 @@ export class Server<I extends Resource.Item> {
 
     this.app.use(json());
     this.app.use(cors());
+    this.app.use(
+      session({
+        secret: "Don't tell anyone!",
+        resave: false,
+        saveUninitialized: false,
+      })
+    );
     this.app.use(morgan('dev'));
     this.app.use(this.router);
 
