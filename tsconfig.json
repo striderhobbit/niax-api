@@ -16,6 +16,6 @@
     "strict": true,
     "target": "ES2022",
     "useDefineForClassFields": false,
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "typeRoots": ["./src/types"]
   }
 }
